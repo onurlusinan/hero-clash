@@ -215,8 +215,24 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5105441036056478257, guid: cfe7dfb780b25a642b9a711a8ba91299, type: 3}
+      propertyPath: level
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5105441036056478257, guid: cfe7dfb780b25a642b9a711a8ba91299, type: 3}
+      propertyPath: health
+      value: 22
+      objectReference: {fileID: 0}
+    - target: {fileID: 5105441036056478257, guid: cfe7dfb780b25a642b9a711a8ba91299, type: 3}
       propertyPath: _heroName
-      value: Holly
+      value: Commander Truck
+      objectReference: {fileID: 0}
+    - target: {fileID: 5105441036056478257, guid: cfe7dfb780b25a642b9a711a8ba91299, type: 3}
+      propertyPath: _isLocked
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5105441036056478257, guid: cfe7dfb780b25a642b9a711a8ba91299, type: 3}
+      propertyPath: attackPower
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 5105441036056478259, guid: cfe7dfb780b25a642b9a711a8ba91299, type: 3}
       propertyPath: m_Name
@@ -305,7 +321,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1.3
-  m_Text: SELECT AT LEAST 3 HEROES TO FIGHT!
+  m_Text: SELECT EXACTLY 3 HEROES TO FIGHT!
 --- !u!222 &6260747
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -415,7 +431,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 8.7, y: 72.98001}
+  m_AnchoredPosition: {x: 8.7, y: 45.299988}
   m_SizeDelta: {x: 2072.53, y: 369.24}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &325945501
@@ -752,8 +768,24 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5105441036056478257, guid: cfe7dfb780b25a642b9a711a8ba91299, type: 3}
+      propertyPath: level
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5105441036056478257, guid: cfe7dfb780b25a642b9a711a8ba91299, type: 3}
+      propertyPath: health
+      value: 75
+      objectReference: {fileID: 0}
+    - target: {fileID: 5105441036056478257, guid: cfe7dfb780b25a642b9a711a8ba91299, type: 3}
       propertyPath: _heroName
-      value: Ilona
+      value: Shaggy
+      objectReference: {fileID: 0}
+    - target: {fileID: 5105441036056478257, guid: cfe7dfb780b25a642b9a711a8ba91299, type: 3}
+      propertyPath: _isLocked
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5105441036056478257, guid: cfe7dfb780b25a642b9a711a8ba91299, type: 3}
+      propertyPath: attackPower
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 5105441036056478259, guid: cfe7dfb780b25a642b9a711a8ba91299, type: 3}
       propertyPath: m_Name
@@ -862,8 +894,24 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5105441036056478257, guid: cfe7dfb780b25a642b9a711a8ba91299, type: 3}
+      propertyPath: level
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5105441036056478257, guid: cfe7dfb780b25a642b9a711a8ba91299, type: 3}
+      propertyPath: health
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 5105441036056478257, guid: cfe7dfb780b25a642b9a711a8ba91299, type: 3}
       propertyPath: _heroName
-      value: Pierre
+      value: Absolute Unit
+      objectReference: {fileID: 0}
+    - target: {fileID: 5105441036056478257, guid: cfe7dfb780b25a642b9a711a8ba91299, type: 3}
+      propertyPath: _isLocked
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5105441036056478257, guid: cfe7dfb780b25a642b9a711a8ba91299, type: 3}
+      propertyPath: attackPower
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 5105441036056478259, guid: cfe7dfb780b25a642b9a711a8ba91299, type: 3}
       propertyPath: m_Name
@@ -880,6 +928,117 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 5105441036056478256, guid: cfe7dfb780b25a642b9a711a8ba91299, type: 3}
   m_PrefabInstance: {fileID: 637048661}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &637569169
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 637569170}
+  - component: {fileID: 637569172}
+  - component: {fileID: 637569171}
+  - component: {fileID: 637569173}
+  - component: {fileID: 637569174}
+  m_Layer: 5
+  m_Name: Text
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &637569170
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 637569169}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1599943014}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -31.450012, y: 0}
+  m_SizeDelta: {x: -62.89, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &637569171
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 637569169}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: 863e2c8fc3b8f6d419e86f9225ee1158, type: 3}
+    m_FontSize: 58
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 4
+    m_MaxSize: 134
+    m_Alignment: 5
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: FIGHT
+--- !u!222 &637569172
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 637569169}
+  m_CullTransparentMesh: 1
+--- !u!114 &637569173
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 637569169}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 1}
+  m_EffectDistance: {x: 4, y: 3}
+  m_UseGraphicAlpha: 1
+--- !u!114 &637569174
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 637569169}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfabb0440166ab443bba8876756fdfa9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 1}
+  m_EffectDistance: {x: 2.76, y: -3.19}
+  m_UseGraphicAlpha: 1
 --- !u!1 &649247609
 GameObject:
   m_ObjectHideFlags: 0
@@ -910,6 +1069,117 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &718536927
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 718536928}
+  - component: {fileID: 718536932}
+  - component: {fileID: 718536931}
+  - component: {fileID: 718536930}
+  - component: {fileID: 718536929}
+  m_Layer: 5
+  m_Name: Arrows
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &718536928
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 718536927}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1599943014}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -129.33002, y: 196}
+  m_SizeDelta: {x: 177.13, y: 72.6}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &718536929
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 718536927}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 1}
+  m_EffectDistance: {x: 2, y: 2}
+  m_UseGraphicAlpha: 1
+--- !u!114 &718536930
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 718536927}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfabb0440166ab443bba8876756fdfa9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 1}
+  m_EffectDistance: {x: 3.75, y: -4.77}
+  m_UseGraphicAlpha: 1
+--- !u!114 &718536931
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 718536927}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 0.96470594, b: 0.77647066, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: 863e2c8fc3b8f6d419e86f9225ee1158, type: 3}
+    m_FontSize: 45
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 10
+    m_MaxSize: 76
+    m_Alignment: 8
+    m_AlignByGeometry: 1
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1.3
+  m_Text: '>>>'
+--- !u!222 &718536932
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 718536927}
+  m_CullTransparentMesh: 1
 --- !u!1 &737919007
 GameObject:
   m_ObjectHideFlags: 0
@@ -1240,8 +1510,24 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5105441036056478257, guid: cfe7dfb780b25a642b9a711a8ba91299, type: 3}
+      propertyPath: level
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5105441036056478257, guid: cfe7dfb780b25a642b9a711a8ba91299, type: 3}
+      propertyPath: health
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 5105441036056478257, guid: cfe7dfb780b25a642b9a711a8ba91299, type: 3}
       propertyPath: _heroName
-      value: Josh
+      value: Lady Boom
+      objectReference: {fileID: 0}
+    - target: {fileID: 5105441036056478257, guid: cfe7dfb780b25a642b9a711a8ba91299, type: 3}
+      propertyPath: _isLocked
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5105441036056478257, guid: cfe7dfb780b25a642b9a711a8ba91299, type: 3}
+      propertyPath: attackPower
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 5105441036056478259, guid: cfe7dfb780b25a642b9a711a8ba91299, type: 3}
       propertyPath: m_Name
@@ -1458,8 +1744,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5105441036056478257, guid: cfe7dfb780b25a642b9a711a8ba91299, type: 3}
+      propertyPath: level
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5105441036056478257, guid: cfe7dfb780b25a642b9a711a8ba91299, type: 3}
       propertyPath: _heroName
-      value: Esmeralda
+      value: Nameless Legend
+      objectReference: {fileID: 0}
+    - target: {fileID: 5105441036056478257, guid: cfe7dfb780b25a642b9a711a8ba91299, type: 3}
+      propertyPath: _isLocked
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5105441036056478259, guid: cfe7dfb780b25a642b9a711a8ba91299, type: 3}
       propertyPath: m_Name
@@ -1568,8 +1862,20 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5105441036056478257, guid: cfe7dfb780b25a642b9a711a8ba91299, type: 3}
+      propertyPath: level
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5105441036056478257, guid: cfe7dfb780b25a642b9a711a8ba91299, type: 3}
+      propertyPath: health
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 5105441036056478257, guid: cfe7dfb780b25a642b9a711a8ba91299, type: 3}
       propertyPath: _heroName
-      value: Jack
+      value: Mr. Regular
+      objectReference: {fileID: 0}
+    - target: {fileID: 5105441036056478257, guid: cfe7dfb780b25a642b9a711a8ba91299, type: 3}
+      propertyPath: attackPower
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5105441036056478259, guid: cfe7dfb780b25a642b9a711a8ba91299, type: 3}
       propertyPath: m_Name
@@ -1715,8 +2021,24 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5105441036056478257, guid: cfe7dfb780b25a642b9a711a8ba91299, type: 3}
+      propertyPath: level
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5105441036056478257, guid: cfe7dfb780b25a642b9a711a8ba91299, type: 3}
+      propertyPath: health
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5105441036056478257, guid: cfe7dfb780b25a642b9a711a8ba91299, type: 3}
       propertyPath: _heroName
-      value: Zack
+      value: Bicep Man
+      objectReference: {fileID: 0}
+    - target: {fileID: 5105441036056478257, guid: cfe7dfb780b25a642b9a711a8ba91299, type: 3}
+      propertyPath: _isLocked
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5105441036056478257, guid: cfe7dfb780b25a642b9a711a8ba91299, type: 3}
+      propertyPath: attackPower
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5105441036056478259, guid: cfe7dfb780b25a642b9a711a8ba91299, type: 3}
       propertyPath: m_Name
@@ -2038,8 +2360,24 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5105441036056478257, guid: cfe7dfb780b25a642b9a711a8ba91299, type: 3}
+      propertyPath: level
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5105441036056478257, guid: cfe7dfb780b25a642b9a711a8ba91299, type: 3}
+      propertyPath: health
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 5105441036056478257, guid: cfe7dfb780b25a642b9a711a8ba91299, type: 3}
       propertyPath: _heroName
-      value: Gregor
+      value: The GOAT
+      objectReference: {fileID: 0}
+    - target: {fileID: 5105441036056478257, guid: cfe7dfb780b25a642b9a711a8ba91299, type: 3}
+      propertyPath: _isLocked
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5105441036056478257, guid: cfe7dfb780b25a642b9a711a8ba91299, type: 3}
+      propertyPath: attackPower
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5105441036056478259, guid: cfe7dfb780b25a642b9a711a8ba91299, type: 3}
       propertyPath: m_Name
@@ -2056,6 +2394,160 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 5105441036056478256, guid: cfe7dfb780b25a642b9a711a8ba91299, type: 3}
   m_PrefabInstance: {fileID: 1507913500}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1599943013
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1599943014}
+  - component: {fileID: 1599943017}
+  - component: {fileID: 1599943016}
+  - component: {fileID: 1599943015}
+  - component: {fileID: 1599943018}
+  - component: {fileID: 1599943019}
+  m_Layer: 5
+  m_Name: Button
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1599943014
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1599943013}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 718536928}
+  - {fileID: 637569170}
+  m_Father: {fileID: 1785533327}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
+  m_AnchoredPosition: {x: -477.11, y: 189.79999}
+  m_SizeDelta: {x: 633.48, y: 216.19}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1599943015
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1599943013}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 1599943016}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &1599943016
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1599943013}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 0.96470594, b: 0.77647066, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1599943017
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1599943013}
+  m_CullTransparentMesh: 1
+--- !u!114 &1599943018
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1599943013}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 1}
+  m_EffectDistance: {x: 5, y: 5}
+  m_UseGraphicAlpha: 1
+--- !u!114 &1599943019
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1599943013}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfabb0440166ab443bba8876756fdfa9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 1}
+  m_EffectDistance: {x: 6.18, y: -9.01}
+  m_UseGraphicAlpha: 1
 --- !u!1001 &1783454237
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2148,8 +2640,20 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5105441036056478257, guid: cfe7dfb780b25a642b9a711a8ba91299, type: 3}
+      propertyPath: level
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5105441036056478257, guid: cfe7dfb780b25a642b9a711a8ba91299, type: 3}
+      propertyPath: health
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 5105441036056478257, guid: cfe7dfb780b25a642b9a711a8ba91299, type: 3}
       propertyPath: _heroName
-      value: Jill
+      value: Human Cop
+      objectReference: {fileID: 0}
+    - target: {fileID: 5105441036056478257, guid: cfe7dfb780b25a642b9a711a8ba91299, type: 3}
+      propertyPath: attackPower
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5105441036056478259, guid: cfe7dfb780b25a642b9a711a8ba91299, type: 3}
       propertyPath: m_Name
@@ -2260,6 +2764,7 @@ RectTransform:
   - {fileID: 1488722478}
   - {fileID: 70332372}
   - {fileID: 566177340}
+  - {fileID: 1599943014}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2363,6 +2868,22 @@ PrefabInstance:
     - target: {fileID: 5105441036056478256, guid: cfe7dfb780b25a642b9a711a8ba91299, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5105441036056478257, guid: cfe7dfb780b25a642b9a711a8ba91299, type: 3}
+      propertyPath: level
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5105441036056478257, guid: cfe7dfb780b25a642b9a711a8ba91299, type: 3}
+      propertyPath: health
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5105441036056478257, guid: cfe7dfb780b25a642b9a711a8ba91299, type: 3}
+      propertyPath: _heroName
+      value: Weakio
+      objectReference: {fileID: 0}
+    - target: {fileID: 5105441036056478257, guid: cfe7dfb780b25a642b9a711a8ba91299, type: 3}
+      propertyPath: attackPower
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5105441036056478259, guid: cfe7dfb780b25a642b9a711a8ba91299, type: 3}
       propertyPath: m_Name

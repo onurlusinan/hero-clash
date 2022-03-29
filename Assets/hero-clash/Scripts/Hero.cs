@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+using DG.Tweening;
+
 public class Hero : MonoBehaviour
 {
     #region ATTRIBUTES
@@ -30,6 +32,7 @@ public class Hero : MonoBehaviour
     private void Awake()
     {
         RefreshUI();
+        ShowHeroLocked(_isLocked);
     }
 
     #region GETTERS - SETTERS
@@ -76,9 +79,11 @@ public class Hero : MonoBehaviour
     }
 
     private void ShowHeroLocked(bool islocked)
-    { 
-        if(islocked)
-
+    {
+        if (islocked)
+            lockedPanelCanvasGroup.DOFade(1.0f, 0.2f);
+        else
+            lockedPanelCanvasGroup.DOFade(0.0f, 0.2f);
     }
 
     public void MainButton()

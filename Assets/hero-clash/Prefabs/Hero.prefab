@@ -671,11 +671,11 @@ RectTransform:
   - {fileID: 5105441035923154142}
   - {fileID: 5105441037005685756}
   m_Father: {fileID: 5105441036465555343}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -57.48}
+  m_AnchoredPosition: {x: -90, y: -57.48}
   m_SizeDelta: {x: 60, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5105441036041029672
@@ -785,12 +785,14 @@ MonoBehaviour:
   level: 2
   health: 30
   attackPower: 12
+  _isLocked: 0
   heroAvatar: {fileID: 5105441035846762968}
   heroBackground: {fileID: 5105441037713489300}
   heroNameText: {fileID: 5105441035968601768}
   heroHealthText: {fileID: 5105441036669920228}
   heroLevelText: {fileID: 5105441037005685755}
   heroAttackPowerText: {fileID: 5105441036450630444}
+  lockedPanelCanvasGroup: {fileID: 5693361920205473026}
 --- !u!1 &5105441036084805483
 GameObject:
   m_ObjectHideFlags: 0
@@ -824,11 +826,11 @@ RectTransform:
   - {fileID: 5105441036404920212}
   - {fileID: 5105441036669920233}
   m_Father: {fileID: 5105441036465555343}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -90, y: -57.48}
+  m_AnchoredPosition: {x: 0, y: -57.48}
   m_SizeDelta: {x: 60, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5105441036084805476
@@ -1284,8 +1286,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 5105441036084805480}
   - {fileID: 5105441036041029676}
+  - {fileID: 5105441036084805480}
   - {fileID: 5105441037432680325}
   m_Father: {fileID: 5105441036281771088}
   m_RootOrder: 2
@@ -1945,7 +1947,7 @@ CanvasGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6613392273212343474}
   m_Enabled: 1
-  m_Alpha: 1
+  m_Alpha: 0
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
