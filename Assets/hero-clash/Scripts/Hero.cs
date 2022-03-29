@@ -1,19 +1,33 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Hero : MonoBehaviour
 {
     #region ATTRIBUTES
+    [Header("Hero Attributes")]
     private int _id;
-    private string _heroName;
-
+    [SerializeField]private string _heroName;
     private float _experience;
     public int level;
-
     public float health;
     public float attackPower;
+
+    [Header("UI Config")]
+    public Image heroAvatar;
+    public Image heroBackground;
+    public Text heroNameText;
+    public Text heroHealthText;
+    public Text heroLevelText;
+    public Text heroAttackPowerText;
+
     #endregion
+
+    private void Awake()
+    {
+        RefreshUI();
+    }
 
     #region GETTERS - SETTERS
     public int GetID() => _id;
@@ -42,6 +56,20 @@ public class Hero : MonoBehaviour
         level = data.level;
         health = data.health;
         attackPower = data.attackPower;
+    }
+
+    #endregion
+
+    #region UI
+
+    private void RefreshUI()
+    {
+        heroNameText.text = _heroName;
+        heroHealthText.text = health.ToString();
+        heroLevelText.text = level.ToString();
+        heroAttackPowerText.text = attackPower.ToString();
+
+        // TODO: Also set the Avatar here  later
     }
 
     #endregion
