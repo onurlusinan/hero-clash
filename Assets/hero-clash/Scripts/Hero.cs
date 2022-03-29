@@ -14,6 +14,8 @@ public class Hero : MonoBehaviour
     public float health;
     public float attackPower;
 
+    [SerializeField] private bool _isLocked;
+
     [Header("UI Config")]
     public Image heroAvatar;
     public Image heroBackground;
@@ -21,6 +23,7 @@ public class Hero : MonoBehaviour
     public Text heroHealthText;
     public Text heroLevelText;
     public Text heroAttackPowerText;
+    public CanvasGroup lockedPanelCanvasGroup;
 
     #endregion
 
@@ -70,6 +73,17 @@ public class Hero : MonoBehaviour
         heroAttackPowerText.text = attackPower.ToString();
 
         // TODO: Also set the Avatar here  later
+    }
+
+    private void ShowHeroLocked(bool islocked)
+    { 
+        if(islocked)
+
+    }
+
+    public void MainButton()
+    {
+        Debug.Log("HEY! I am the hero " + _heroName + ".");
     }
 
     #endregion
