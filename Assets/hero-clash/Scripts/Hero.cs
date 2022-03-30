@@ -31,7 +31,7 @@ public class Hero : Character
     [Header("Panels")]
     public CanvasGroup lockedPanel;
     public CanvasGroup attributePanel;
-    public CanvasGroup checkboxPanel;
+    public CanvasGroup selectIndicator;
 
     #endregion
 
@@ -106,16 +106,9 @@ public class Hero : Character
         {
             lockedPanel.gameObject.SetActive(true);
             lockedPanel.DOFade(1.0f, 0.2f);
-
-            checkboxPanel.DOFade(0.0f, 0.2f).OnComplete(() =>
-                checkboxPanel.gameObject.SetActive(false)
-            );
         }
         else
         {
-            checkboxPanel.gameObject.SetActive(true);
-            checkboxPanel.DOFade(1.0f, 0.2f);
-
             lockedPanel.DOFade(0.0f, 0.2f).OnComplete(() =>
                 lockedPanel.gameObject.SetActive(false)
             );
