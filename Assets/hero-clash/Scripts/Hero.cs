@@ -14,6 +14,7 @@ public class Hero : Character
     public float _experience;
     public int level;
     [SerializeField] private bool _isLocked;
+    public bool isSelected;
 
     [Header("Hero Sprites")]
     public Sprite defaultAvatarSprite;
@@ -39,6 +40,8 @@ public class Hero : Character
     {
         RefreshInfo();
         ShowLockPanel(_isLocked);
+
+        isSelected = false;
     }
 
     #region GETTERS - SETTERS
@@ -116,6 +119,14 @@ public class Hero : Character
             
     }
 
+    private void ShowSelectIndicator(bool show)
+    {
+        if (show)
+            selectIndicator.DOFade(1.0f, 0.2f);
+        else
+            selectIndicator.DOFade(0.0f, 0.2f);
+    }
+
     /// <summary>
     /// Shows/hides the Attributes Panel pop-up
     /// </summary>
@@ -136,12 +147,30 @@ public class Hero : Character
     public void MainButton()
     {
         if (_isLocked)
-            Debug.Log("Hero locked!");
-        else
-        { 
-            Debug.Log("HEY! I am the hero " + characterName + ".");
-        }
+            return;
+     
+        SelectHero();   
     }
 
+    #endregion
+
+    #region SELECTING
+    private void SelectHero()
+    {
+        Debug.Log("HEY! I am the hero " + characterName + ".");
+
+        ShowSelectIndicator(!isSelected);
+
+        if (!isSelected)
+        {
+            // SELECT
+            isSelected = true;
+        }
+        else
+        {
+            // DESELECT
+            isSelected = false;
+        }
+    }
     #endregion
 }

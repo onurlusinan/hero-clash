@@ -873,6 +873,7 @@ MonoBehaviour:
   _experience: 0
   level: 1
   _isLocked: 0
+  isSelected: 0
   defaultAvatarSprite: {fileID: -4712630994511652308, guid: f1d36e38b49efe141af09c0d74afcdf8, type: 3}
   attackingAvatarSprite: {fileID: 2266114437038893649, guid: f1d36e38b49efe141af09c0d74afcdf8, type: 3}
   damagedAvatarSprite: {fileID: 1785550314556681177, guid: f1d36e38b49efe141af09c0d74afcdf8, type: 3}
@@ -884,7 +885,7 @@ MonoBehaviour:
   heroAttackPowerText: {fileID: 5105441036450630444}
   lockedPanel: {fileID: 5693361920205473026}
   attributePanel: {fileID: 4505021160937821563}
-  selectIndicator: {fileID: 0}
+  selectIndicator: {fileID: 1850930896741144785}
 --- !u!1 &5105441036084805483
 GameObject:
   m_ObjectHideFlags: 0
@@ -2093,7 +2094,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 270}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -3.3920288, y: 37.52098}
+  m_AnchoredPosition: {x: -1.8, y: 37.52098}
   m_SizeDelta: {x: 70, y: 70}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8605829719641833270
