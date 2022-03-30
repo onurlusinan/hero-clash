@@ -215,6 +215,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5105441036056478257, guid: cfe7dfb780b25a642b9a711a8ba91299, type: 3}
+      propertyPath: _id
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5105441036056478257, guid: cfe7dfb780b25a642b9a711a8ba91299, type: 3}
       propertyPath: level
       value: 1
       objectReference: {fileID: 0}
@@ -236,7 +240,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5105441036056478259, guid: cfe7dfb780b25a642b9a711a8ba91299, type: 3}
       propertyPath: m_Name
-      value: Hero (3)
+      value: Hero
       objectReference: {fileID: 0}
     - target: {fileID: 5105441036281771088, guid: cfe7dfb780b25a642b9a711a8ba91299, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -409,7 +413,7 @@ GameObject:
   - component: {fileID: 325945502}
   - component: {fileID: 325945501}
   m_Layer: 5
-  m_Name: Grass
+  m_Name: Green
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -431,7 +435,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 8.7, y: 45.299988}
+  m_AnchoredPosition: {x: 8.7, y: 39.70999}
   m_SizeDelta: {x: 2072.53, y: 369.24}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &325945501
@@ -768,6 +772,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5105441036056478257, guid: cfe7dfb780b25a642b9a711a8ba91299, type: 3}
+      propertyPath: _id
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5105441036056478257, guid: cfe7dfb780b25a642b9a711a8ba91299, type: 3}
       propertyPath: level
       value: 1
       objectReference: {fileID: 0}
@@ -789,7 +797,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5105441036056478259, guid: cfe7dfb780b25a642b9a711a8ba91299, type: 3}
       propertyPath: m_Name
-      value: Hero (9)
+      value: Hero
       objectReference: {fileID: 0}
     - target: {fileID: 5105441036281771088, guid: cfe7dfb780b25a642b9a711a8ba91299, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -894,6 +902,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5105441036056478257, guid: cfe7dfb780b25a642b9a711a8ba91299, type: 3}
+      propertyPath: _id
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 5105441036056478257, guid: cfe7dfb780b25a642b9a711a8ba91299, type: 3}
       propertyPath: level
       value: 1
       objectReference: {fileID: 0}
@@ -915,7 +927,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5105441036056478259, guid: cfe7dfb780b25a642b9a711a8ba91299, type: 3}
       propertyPath: m_Name
-      value: Hero (8)
+      value: Hero
       objectReference: {fileID: 0}
     - target: {fileID: 5105441036281771088, guid: cfe7dfb780b25a642b9a711a8ba91299, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -989,7 +1001,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 863e2c8fc3b8f6d419e86f9225ee1158, type: 3}
-    m_FontSize: 58
+    m_FontSize: 55
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 4
@@ -1000,7 +1012,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: FIGHT
+  m_Text: BATTLE!
 --- !u!222 &637569172
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1510,6 +1522,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5105441036056478257, guid: cfe7dfb780b25a642b9a711a8ba91299, type: 3}
+      propertyPath: _id
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5105441036056478257, guid: cfe7dfb780b25a642b9a711a8ba91299, type: 3}
       propertyPath: level
       value: 1
       objectReference: {fileID: 0}
@@ -1531,7 +1547,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5105441036056478259, guid: cfe7dfb780b25a642b9a711a8ba91299, type: 3}
       propertyPath: m_Name
-      value: Hero (5)
+      value: Hero
       objectReference: {fileID: 0}
     - target: {fileID: 5105441036281771088, guid: cfe7dfb780b25a642b9a711a8ba91299, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -1744,12 +1760,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5105441036056478257, guid: cfe7dfb780b25a642b9a711a8ba91299, type: 3}
+      propertyPath: _id
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5105441036056478257, guid: cfe7dfb780b25a642b9a711a8ba91299, type: 3}
       propertyPath: level
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5105441036056478257, guid: cfe7dfb780b25a642b9a711a8ba91299, type: 3}
       propertyPath: _heroName
-      value: Nameless Legend
+      value: Future Man
       objectReference: {fileID: 0}
     - target: {fileID: 5105441036056478257, guid: cfe7dfb780b25a642b9a711a8ba91299, type: 3}
       propertyPath: _isLocked
@@ -1757,7 +1777,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5105441036056478259, guid: cfe7dfb780b25a642b9a711a8ba91299, type: 3}
       propertyPath: m_Name
-      value: Hero (7)
+      value: Hero
       objectReference: {fileID: 0}
     - target: {fileID: 5105441036281771088, guid: cfe7dfb780b25a642b9a711a8ba91299, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -1777,6 +1797,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 838504475}
     m_Modifications:
+    - target: {fileID: 5105441035846762968, guid: cfe7dfb780b25a642b9a711a8ba91299, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -4712630994511652308, guid: f1d36e38b49efe141af09c0d74afcdf8, type: 3}
     - target: {fileID: 5105441036056478256, guid: cfe7dfb780b25a642b9a711a8ba91299, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1862,6 +1886,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5105441036056478257, guid: cfe7dfb780b25a642b9a711a8ba91299, type: 3}
+      propertyPath: _id
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5105441036056478257, guid: cfe7dfb780b25a642b9a711a8ba91299, type: 3}
       propertyPath: level
       value: 1
       objectReference: {fileID: 0}
@@ -1871,7 +1899,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5105441036056478257, guid: cfe7dfb780b25a642b9a711a8ba91299, type: 3}
       propertyPath: _heroName
-      value: Mr. Regular
+      value: Sir. Gramington
+      objectReference: {fileID: 0}
+    - target: {fileID: 5105441036056478257, guid: cfe7dfb780b25a642b9a711a8ba91299, type: 3}
+      propertyPath: _isLocked
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5105441036056478257, guid: cfe7dfb780b25a642b9a711a8ba91299, type: 3}
       propertyPath: attackPower
@@ -1879,7 +1911,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5105441036056478259, guid: cfe7dfb780b25a642b9a711a8ba91299, type: 3}
       propertyPath: m_Name
-      value: Hero (1)
+      value: Hero
       objectReference: {fileID: 0}
     - target: {fileID: 5105441036281771088, guid: cfe7dfb780b25a642b9a711a8ba91299, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -2021,6 +2053,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5105441036056478257, guid: cfe7dfb780b25a642b9a711a8ba91299, type: 3}
+      propertyPath: _id
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5105441036056478257, guid: cfe7dfb780b25a642b9a711a8ba91299, type: 3}
       propertyPath: level
       value: 1
       objectReference: {fileID: 0}
@@ -2042,7 +2078,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5105441036056478259, guid: cfe7dfb780b25a642b9a711a8ba91299, type: 3}
       propertyPath: m_Name
-      value: Hero (4)
+      value: Hero
       objectReference: {fileID: 0}
     - target: {fileID: 5105441036281771088, guid: cfe7dfb780b25a642b9a711a8ba91299, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -2360,6 +2396,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5105441036056478257, guid: cfe7dfb780b25a642b9a711a8ba91299, type: 3}
+      propertyPath: _id
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5105441036056478257, guid: cfe7dfb780b25a642b9a711a8ba91299, type: 3}
       propertyPath: level
       value: 1
       objectReference: {fileID: 0}
@@ -2381,7 +2421,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5105441036056478259, guid: cfe7dfb780b25a642b9a711a8ba91299, type: 3}
       propertyPath: m_Name
-      value: Hero (6)
+      value: Hero
       objectReference: {fileID: 0}
     - target: {fileID: 5105441036281771088, guid: cfe7dfb780b25a642b9a711a8ba91299, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -2555,6 +2595,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 838504475}
     m_Modifications:
+    - target: {fileID: 5105441035846762968, guid: cfe7dfb780b25a642b9a711a8ba91299, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 2266114437038893649, guid: f1d36e38b49efe141af09c0d74afcdf8, type: 3}
     - target: {fileID: 5105441036056478256, guid: cfe7dfb780b25a642b9a711a8ba91299, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -2640,6 +2684,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5105441036056478257, guid: cfe7dfb780b25a642b9a711a8ba91299, type: 3}
+      propertyPath: _id
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5105441036056478257, guid: cfe7dfb780b25a642b9a711a8ba91299, type: 3}
       propertyPath: level
       value: 1
       objectReference: {fileID: 0}
@@ -2652,12 +2700,16 @@ PrefabInstance:
       value: Human Cop
       objectReference: {fileID: 0}
     - target: {fileID: 5105441036056478257, guid: cfe7dfb780b25a642b9a711a8ba91299, type: 3}
+      propertyPath: _isLocked
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5105441036056478257, guid: cfe7dfb780b25a642b9a711a8ba91299, type: 3}
       propertyPath: attackPower
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5105441036056478259, guid: cfe7dfb780b25a642b9a711a8ba91299, type: 3}
       propertyPath: m_Name
-      value: Hero (2)
+      value: Hero
       objectReference: {fileID: 0}
     - target: {fileID: 5105441036281771088, guid: cfe7dfb780b25a642b9a711a8ba91299, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -2785,6 +2837,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 838504475}
     m_Modifications:
+    - target: {fileID: 5105441035846762968, guid: cfe7dfb780b25a642b9a711a8ba91299, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 7348058720353786455, guid: f1d36e38b49efe141af09c0d74afcdf8, type: 3}
     - target: {fileID: 5105441036056478256, guid: cfe7dfb780b25a642b9a711a8ba91299, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -2870,6 +2926,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5105441036056478257, guid: cfe7dfb780b25a642b9a711a8ba91299, type: 3}
+      propertyPath: _id
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5105441036056478257, guid: cfe7dfb780b25a642b9a711a8ba91299, type: 3}
       propertyPath: level
       value: 1
       objectReference: {fileID: 0}
@@ -2880,6 +2940,10 @@ PrefabInstance:
     - target: {fileID: 5105441036056478257, guid: cfe7dfb780b25a642b9a711a8ba91299, type: 3}
       propertyPath: _heroName
       value: Weakio
+      objectReference: {fileID: 0}
+    - target: {fileID: 5105441036056478257, guid: cfe7dfb780b25a642b9a711a8ba91299, type: 3}
+      propertyPath: _isLocked
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5105441036056478257, guid: cfe7dfb780b25a642b9a711a8ba91299, type: 3}
       propertyPath: attackPower

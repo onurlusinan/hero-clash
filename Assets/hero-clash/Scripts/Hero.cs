@@ -5,17 +5,14 @@ using UnityEngine.UI;
 
 using DG.Tweening;
 
-public class Hero : MonoBehaviour
+public class Hero : Character
 {
     #region ATTRIBUTES
-    [Header("Hero Attributes")]
-    private int _id;
-    [SerializeField]private string _heroName;
-    private float _experience;
-    public int level;
-    public float health;
-    public float attackPower;
+    [SerializeField] private int _heroID;
 
+    [Header("Experience-Related")]
+    public float _experience;
+    public int level;
     [SerializeField] private bool _isLocked;
 
     [Header("UI Config")]
@@ -36,13 +33,18 @@ public class Hero : MonoBehaviour
     }
 
     #region GETTERS - SETTERS
-    public int GetID() => _id;
-    public string GetName() => _heroName;
+    public int GetID() => _heroID;
+    public string GetName() => characterName;
     public float GetExperience() => _experience;
-    public void SetID(int id) => _id = id;
-    public void SetHeroName(string name) => _heroName = name; 
-    public void SetExperience(float experience) => _experience = experience; 
-
+    public void SetID(int id) => _heroID = id;
+    public void SetHeroName(string name) => characterName = name; 
+    public void SetExperience(float experience) => _experience = experience;
+    public bool IsLocked() => _isLocked;
+    public void SetLock(bool locked) 
+    { 
+        _isLocked = locked;
+        ShowHeroLocked(locked);
+    } 
     #endregion
 
     #region SAVE-SYSTEM
@@ -62,6 +64,7 @@ public class Hero : MonoBehaviour
         level = data.level;
         health = data.health;
         attackPower = data.attackPower;
+        SetLock(data.isLocked);
     }
 
     #endregion
@@ -70,25 +73,33 @@ public class Hero : MonoBehaviour
 
     private void RefreshUI()
     {
-        heroNameText.text = _heroName;
+        heroNameText.text = characterName;
         heroHealthText.text = health.ToString();
         heroLevelText.text = level.ToString();
         heroAttackPowerText.text = attackPower.ToString();
-
-        // TODO: Also set the Avatar here  later
     }
 
     private void ShowHeroLocked(bool islocked)
     {
         if (islocked)
+        {
+            lockedPanelCanvasGroup.gameObject.SetActive(true);
             lockedPanelCanvasGroup.DOFade(1.0f, 0.2f);
+        }
         else
-            lockedPanelCanvasGroup.DOFade(0.0f, 0.2f);
+            lockedPanelCanvasGroup.DOFade(0.0f, 0.2f).OnComplete(() =>
+                lockedPanelCanvasGroup.gameObject.SetActive(false)
+            );
     }
 
     public void MainButton()
     {
-        Debug.Log("HEY! I am the hero " + _heroName + ".");
+        if (_isLocked)
+            Debug.Log("Hero locked!");
+        else
+        { 
+            Debug.Log("HEY! I am the hero " + characterName + ".");
+        }
     }
 
     #endregion

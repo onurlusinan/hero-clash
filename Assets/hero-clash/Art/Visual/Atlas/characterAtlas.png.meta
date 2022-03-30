@@ -4,10 +4,25 @@ TextureImporter:
   internalIDToNameTable:
   - first:
       213: 2266114437038893649
-    second: heroAttack
+    second: heroDetermined
   - first:
       213: 1785550314556681177
     second: heroDamage
+  - first:
+      213: 7348058720353786455
+    second: heroDerpy
+  - first:
+      213: -685172708238522303
+    second: heroFemaleDerpy
+  - first:
+      213: 8858395719957778913
+    second: enemy
+  - first:
+      213: 6799043069244973149
+    second: heroHappy
+  - first:
+      213: -4712630994511652308
+    second: heroSir
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -133,15 +148,15 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: heroAttack
+      name: heroDetermined
       rect:
         serializedVersion: 2
-        x: 63
-        y: 642
-        width: 325
-        height: 325
+        x: 59
+        y: 1425
+        width: 600
+        height: 599
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -157,12 +172,12 @@ TextureImporter:
       name: heroDamage
       rect:
         serializedVersion: 2
-        x: 471
-        y: 641
-        width: 325
-        height: 325
+        x: 739
+        y: 1425
+        width: 600
+        height: 595
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -170,6 +185,111 @@ TextureImporter:
       bones: []
       spriteID: 9dbecb30d8c87c810800000000000000
       internalID: 1785550314556681177
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: heroDerpy
+      rect:
+        serializedVersion: 2
+        x: 1386
+        y: 1417
+        width: 600
+        height: 599
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75a1667797c89f560800000000000000
+      internalID: 7348058720353786455
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: heroFemaleDerpy
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 753
+        width: 600
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 14886a35d07cd76f0800000000000000
+      internalID: -685172708238522303
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy
+      rect:
+        serializedVersion: 2
+        x: 748
+        y: 751
+        width: 600
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e19ce739f75fea70800000000000000
+      internalID: 8858395719957778913
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: heroHappy
+      rect:
+        serializedVersion: 2
+        x: 1394
+        y: 741
+        width: 600
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d50adea06ad0b5e50800000000000000
+      internalID: 6799043069244973149
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: heroSir
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 82
+        width: 600
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c2a13ae341f599eb0800000000000000
+      internalID: -4712630994511652308
       vertices: []
       indices: 
       edges: []

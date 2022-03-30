@@ -14,6 +14,8 @@ public class HeroData
     public float health;
     public float attackPower;
 
+    public bool isLocked;
+
     public HeroData(Hero hero)
     {
         id = hero.GetID();
@@ -22,5 +24,6 @@ public class HeroData
         level = hero.level;
         health = hero.health;
         attackPower = hero.attackPower;
+        isLocked = hero.IsLocked();
     }
 }
