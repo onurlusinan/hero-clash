@@ -178,12 +178,12 @@ public class Hero : Character
         if (isSelected)
         {
             Debug.Log("Hero: " + characterName + " selected.");
-            HeroManager.Instance.SelectHero(this);
+            HeroManager.Instance.SelectHero(_heroID);
         }
         else
         {
             Debug.Log("Hero: " + characterName + " deselected.");
-            HeroManager.Instance.DeselectHero(this);
+            HeroManager.Instance.DeselectHero(_heroID);
         }
     }
     #endregion

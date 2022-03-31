@@ -39,13 +39,22 @@ public class HeroManager : MonoBehaviour
         }
     }
 
-    public void SelectHero(Hero hero)
+    private void HandlePlayerCount()
     {
-        
+        if (_selectedHeroIDs.Count > 3)
+        {
+            _heroDict[_selectedHeroIDs[0]].Select(false);
+        }
     }
 
-    public void DeselectHero(Hero hero)
+    public void SelectHero(int id)
     {
+        _selectedHeroIDs.Add(id);
+        HandlePlayerCount();
+    }
 
+    public void DeselectHero(int id)
+    {
+        _selectedHeroIDs.Remove(id);
     }
 }
