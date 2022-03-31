@@ -34,6 +34,8 @@ public class Hero : Character
     public CanvasGroup attributePanel;
     public CanvasGroup selectIndicator;
 
+    public RectTransform heroCard;
+
     #endregion
 
     private void Awake()
@@ -144,12 +146,23 @@ public class Hero : Character
     /// <summary>
     /// Method for the main button on the hero card
     /// </summary>
-    public void MainButton()
+    public void HeroCardPressed()
     {
         if (_isLocked)
             return;
      
         SelectHero();   
+    }
+
+    /// <summary>
+    /// Moves the hero card down when selected
+    /// </summary>
+    private void MoveHeroCard(bool selected)
+    {
+        if (selected)
+            heroCard.DOAnchorPosY(-60f, 0.2f);
+        else
+            heroCard.DOAnchorPosY(0f, 0.2f);
     }
 
     #endregion
@@ -158,8 +171,6 @@ public class Hero : Character
     private void SelectHero()
     {
         Debug.Log("HEY! I am the hero " + characterName + ".");
-
-        ShowSelectIndicator(!isSelected);
 
         if (!isSelected)
         {
@@ -171,6 +182,9 @@ public class Hero : Character
             // DESELECT
             isSelected = false;
         }
+
+        ShowSelectIndicator(isSelected);
+        MoveHeroCard(isSelected);
     }
     #endregion
 }
