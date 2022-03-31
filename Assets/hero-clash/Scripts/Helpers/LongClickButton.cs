@@ -11,7 +11,6 @@ public class LongClickButton : MonoBehaviour,  IPointerUpHandler, IPointerDownHa
 {
     private bool _pointerDown;
     private float _pointerDownTimer;
-    private bool _pointerDrag;
     private bool _pointerHover;
 
     private ScrollRect _scrollRectParent;
@@ -83,7 +82,6 @@ public class LongClickButton : MonoBehaviour,  IPointerUpHandler, IPointerDownHa
     private void Reset()
     {
         _pointerDown = false;
-        _pointerDrag = false;
         _pointerDownTimer = 0f;
 
         onReleaseLongClick?.Invoke();

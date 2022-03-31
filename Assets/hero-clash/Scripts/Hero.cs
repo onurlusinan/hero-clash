@@ -7,7 +7,7 @@ using DG.Tweening;
 
 public class Hero : Character
 {
-    #region ATTRIBUTES
+    #region VARIABLES & REFS
     [SerializeField] private int _heroID;
 
     [Header("Experience-Related")]
@@ -144,14 +144,14 @@ public class Hero : Character
     }
 
     /// <summary>
-    /// Method for the main button on the hero card
+    /// Method for selecting on the hero card
     /// </summary>
     public void HeroCardPressed()
     {
         if (_isLocked)
             return;
      
-        SelectHero();   
+        Select(!isSelected);   
     }
 
     /// <summary>
@@ -168,23 +168,23 @@ public class Hero : Character
     #endregion
 
     #region SELECTING
-    private void SelectHero()
+    public void Select(bool select)
     {
-        Debug.Log("HEY! I am the hero " + characterName + ".");
-
-        if (!isSelected)
-        {
-            // SELECT
-            isSelected = true;
-        }
-        else
-        {
-            // DESELECT
-            isSelected = false;
-        }
+        isSelected = select;
 
         ShowSelectIndicator(isSelected);
         MoveHeroCard(isSelected);
+
+        if (isSelected)
+        {
+            Debug.Log("Hero: " + characterName + " selected.");
+            HeroManager.Instance.SelectHero(this);
+        }
+        else
+        {
+            Debug.Log("Hero: " + characterName + " deselected.");
+            HeroManager.Instance.DeselectHero(this);
+        }
     }
     #endregion
 }

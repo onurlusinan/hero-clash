@@ -1712,7 +1712,7 @@ GameObject:
   - component: {fileID: 838504478}
   - component: {fileID: 838504477}
   m_Layer: 5
-  m_Name: HeroList
+  m_Name: HeroesParent
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1928,8 +1928,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1058722545}
+  - component: {fileID: 1058722546}
   m_Layer: 0
-  m_Name: SelectionManager
+  m_Name: HeroManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1949,6 +1950,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1058722546
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1058722544}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8dcee5c8b54a62143849dd93ddc74067, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  selectableHeroAmount: 3
+  heroesParent: {fileID: 838504475}
 --- !u!1 &1275951455
 GameObject:
   m_ObjectHideFlags: 0
