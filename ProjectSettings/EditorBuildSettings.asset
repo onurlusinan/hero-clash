@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/hero-clash/Scenes/Battle.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
+    path: Assets/hero-clash/Scenes/HeroSelection.unity
+    guid: 3dc12310773971c419a8290bf5f8a3bb
+  - enabled: 1
+    path: Assets/hero-clash/Scenes/Battleground.unity
+    guid: c811b2f6774fdfd428ca19477b1a772b
   m_configObjects: {}

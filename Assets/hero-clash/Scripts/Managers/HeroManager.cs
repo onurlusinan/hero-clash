@@ -3,6 +3,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum SceneType
+{ 
+    heroSelection,
+    battleground
+}
+
 public class HeroManager : MonoBehaviour
 {
     // Simple singleton Instance
@@ -12,15 +18,11 @@ public class HeroManager : MonoBehaviour
     public int experiencePerLevel;
 
     [Header("HeroManager Config")]
-    public GameObject heroPrefab;
     public int selectableHeroAmount;
-    public Transform heroesParent;
-    public List<int> selectedHeroIds; 
-
+    public List<int> selectedHeroIds;
     public static event Action<int> selectedHeroAmountChanged;
 
     private Dictionary<int, Hero> _heroDict;
-    private HeroBaseDataCollection _heroBaseDataCollection;
 
     private void Awake()
     {
@@ -33,27 +35,9 @@ public class HeroManager : MonoBehaviour
 
         _heroDict = new Dictionary<int, Hero>();
         selectedHeroIds = new List<int>();
-        _heroBaseDataCollection = Resources.Load<HeroBaseDataCollection>("HeroBaseData/HeroBaseDataCollection");
-
-        InstantiateHeroes();
-        //SaveAllHeroes(); // Only turn on if save file is deleted
-        LoadAllHeroes();
     }
 
-    private void InstantiateHeroes()
-    {
-        foreach (HeroBaseData baseData in _heroBaseDataCollection.GetCollection())
-        {
-            GameObject newHeroObject = Instantiate(heroPrefab, heroesParent);
-            Hero newHero = newHeroObject.GetComponent<Hero>();
-            newHero.LoadBaseData(baseData);
-            newHero.RefreshHeroCardUI();
-
-            _heroDict.Add(newHero.GetID(), newHero);
-        }
-    }
-
-    private void LoadAllHeroes()
+    public void LoadAllHeroes()
     {
         foreach (KeyValuePair<int, Hero> hero in _heroDict)
         {
@@ -69,7 +53,12 @@ public class HeroManager : MonoBehaviour
             SaveSystem.SaveHero(hero.Value);
         }
     }
-    
+
+    public void AddToHeroes(Hero hero)
+    {
+        _heroDict.Add(hero.GetID(), hero);
+    }
+
     /// <summary>
     /// Main select/deselect with id
     /// </summary>

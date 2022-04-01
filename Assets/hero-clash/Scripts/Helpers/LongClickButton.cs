@@ -33,14 +33,11 @@ public class LongClickButton : MonoBehaviour,  IPointerUpHandler, IPointerDownHa
 
     public void OnPointerDown(PointerEventData eventData)
     {
-        Debug.Log("OnPointerDown was called for object " + gameObject.name);
         _pointerDown = true;
     }
 
     public void OnPointerUp(PointerEventData eventData)
     {
-        Debug.Log("OnPointerUp was called for object " + gameObject.name);
-
         if (_pointerHover && OnClick != null)
             OnClick();
 
