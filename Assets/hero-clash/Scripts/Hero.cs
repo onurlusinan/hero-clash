@@ -40,7 +40,7 @@ public class Hero : Character
 
     private void Awake()
     {
-        RefreshInfo();
+        RefreshHeroCardUI();
         ShowLockPanel(_isLocked);
 
         isSelected = false;
@@ -97,6 +97,8 @@ public class Hero : Character
         health = baseData.GetHealth();
         attackPower = baseData.GetAttackPower();
 
+        _isLocked = baseData.IsLocked();
+
         defaultAvatarSprite = baseData.GetDefaultAvatar();
     }
 
@@ -112,16 +114,20 @@ public class Hero : Character
     /// <summary>
     /// Refreshes the text info of the hero card
     /// </summary>
-    private void RefreshInfo()
+    public void RefreshHeroCardUI()
     {
         heroNameText.text = characterName;
         heroHealthText.text = health.ToString();
         heroLevelText.text = level.ToString();
         heroAttackPowerText.text = attackPower.ToString();
+
+        SetLock(_isLocked);
+
+        heroAvatar.sprite = defaultAvatarSprite;
     }
 
     /// <summary>
-    /// Shows/hides the lock and the checkbox panels
+    /// Shows/hides the lock panel
     /// </summary>
     private void ShowLockPanel(bool islocked)
     {
