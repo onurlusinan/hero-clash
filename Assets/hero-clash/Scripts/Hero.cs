@@ -175,16 +175,7 @@ public class Hero : Character
         ShowSelectIndicator(isSelected);
         MoveHeroCard(isSelected);
 
-        if (isSelected)
-        {
-            Debug.Log("Hero: " + characterName + " selected.");
-            HeroManager.Instance.SelectHero(_heroID);
-        }
-        else
-        {
-            Debug.Log("Hero: " + characterName + " deselected.");
-            HeroManager.Instance.DeselectHero(_heroID);
-        }
+        HeroManager.Instance.SelectHero(isSelected, _heroID);
     }
     #endregion
 }

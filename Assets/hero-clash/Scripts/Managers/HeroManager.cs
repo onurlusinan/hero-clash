@@ -11,9 +11,10 @@ public class HeroManager : MonoBehaviour
     [Header("HeroManager Config")]
     public int selectableHeroAmount;
     public Transform heroesParent;
+    public List<int> selectedHeroIds;
 
     private Dictionary<int, Hero> _heroDict;
-    private List<int> _selectedHeroIDs;
+    public static event Action<int> selectedHeroAmountChanged;
 
     private void Awake()
     {
@@ -25,7 +26,7 @@ public class HeroManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
 
         _heroDict = new Dictionary<int, Hero>();
-        _selectedHeroIDs = new List<int>();
+        selectedHeroIds = new List<int>();
 
         CreateHeroList();
     }
@@ -39,22 +40,21 @@ public class HeroManager : MonoBehaviour
         }
     }
 
-    private void HandlePlayerCount()
+    public void SelectHero(bool select, int id)
     {
-        if (_selectedHeroIDs.Count > 3)
+        if (select)
         {
-            _heroDict[_selectedHeroIDs[0]].Select(false);
+            selectedHeroIds.Add(id);
+
+            if (selectedHeroIds.Count > selectableHeroAmount)
+                _heroDict[selectedHeroIds[0]].Select(false);
         }
-    }
-
-    public void SelectHero(int id)
-    {
-        _selectedHeroIDs.Add(id);
-        HandlePlayerCount();
-    }
-
-    public void DeselectHero(int id)
-    {
-        _selectedHeroIDs.Remove(id);
+        else
+        {
+            selectedHeroIds.Remove(id);
+            selectedHeroAmountChanged?.Invoke(selectedHeroIds.Count);
+        }
+        
+        selectedHeroAmountChanged?.Invoke(selectedHeroIds.Count);
     }
 }
