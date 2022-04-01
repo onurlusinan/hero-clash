@@ -13,13 +13,13 @@ public static class SaveSystem
         string path = Application.persistentDataPath + "/hero" + hero.GetID() +".save";
         FileStream stream = new FileStream(path, FileMode.Create);
 
-        HeroData data = new HeroData(hero);
+        HeroSaveData data = new HeroSaveData(hero);
 
         formatter.Serialize(stream, data);
         stream.Close();
     }
 
-    public static HeroData LoadHero(Hero hero)
+    public static HeroSaveData LoadHero(Hero hero)
     {
         string path = Application.persistentDataPath + "/hero" + hero.GetID() + ".save";
         if (File.Exists(path))
@@ -27,7 +27,7 @@ public static class SaveSystem
             BinaryFormatter formatter = new BinaryFormatter();
             FileStream stream = new FileStream(path, FileMode.Open);
             
-            HeroData data = formatter.Deserialize(stream) as HeroData;
+            HeroSaveData data = formatter.Deserialize(stream) as HeroSaveData;
             stream.Close();
             return data;
         }

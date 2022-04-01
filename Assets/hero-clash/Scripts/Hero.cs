@@ -11,7 +11,7 @@ public class Hero : Character
     [SerializeField] private int _heroID;
 
     [Header("Experience-Related")]
-    public float _experience;
+    public int _experience;
     public int level;
     [SerializeField] private bool _isLocked;
     public bool isSelected;
@@ -49,11 +49,11 @@ public class Hero : Character
     #region GETTERS - SETTERS
     public int GetID() => _heroID;
     public string GetName() => characterName;
-    public float GetExperience() => _experience;
+    public int GetExperience() => _experience;
     public bool IsLocked() => _isLocked;
     public void SetID(int id) => _heroID = id;
     public void SetHeroName(string name) => characterName = name; 
-    public void SetExperience(float experience) => _experience = experience;
+    public void SetExperience(int experience) => _experience = experience;
     public void SetLock(bool locked) 
     { 
         _isLocked = locked;
@@ -76,15 +76,33 @@ public class Hero : Character
     /// </summary>
     public void LoadHero()
     {
-        HeroData data = SaveSystem.LoadHero(this);
+        HeroSaveData data = SaveSystem.LoadHero(this);
 
         SetID(data.id);
         SetHeroName(data.heroName);
         SetExperience(data.experience);
-        level = data.level;
         health = data.health;
         attackPower = data.attackPower;
         SetLock(data.isLocked);
+    }
+
+    public void LoadBaseData(HeroBaseData baseData)
+    {
+        SetID(baseData.GetID());
+        SetHeroName(baseData.GetHeroName());
+
+        SetExperience(baseData.GetExperience());
+        level = CalculateLevel(_experience);
+
+        health = baseData.GetHealth();
+        attackPower = baseData.GetAttackPower();
+
+        defaultAvatarSprite = baseData.GetDefaultAvatar();
+    }
+
+    private int CalculateLevel(int experience)
+    {
+        return experience / HeroManager.Instance.experiencePerLevel;
     }
 
     #endregion

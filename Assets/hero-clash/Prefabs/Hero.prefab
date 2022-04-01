@@ -810,13 +810,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04109c6998cda634ab44cf5aad2cd11d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterName: Sir Gramington
-  health: 15
-  attackPower: 3
+  characterName: Hero Name
+  health: 0
+  attackPower: 0
   _heroID: 0
   _experience: 0
-  level: 1
-  _isLocked: 0
+  level: 0
+  _isLocked: 1
   isSelected: 0
   defaultAvatarSprite: {fileID: -4712630994511652308, guid: f1d36e38b49efe141af09c0d74afcdf8, type: 3}
   attackingAvatarSprite: {fileID: 2266114437038893649, guid: f1d36e38b49efe141af09c0d74afcdf8, type: 3}

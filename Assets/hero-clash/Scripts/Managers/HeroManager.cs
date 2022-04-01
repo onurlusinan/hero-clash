@@ -8,13 +8,20 @@ public class HeroManager : MonoBehaviour
     // Simple singleton Instance
     public static HeroManager Instance;
 
+    [Header("Hero Leveling")]
+    public int experiencePerLevel;
+
     [Header("HeroManager Config")]
     public int selectableHeroAmount;
     public Transform heroesParent;
-    public List<int> selectedHeroIds;
+    public List<int> selectedHeroIds; 
+
+    public static event Action<int> selectedHeroAmountChanged;
 
     private Dictionary<int, Hero> _heroDict;
-    public static event Action<int> selectedHeroAmountChanged;
+    private HeroBaseDataCollection _heroBaseDataCollection;
+
+    
 
     private void Awake()
     {
@@ -28,10 +35,11 @@ public class HeroManager : MonoBehaviour
         _heroDict = new Dictionary<int, Hero>();
         selectedHeroIds = new List<int>();
 
-        CreateHeroList();
+        CreateHeroDict();
+        LoadAllHeroes();
     }
 
-    private void CreateHeroList()
+    private void CreateHeroDict()
     {
         foreach (Transform child in heroesParent)
         {
@@ -40,6 +48,20 @@ public class HeroManager : MonoBehaviour
         }
     }
 
+    private void LoadAllHeroes()
+    {
+        _heroBaseDataCollection = Resources.Load<HeroBaseDataCollection>("HeroBaseData/HeroBaseDataCollection");
+
+        foreach(HeroBaseData baseData in _heroBaseDataCollection.GetCollection())
+        {
+            Hero hero = _heroDict[baseData.GetID()];
+            hero.LoadBaseData(baseData);
+        }
+    }
+    
+    /// <summary>
+    /// Main select/deselect with id
+    /// </summary>
     public void SelectHero(bool select, int id)
     {
         if (select)
