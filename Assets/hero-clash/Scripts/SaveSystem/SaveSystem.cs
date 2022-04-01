@@ -33,7 +33,8 @@ public static class SaveSystem
         }
         else
         {
-            Debug.LogError("Save File not found in " + path);
+            Debug.LogWarning("A new hero?! There is no previous save file for hero " + hero.GetID() + ". Saving...");
+            SaveHero(hero);
             return null;
         }
     }

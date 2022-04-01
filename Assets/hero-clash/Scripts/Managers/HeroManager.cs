@@ -22,8 +22,6 @@ public class HeroManager : MonoBehaviour
     private Dictionary<int, Hero> _heroDict;
     private HeroBaseDataCollection _heroBaseDataCollection;
 
-    
-
     private void Awake()
     {
         if (HeroManager.Instance == null)
@@ -37,13 +35,12 @@ public class HeroManager : MonoBehaviour
         selectedHeroIds = new List<int>();
         _heroBaseDataCollection = Resources.Load<HeroBaseDataCollection>("HeroBaseData/HeroBaseDataCollection");
 
-        CreateHeroDict();
-
-        SaveAllHeroes();
+        InstantiateHeroes();
+        //SaveAllHeroes(); // Only turn on if save file is deleted
         LoadAllHeroes();
     }
 
-    private void CreateHeroDict()
+    private void InstantiateHeroes()
     {
         foreach (HeroBaseData baseData in _heroBaseDataCollection.GetCollection())
         {
