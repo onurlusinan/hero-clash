@@ -5,15 +5,24 @@ using UnityEngine;
 public class BattleSystem : StateMachine
 {
     public BattleUI battleUI;
-    public List<Hero> heroes;
+    public List<BattleHero> battleHeroes;
+
+    private void Awake()
+    {
+        BattleHero.heroAttack += OnHeroAttack;
+    }
+    private void OnDestroy()
+    {
+        BattleHero.heroAttack -= OnHeroAttack;
+    }
 
     private void Start()
     {
         SetState(new Begin(this));
     }
 
-    public void AttackButton()
+    private void OnHeroAttack(Hero hero)
     {
-        StartCoroutine(battleState.Attack());
+        StartCoroutine(battleState.Attack(hero));
     }
 }

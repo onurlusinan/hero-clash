@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,6 +13,8 @@ public class BattleHero : MonoBehaviour
 
     private Hero hero;
 
+    public static event Action<Hero> heroAttack;
+
     public void LoadBattleHero(Hero hero)
     {
         this.hero = hero;
@@ -21,4 +24,9 @@ public class BattleHero : MonoBehaviour
     }
 
     public Hero GetHero() => hero;
+
+    public void Attack()
+    {
+        heroAttack?.Invoke(hero);
+    }
 }

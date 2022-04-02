@@ -21,8 +21,6 @@ public class LongClickButton : MonoBehaviour,  IPointerUpHandler, IPointerDownHa
     public UnityEvent onReleaseLongClick;
     public UnityEvent onClick;
 
-    
-
     public void Awake()
     {
         if (GetComponentInParent<ScrollRect>() != null)

@@ -13,9 +13,9 @@ public class PlayerTurn : State
         yield break;
     }
 
-    public override IEnumerator Attack()
+    public override IEnumerator Attack(Hero hero)
     {
-        battleSystem.battleUI.PrintMessage("A hero attacked the enemy");
+        battleSystem.battleUI.PrintMessage("The hero " + hero.characterName + " attacked the enemy with Attack Power: " + hero.attackPower);
         bool isDead = false;
 
         yield return new WaitForSeconds(1f);
