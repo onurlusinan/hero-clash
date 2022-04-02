@@ -40,18 +40,13 @@ public class HeroManager : MonoBehaviour
     public void LoadAllHeroes()
     {
         foreach (KeyValuePair<int, Hero> hero in _heroDict)
-        {
-            SaveSystem.LoadHero(hero.Value);
-            hero.Value.RefreshHeroCardUI();
-        }
+            hero.Value.LoadHero();
     }
 
     private void SaveAllHeroes()
     {
         foreach (KeyValuePair<int, Hero> hero in _heroDict)
-        {
-            SaveSystem.SaveHero(hero.Value);
-        }
+            hero.Value.SaveHero();
     }
 
     public void AddToHeroes(Hero hero)

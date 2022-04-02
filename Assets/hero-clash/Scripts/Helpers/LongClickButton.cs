@@ -42,9 +42,10 @@ public class LongClickButton : MonoBehaviour,  IPointerUpHandler, IPointerDownHa
             OnClick();
 
         if(!eventData.dragging)
-            hero.HeroCardPressed();
-
-        Reset();
+            hero.CharacterPressed();
+        
+        if(eventData.clickTime < 3)
+            Reset();
     }
 
     public void OnDrag(PointerEventData eventData)

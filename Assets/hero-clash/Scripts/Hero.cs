@@ -10,39 +10,22 @@ public class Hero : Character
     #region VARIABLES & REFS
     [SerializeField] private int _heroID;
 
-    [Header("Experience-Related")]
-    public int _experience;
+    [Header("Hero Experience-Related")]
     public int level;
-    [SerializeField] private bool _isLocked;
     public bool isSelected;
 
-    [Header("Hero Sprites")]
-    public Sprite defaultAvatarSprite;
-    public Sprite attackingAvatarSprite;
-    public Sprite damagedAvatarSprite;
+    private int _experience;
+    [SerializeField]private bool _isLocked;
 
-    [Header("Images and Texts")]
-    public Image heroAvatar;
-    public Image heroBackground;
-    public Text heroNameText;
-    public Text heroHealthText;
-    public Text heroLevelText;
-    public Text heroAttackPowerText;
-
-    [Header("Panels")]
+    [Header("Hero-Spesific Panels")]
     public CanvasGroup lockedPanel;
-    public CanvasGroup attributePanel;
     public CanvasGroup selectIndicator;
-
-    public RectTransform heroCard;
+    public RectTransform characterCard;
 
     #endregion
 
     private void Awake()
     {
-        RefreshHeroCardUI();
-        ShowLockPanel(_isLocked);
-
         isSelected = false;
     }
 
@@ -55,7 +38,7 @@ public class Hero : Character
     public void SetHeroName(string name) => characterName = name; 
     public void SetExperience(int experience) => _experience = experience;
     public void SetLock(bool locked) 
-    { 
+    {
         _isLocked = locked;
         ShowLockPanel(locked);
     } 
@@ -84,6 +67,8 @@ public class Hero : Character
         health = data.health;
         attackPower = data.attackPower;
         SetLock(data.isLocked);
+
+        RefreshCharacterCard();
     }
 
     public void LoadBaseData(HeroBaseData baseData)
@@ -114,16 +99,35 @@ public class Hero : Character
     /// <summary>
     /// Refreshes the text info of the hero card
     /// </summary>
-    public void RefreshHeroCardUI()
+    public override void RefreshCharacterCard()
     {
-        heroNameText.text = characterName;
-        heroHealthText.text = health.ToString();
-        heroLevelText.text = level.ToString();
-        heroAttackPowerText.text = attackPower.ToString();
+        characterNameText.text = characterName;
+        attributePanel.RefreshPanelInfo(level.ToString(), health.ToString(), attackPower.ToString());
+        characterAvatar.sprite = defaultAvatarSprite;
 
         SetLock(_isLocked);
+    }
 
-        heroAvatar.sprite = defaultAvatarSprite;
+    /// <summary>
+    /// OverShows/hides the Attributes Panel pop-up
+    /// </summary>
+    public override void ShowAttributesPanel(bool show)
+    {
+        if (_isLocked)
+            return;
+
+        attributePanel.ShowPanel(show);
+    }
+
+    /// <summary>
+    /// Override method for selecting on the hero card
+    /// </summary>
+    public override void CharacterPressed()
+    {
+        if (_isLocked)
+            return;
+
+        Select(!isSelected);
     }
 
     /// <summary>
@@ -138,13 +142,17 @@ public class Hero : Character
         }
         else
         {
+            Debug.Log("Setting " + characterName + " lock to " + islocked);
             lockedPanel.DOFade(0.0f, 0.2f).OnComplete(() =>
                 lockedPanel.gameObject.SetActive(false)
             );
         }
-            
     }
 
+    /// <summary>
+    /// shows/hides the SELECTED text behind the character cards
+    /// </summary>
+    /// <param name="show"></param>
     private void ShowSelectIndicator(bool show)
     {
         if (show)
@@ -154,39 +162,16 @@ public class Hero : Character
     }
 
     /// <summary>
-    /// Shows/hides the Attributes Panel pop-up
-    /// </summary>
-    public void ShowAttributesPanel(bool show)
-    {
-        if (_isLocked)
-            return;
-
-        if (show)
-            attributePanel.DOFade(1.0f, 0.2f);
-        else
-            attributePanel.DOFade(0.0f, 0.2f);
-    }
-
-    /// <summary>
-    /// Method for selecting on the hero card
-    /// </summary>
-    public void HeroCardPressed()
-    {
-        if (_isLocked)
-            return;
-     
-        Select(!isSelected);   
-    }
-
-    /// <summary>
     /// Moves the hero card down when selected
     /// </summary>
     private void MoveHeroCard(bool selected)
     {
+        ShowSelectIndicator(selected);
+
         if (selected)
-            heroCard.DOAnchorPosY(-60f, 0.2f);
+            characterCard.DOAnchorPosY(-60f, 0.2f);
         else
-            heroCard.DOAnchorPosY(0f, 0.2f);
+            characterCard.DOAnchorPosY(0f, 0.2f);
     }
 
     #endregion
@@ -196,7 +181,6 @@ public class Hero : Character
     {
         isSelected = select;
 
-        ShowSelectIndicator(isSelected);
         MoveHeroCard(isSelected);
 
         HeroManager.Instance.SelectHero(isSelected, _heroID);

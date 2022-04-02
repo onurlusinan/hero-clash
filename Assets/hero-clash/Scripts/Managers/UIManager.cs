@@ -25,7 +25,6 @@ public class UIManager : MonoBehaviour
         battleButton.interactable = false;
 
         _heroBaseDataCollection = Resources.Load<HeroBaseDataCollection>("HeroBaseData/HeroBaseDataCollection");
-
         InstantiateHeroes();
 
         overlay.DOFade(0.0f, 0.5f).OnComplete(() =>
@@ -51,7 +50,7 @@ public class UIManager : MonoBehaviour
             GameObject newHeroObject = Instantiate(heroPrefab, heroesParent);
             Hero newHero = newHeroObject.GetComponent<Hero>();
             newHero.LoadBaseData(baseData);
-            newHero.RefreshHeroCardUI();
+            newHero.RefreshCharacterCard();
 
             HeroManager.Instance.AddToHeroes(newHero);
         }
