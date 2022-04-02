@@ -102,7 +102,7 @@ public class Hero : Character
     public override void RefreshCharacterCard()
     {
         characterNameText.text = characterName;
-        attributePanel.RefreshPanelInfo(level.ToString(), health.ToString(), attackPower.ToString());
+        attributePanel.RefreshPanelInfo(level, health, attackPower);
         characterAvatar.sprite = defaultAvatarSprite;
 
         SetLock(_isLocked);

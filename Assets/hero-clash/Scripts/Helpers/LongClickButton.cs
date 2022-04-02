@@ -17,10 +17,10 @@ public class LongClickButton : MonoBehaviour,  IPointerUpHandler, IPointerDownHa
 
     [Header("Click Config")]
     public float requiredHoldTime;
-    public Hero hero;
 
     public UnityEvent onLongClick;
     public UnityEvent onReleaseLongClick;
+    public UnityEvent onDragging;
 
     public void Awake()
     {
@@ -42,7 +42,7 @@ public class LongClickButton : MonoBehaviour,  IPointerUpHandler, IPointerDownHa
             OnClick();
 
         if(!eventData.dragging)
-            hero.CharacterPressed();
+            onDragging?.Invoke();
         
             Reset();
     }

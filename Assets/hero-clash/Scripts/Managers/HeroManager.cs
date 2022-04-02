@@ -49,6 +49,11 @@ public class HeroManager : MonoBehaviour
             hero.Value.SaveHero();
     }
 
+    public Hero GetHero(int id)
+    {
+        return _heroDict[id];
+    }
+
     public void AddToHeroes(Hero hero)
     {
         _heroDict.Add(hero.GetID(), hero);

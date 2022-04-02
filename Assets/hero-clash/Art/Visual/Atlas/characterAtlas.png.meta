@@ -25,7 +25,7 @@ TextureImporter:
     second: heroSir
   - first:
       213: -6879433261458707565
-    second: TickIcon
+    second: HealthFill
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -298,15 +298,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TickIcon
+      name: HealthFill
       rect:
         serializedVersion: 2
-        x: 871
-        y: 472
-        width: 149
-        height: 135
+        x: 821
+        y: 571
+        width: 852
+        height: 95
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []

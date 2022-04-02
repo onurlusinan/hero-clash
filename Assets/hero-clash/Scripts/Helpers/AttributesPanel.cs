@@ -17,11 +17,11 @@ public class AttributesPanel : MonoBehaviour
     {
         canvasGroup = GetComponent<CanvasGroup>();
     }
-    public void RefreshPanelInfo(string level, string health, string attackPower)
+    public void RefreshPanelInfo(int level, float health, float attackPower)
     {
-        levelText.text = level;
-        healthText.text = health;
-        attackPowerText.text = attackPower;
+        levelText.text = level.ToString();
+        healthText.text = health.ToString();
+        attackPowerText.text = attackPower.ToString();
     }
 
     public void ShowPanel(bool show)
