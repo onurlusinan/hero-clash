@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 using DG.Tweening;
 
-public class UIManager : MonoBehaviour
+public class SelectionManager : MonoBehaviour
 {
     [Header("UIManager Config")]
     public Button battleButton;
@@ -43,6 +43,9 @@ public class UIManager : MonoBehaviour
         battleButton.interactable = isInteractable;
     }
 
+    /// <summary>
+    /// Instantiates the hero prefabs based on collected hero base data
+    /// </summary>
     private void InstantiateHeroes()
     {
         foreach (HeroBaseData baseData in _heroBaseDataCollection.GetCollection())
@@ -50,7 +53,6 @@ public class UIManager : MonoBehaviour
             GameObject newHeroObject = Instantiate(heroPrefab, heroesParent);
             Hero newHero = newHeroObject.GetComponent<Hero>();
             newHero.LoadBaseData(baseData);
-            newHero.RefreshCharacterCard();
 
             HeroManager.Instance.AddToHeroes(newHero);
         }
