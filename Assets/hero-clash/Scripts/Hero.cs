@@ -109,20 +109,9 @@ public class Hero : Character
     }
 
     /// <summary>
-    /// OverShows/hides the Attributes Panel pop-up
-    /// </summary>
-    public override void ShowAttributesPanel(bool show)
-    {
-        if (_isLocked)
-            return;
-
-        attributePanel.ShowPanel(show);
-    }
-
-    /// <summary>
     /// Override method for selecting on the hero card
     /// </summary>
-    public override void CharacterPressed()
+    public void CharacterPressed()
     {
         if (_isLocked)
             return;

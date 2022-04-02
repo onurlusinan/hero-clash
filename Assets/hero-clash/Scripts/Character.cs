@@ -24,7 +24,4 @@ public abstract class Character : MonoBehaviour
     public AttributesPanel attributePanel;
 
     public abstract void RefreshCharacterCard();
-    public abstract void ShowAttributesPanel(bool show);
-    public abstract void CharacterPressed();
-
 }

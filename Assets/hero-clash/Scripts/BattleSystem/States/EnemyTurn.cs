@@ -10,9 +10,10 @@ internal class EnemyTurn : State
     public override IEnumerator Start()
     {
         battleSystem.battleUI.PrintMessage("Enemy Turn.");
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(2f);
 
-        battleSystem.battleUI.PrintMessage("Enemy attacks to a hero!");
+        battleSystem.battleUI.PrintMessage("Enemy attacks a hero!");
+        yield return new WaitForSeconds(2f);
 
         bool isHeroDead = false; 
 

@@ -19,7 +19,15 @@ public class AttributesPanel : MonoBehaviour
     }
     public void RefreshPanelInfo(int level, float health, float attackPower)
     {
-        levelText.text = level.ToString();
+        if(levelText != null)
+            levelText.text = level.ToString();
+
+        healthText.text = health.ToString();
+        attackPowerText.text = attackPower.ToString();
+    }
+
+    public void RefreshPanelInfo(float health, float attackPower)
+    {
         healthText.text = health.ToString();
         attackPowerText.text = attackPower.ToString();
     }
@@ -27,8 +35,8 @@ public class AttributesPanel : MonoBehaviour
     public void ShowPanel(bool show)
     {
         if (show)
-            canvasGroup.DOFade(1.0f, 0.2f);
+            canvasGroup.DOFade(1.0f, 0.1f);
         else
-            canvasGroup.DOFade(0.0f, 0.2f);
+            canvasGroup.DOFade(0.0f, 0.1f);
     }
 }

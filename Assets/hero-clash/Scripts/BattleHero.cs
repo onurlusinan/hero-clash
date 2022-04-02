@@ -28,7 +28,6 @@ public class BattleHero : MonoBehaviour
 
     public void Attack()
     {
-        Debug.Log("Attack fired from hero " + hero.characterName);
         heroAttack?.Invoke(hero);
     }
 

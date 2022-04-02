@@ -11,7 +11,7 @@ public class PlayerTurn : State
     {
         battleSystem.battleUI.PrintMessage("Tap on a hero to attack with.");
 
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(2f);
 
         battleSystem.battleUI.SetAllInput(true);
     }
@@ -23,7 +23,7 @@ public class PlayerTurn : State
 
         battleSystem.battleUI.SetAllInput(false);
 
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(2f);
 
         if (isDead)
             battleSystem.SetState(new Won(battleSystem));
