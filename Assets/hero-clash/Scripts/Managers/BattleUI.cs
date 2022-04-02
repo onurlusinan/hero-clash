@@ -5,10 +5,11 @@ using UnityEngine.UI;
 
 using DG.Tweening;
 
-public class BattleUIManager : MonoBehaviour
+public class BattleUI : MonoBehaviour
 {
     [Header("Battle-UI-Manager Config")]
     public Image overlay;
+    public Text dialogueText;
 
     public List<BattleHero> battleHeroes;
 
@@ -30,5 +31,10 @@ public class BattleUIManager : MonoBehaviour
             Hero newHero = HeroManager.Instance.GetHero(heroIDs[i]);
             battleHeroes[i].LoadBattleHero(newHero);
         }
+    }
+
+    public void PrintMessage(string message)
+    {
+        dialogueText.text = message;
     }
 }
