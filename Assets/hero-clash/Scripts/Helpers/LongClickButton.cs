@@ -44,7 +44,6 @@ public class LongClickButton : MonoBehaviour,  IPointerUpHandler, IPointerDownHa
         if(!eventData.dragging)
             hero.CharacterPressed();
         
-        if(eventData.clickTime < 3)
             Reset();
     }
 
