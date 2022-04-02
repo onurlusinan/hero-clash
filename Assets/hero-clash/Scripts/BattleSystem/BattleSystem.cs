@@ -14,6 +14,6 @@ public class BattleSystem : StateMachine
 
     public void AttackButton()
     {
-        StartCoroutine(nameof(battleState.Attack));
+        StartCoroutine(battleState.Attack());
     }
 }

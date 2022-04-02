@@ -9,7 +9,6 @@ public abstract class State
     protected State(BattleSystem battleSystem)
     {
         this.battleSystem = battleSystem;
-        Start();
     }
 
     public virtual IEnumerator Start()

@@ -9,6 +9,6 @@ public class StateMachine : MonoBehaviour
     public void SetState(State state)
     {
         battleState = state;
-        StartCoroutine(nameof(battleState.Start));
+        StartCoroutine(battleState.Start());
     }
 }  
