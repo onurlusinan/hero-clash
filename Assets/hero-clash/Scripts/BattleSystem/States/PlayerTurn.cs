@@ -10,13 +10,18 @@ public class PlayerTurn : State
     public override IEnumerator Start()
     {
         battleSystem.battleUI.PrintMessage("Tap on a hero to attack with.");
-        yield break;
+
+        yield return new WaitForSeconds(1f);
+
+        battleSystem.battleUI.SetAllInput(true);
     }
 
     public override IEnumerator Attack(Hero hero)
     {
         battleSystem.battleUI.PrintMessage("The hero " + hero.characterName + " attacked the enemy with Attack Power: " + hero.attackPower);
         bool isDead = false;
+
+        battleSystem.battleUI.SetAllInput(false);
 
         yield return new WaitForSeconds(1f);
 

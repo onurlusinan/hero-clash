@@ -11,6 +11,7 @@ public class LongClickButton : MonoBehaviour,  IPointerUpHandler, IPointerDownHa
     private bool _pointerDown;
     private float _pointerDownTimer;
     private bool _fakeClick;
+    public bool _input;
 
     private ScrollRect _scrollRectParent;
 
@@ -21,10 +22,18 @@ public class LongClickButton : MonoBehaviour,  IPointerUpHandler, IPointerDownHa
     public UnityEvent onReleaseLongClick;
     public UnityEvent onClick;
 
+
     public void Awake()
     {
         if (GetComponentInParent<ScrollRect>() != null)
             _scrollRectParent = GetComponentInParent<ScrollRect>();
+
+        SetInput(true);
+    }
+
+    public void SetInput(bool input)
+    {
+        _input = input;
     }
 
     public void OnPointerDown(PointerEventData eventData)
@@ -34,6 +43,9 @@ public class LongClickButton : MonoBehaviour,  IPointerUpHandler, IPointerDownHa
 
     public void OnPointerUp(PointerEventData eventData)
     {
+        if (!_input)
+            return;
+
         if (!eventData.dragging && _fakeClick)
             onClick?.Invoke();
         
@@ -70,6 +82,9 @@ public class LongClickButton : MonoBehaviour,  IPointerUpHandler, IPointerDownHa
 
     private void Update()
     {
+        if (!_input)
+            return;
+
         if (_pointerDown)
         {
             _pointerDownTimer += Time.deltaTime;

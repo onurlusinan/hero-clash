@@ -142,7 +142,6 @@ public class Hero : Character
         }
         else
         {
-            Debug.Log("Setting " + characterName + " lock to " + islocked);
             lockedPanel.DOFade(0.0f, 0.2f).OnComplete(() =>
                 lockedPanel.gameObject.SetActive(false)
             );

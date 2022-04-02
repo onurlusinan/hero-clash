@@ -10,6 +10,7 @@ public class BattleHero : MonoBehaviour
     public Text heroName;
     public Image characterAvatar;
     public AttributesPanel attributesPanel;
+    public LongClickButton button;
 
     private Hero hero;
 
@@ -27,6 +28,12 @@ public class BattleHero : MonoBehaviour
 
     public void Attack()
     {
+        Debug.Log("Attack fired from hero " + hero.characterName);
         heroAttack?.Invoke(hero);
+    }
+
+    public void SetInput(bool input)
+    {
+        button.SetInput(input);
     }
 }

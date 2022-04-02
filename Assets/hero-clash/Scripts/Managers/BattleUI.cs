@@ -37,4 +37,10 @@ public class BattleUI : MonoBehaviour
     {
         dialogueText.text = message;
     }
+
+    public void SetAllInput(bool input)
+    { 
+        foreach(BattleHero battleHero in battleHeroes)
+            battleHero.SetInput(input);
+    }
 }

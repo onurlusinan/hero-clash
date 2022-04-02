@@ -12,7 +12,7 @@ public class Begin : State
     {
         battleSystem.battleUI.PrintMessage("Another epic battle begins!");
 
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(3f);
         battleSystem.SetState(new PlayerTurn(battleSystem));
     }
 }
