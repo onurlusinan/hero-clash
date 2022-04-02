@@ -89,7 +89,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   requiredHoldTime: 3
-  hero: {fileID: 5105441036056478257}
   onLongClick:
     m_PersistentCalls:
       m_Calls:
@@ -120,7 +119,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  onDragging:
+  onClick:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 5105441036056478257}
