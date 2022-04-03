@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 40beffabff9bef9449f40aea298048a0, type: 3}
-  m_Name: Rockstar
+  m_Name: ChallengeKing
   m_EditorClassIdentifier: 
-  _id: 5
-  _heroName: Rockstar
+  _id: 4
+  _heroName: Challenge King
   _experience: 0
   _health: 6
   _attackPower: 12

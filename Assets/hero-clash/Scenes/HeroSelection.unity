@@ -1244,7 +1244,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   experiencePerLevel: 5
-  battlesPerHero: 1
+  battlesPerNewHero: 5
   initialHeroAmount: 3
   battlesFought: 0
   selectableHeroAmount: 3

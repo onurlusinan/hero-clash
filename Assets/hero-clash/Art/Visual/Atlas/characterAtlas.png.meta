@@ -4,28 +4,34 @@ TextureImporter:
   internalIDToNameTable:
   - first:
       213: 2266114437038893649
-    second: heroDetermined
+    second: SuperCop
   - first:
       213: 1785550314556681177
-    second: heroDamage
+    second: derpette
   - first:
       213: 7348058720353786455
-    second: heroDerpy
+    second: derp
   - first:
       213: -685172708238522303
-    second: heroFemaleDerpy
+    second: sirGramington
   - first:
       213: 8858395719957778913
-    second: enemy
+    second: enemy1
   - first:
       213: 6799043069244973149
-    second: heroHappy
+    second: challengeKing
   - first:
       213: -4712630994511652308
-    second: heroSir
+    second: cerealKiller
   - first:
       213: -6879433261458707565
     second: HealthFill
+  - first:
+      213: 7138636302706560983
+    second: enemy2
+  - first:
+      213: -4905154091074506600
+    second: detective
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -151,11 +157,11 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: heroDetermined
+      name: SuperCop
       rect:
         serializedVersion: 2
-        x: 59
-        y: 1425
+        x: 22
+        y: 1443
         width: 600
         height: 599
       alignment: 0
@@ -172,11 +178,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: heroDamage
+      name: derpette
       rect:
         serializedVersion: 2
-        x: 739
-        y: 1425
+        x: 711
+        y: 1443
         width: 600
         height: 595
       alignment: 0
@@ -193,11 +199,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: heroDerpy
+      name: derp
       rect:
         serializedVersion: 2
-        x: 1386
-        y: 1417
+        x: 1361
+        y: 1449
         width: 600
         height: 599
       alignment: 0
@@ -214,11 +220,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: heroFemaleDerpy
+      name: sirGramington
       rect:
         serializedVersion: 2
-        x: 79
-        y: 753
+        x: 77
+        y: 776
         width: 600
         height: 600
       alignment: 0
@@ -235,11 +241,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: enemy
+      name: enemy1
       rect:
         serializedVersion: 2
-        x: 748
-        y: 751
+        x: 746
+        y: 776
         width: 600
         height: 600
       alignment: 0
@@ -256,11 +262,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: heroHappy
+      name: challengeKing
       rect:
         serializedVersion: 2
-        x: 1394
-        y: 741
+        x: 1417
+        y: 802
         width: 600
         height: 600
       alignment: 0
@@ -277,11 +283,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: heroSir
+      name: cerealKiller
       rect:
         serializedVersion: 2
-        x: 97
-        y: 82
+        x: 81
+        y: 94
         width: 600
         height: 600
       alignment: 0
@@ -301,10 +307,10 @@ TextureImporter:
       name: HealthFill
       rect:
         serializedVersion: 2
-        x: 821
-        y: 571
-        width: 852
-        height: 95
+        x: 800
+        y: 8
+        width: 437
+        height: 94
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -314,6 +320,48 @@ TextureImporter:
       bones: []
       spriteID: 39b2fb2c5e75780a0800000000000000
       internalID: -6879433261458707565
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy2
+      rect:
+        serializedVersion: 2
+        x: 728
+        y: 119
+        width: 600
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7df488b25e7811360800000000000000
+      internalID: 7138636302706560983
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: detective
+      rect:
+        serializedVersion: 2
+        x: 1398
+        y: 76
+        width: 600
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 89033f0c7546debb0800000000000000
+      internalID: -4905154091074506600
       vertices: []
       indices: 
       edges: []

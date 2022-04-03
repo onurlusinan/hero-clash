@@ -17,9 +17,9 @@ public class HeroManager : MonoBehaviour
 
     [Header("Hero Leveling")]
     public int experiencePerLevel;
-    public int battlesPerHero;
+    public int battlesPerNewHero;
     public int initialHeroAmount;
-    [SerializeField]internal int battlesFought;
+    internal int battlesFought;
 
     [Header("HeroManager Config")]
     public int selectableHeroAmount;
@@ -52,7 +52,7 @@ public class HeroManager : MonoBehaviour
         else
             battlesFought = playerSaveData.battlesFought;
         
-        int heroesToUnlock = battlesFought / battlesPerHero;
+        int heroesToUnlock = battlesFought / battlesPerNewHero;
         if (heroesToUnlock == 0)
             heroesToUnlock = initialHeroAmount;
         else

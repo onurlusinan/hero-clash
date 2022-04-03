@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 40beffabff9bef9449f40aea298048a0, type: 3}
-  m_Name: Weakio
+  m_Name: Derpette
   m_EditorClassIdentifier: 
   _id: 1
-  _heroName: Derpio
+  _heroName: Derpette
   _experience: 0
   _health: 6
   _attackPower: 2
   _isLocked: 1
-  _defaultAvatar: {fileID: 7348058720353786455, guid: f1d36e38b49efe141af09c0d74afcdf8, type: 3}
+  _defaultAvatar: {fileID: 1785550314556681177, guid: f1d36e38b49efe141af09c0d74afcdf8, type: 3}

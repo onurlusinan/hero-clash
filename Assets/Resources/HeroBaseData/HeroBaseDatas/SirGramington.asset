@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40beffabff9bef9449f40aea298048a0, type: 3}
   m_Name: SirGramington
   m_EditorClassIdentifier: 
-  _id: 4
-  _heroName: Sir. Gramington
+  _id: 3
+  _heroName: Sir Gramington
   _experience: 0
   _health: 8
   _attackPower: 8
   _isLocked: 1
-  _defaultAvatar: {fileID: -4712630994511652308, guid: f1d36e38b49efe141af09c0d74afcdf8, type: 3}
+  _defaultAvatar: {fileID: -685172708238522303, guid: f1d36e38b49efe141af09c0d74afcdf8, type: 3}
