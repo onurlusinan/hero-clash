@@ -21,7 +21,6 @@ public abstract class Character : MonoBehaviour
     public Text characterNameText;
 
     [Header("Panels")]
-    public AttributesPanel attributePanel;
-
+    public AttributesPanel attributesPanel;
     public abstract void RefreshCharacterCard();
 }

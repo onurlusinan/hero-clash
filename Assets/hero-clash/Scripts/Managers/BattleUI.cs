@@ -29,7 +29,7 @@ public class BattleUI : MonoBehaviour
         for (int i = 0; i < heroIDs.Count; i++)
         {
             Hero newHero = HeroManager.Instance.GetHero(heroIDs[i]);
-            battleHeroes[i].LoadBattleHero(newHero);
+            battleHeroes[i].InitBattleHero(newHero);
         }
     }
 

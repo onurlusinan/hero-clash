@@ -468,10 +468,8 @@ MonoBehaviour:
   characterAvatar: {fileID: 5105441035846762968}
   characterBackground: {fileID: 5105441037713489300}
   characterNameText: {fileID: 5105441035968601768}
-  attributePanel: {fileID: 9219026566186649831}
-  enemyNameText: {fileID: 0}
-  enemyHealthText: {fileID: 0}
-  enemyAttackPowerText: {fileID: 0}
+  attributesPanel: {fileID: 9219026566186649831}
+  healthBar: {fileID: 1833031195067654385}
 --- !u!1 &5105441036214765759
 GameObject:
   m_ObjectHideFlags: 0
@@ -849,6 +847,7 @@ GameObject:
   - component: {fileID: 5273940587813394584}
   - component: {fileID: 2948678796324560774}
   - component: {fileID: 6643196557745030676}
+  - component: {fileID: 1833031195067654385}
   m_Layer: 0
   m_Name: HealthBar
   m_TagString: Untagged
@@ -944,6 +943,19 @@ MonoBehaviour:
   m_EffectColor: {r: 0, g: 0, b: 0, a: 1}
   m_EffectDistance: {x: 4.32, y: -4.34}
   m_UseGraphicAlpha: 1
+--- !u!114 &1833031195067654385
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6388349518121614649}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05bad0a1f20b1354ea891f0d68e2942b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthFill: {fileID: 4397688870655485954}
 --- !u!1 &6431355971369915218
 GameObject:
   m_ObjectHideFlags: 0

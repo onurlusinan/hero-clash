@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: EvilIncarnate
   m_EditorClassIdentifier: 
   _enemyName: Evil Incarnate
-  _health: 120
-  _attackPower: 20
+  _health: 100
+  _attackPower: 10
   _defaultAvatar: {fileID: 0}

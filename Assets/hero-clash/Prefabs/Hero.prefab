@@ -88,6 +88,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91b612c72a57b404c810b1454540d994, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _input: 0
   requiredHoldTime: 3
   onLongClick:
     m_PersistentCalls:
@@ -629,7 +630,7 @@ MonoBehaviour:
   characterAvatar: {fileID: 5105441035846762968}
   characterBackground: {fileID: 5105441037713489300}
   characterNameText: {fileID: 5105441035968601768}
-  attributePanel: {fileID: 9219026566186649831}
+  attributesPanel: {fileID: 9219026566186649831}
   _heroID: 0
   level: 0
   isSelected: 0
