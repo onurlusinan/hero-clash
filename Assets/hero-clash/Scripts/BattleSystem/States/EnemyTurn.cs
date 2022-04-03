@@ -38,7 +38,7 @@ internal class EnemyTurn : State
 
     private HeroBattleCard SelectRandomHero()
     {
-        int randomIndex = Random.Range(0, battleSystem.heroBattleCards.Count - 1);
+        int randomIndex = Random.Range(0, battleSystem.heroBattleCards.Count);
         HeroBattleCard heroBattleCard = battleSystem.heroBattleCards[randomIndex];
 
         if (heroBattleCard.IsDead())

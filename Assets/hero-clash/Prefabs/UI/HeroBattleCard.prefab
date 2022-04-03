@@ -1092,6 +1092,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5105441036281771088}
     m_Modifications:
+    - target: {fileID: 2705367737680797263, guid: 40cab5b0536dbd049aeda2f8f5c1e1e1, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 90.997
+      objectReference: {fileID: 0}
+    - target: {fileID: 2705367737680797263, guid: 40cab5b0536dbd049aeda2f8f5c1e1e1, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 116.391945
+      objectReference: {fileID: 0}
+    - target: {fileID: 2705367737966393830, guid: 40cab5b0536dbd049aeda2f8f5c1e1e1, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 89.1748
+      objectReference: {fileID: 0}
+    - target: {fileID: 2705367737966393830, guid: 40cab5b0536dbd049aeda2f8f5c1e1e1, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -116.20481
+      objectReference: {fileID: 0}
+    - target: {fileID: 2705367738484592290, guid: 40cab5b0536dbd049aeda2f8f5c1e1e1, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 96.4641
+      objectReference: {fileID: 0}
+    - target: {fileID: 2705367738484592290, guid: 40cab5b0536dbd049aeda2f8f5c1e1e1, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 1.1736
+      objectReference: {fileID: 0}
     - target: {fileID: 2705367738609514052, guid: 40cab5b0536dbd049aeda2f8f5c1e1e1, type: 3}
       propertyPath: m_Name
       value: AttributesPanel
