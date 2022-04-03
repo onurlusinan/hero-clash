@@ -5,21 +5,36 @@ using UnityEngine.UI;
 
 using DG.Tweening;
 
-public class Hero : Character
+public class Hero : MonoBehaviour
 {
     #region VARIABLES & REFS
+
+    [Header("Attributes")]
     [SerializeField] private int _heroID;
+    public string characterName;
+    public float health;
+    public float attackPower;
+
+    [Header("Sprites")]
+    public Sprite defaultAvatarSprite;
+    public Sprite attackingAvatarSprite;
+    public Sprite damagedAvatarSprite;
+
+    [Header("Images and Texts")]
+    public Image characterAvatar;
+    public Image characterBackground;
+    public Text characterNameText;
 
     [Header("Hero Experience-Related")]
     public int level;
     public bool isSelected;
-
     private int _experience;
-    [SerializeField]private bool _isLocked;
+    private bool _isLocked;
 
-    [Header("Hero-Spesific Panels")]
+    [Header("Panels")]
     public CanvasGroup lockedPanel;
     public CanvasGroup selectIndicator;
+    public AttributesPanel attributesPanel;
     public RectTransform characterCard;
 
     #endregion
@@ -99,7 +114,7 @@ public class Hero : Character
     /// <summary>
     /// Refreshes the text info of the hero card
     /// </summary>
-    public override void RefreshCharacterCard()
+    public void RefreshCharacterCard()
     {
         characterNameText.text = characterName;
         attributesPanel.RefreshPanelInfo(level, health, attackPower);
