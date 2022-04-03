@@ -10,6 +10,10 @@ internal class Won : State
     {
         battleSystem.battleUI.PrintMessage("Battle Won.");
         HeroManager.Instance.LevelUpHeroes(battleSystem.GetWinnerHeroIDs());
+
+        int battlesFought = HeroManager.Instance.battlesFought +1;
+        SaveSystem.SavePlayerData(battlesFought);
+
         battleSystem.battleUI.SwitchPanel(PanelType.win);
         yield break;
     }

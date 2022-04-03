@@ -33,8 +33,40 @@ public static class SaveSystem
         }
         else
         {
-            Debug.LogWarning("A new hero?! There is no previous save file for hero " + hero.GetID() + ". Saving...");
+            Debug.LogWarning("A new hero?! There is no previous save file for hero ");
             SaveHero(hero);
+            return null;
+        }
+    }
+
+    public static void SavePlayerData(int battlesFought)
+    {
+        BinaryFormatter formatter = new BinaryFormatter();
+        string path = Application.persistentDataPath + "/battlesFought.save";
+        FileStream stream = new FileStream(path, FileMode.Create);
+
+        PlayerSaveData data = new PlayerSaveData(battlesFought);
+
+        formatter.Serialize(stream, data);
+        stream.Close();
+    }
+
+    public static PlayerSaveData LoadPlayerData()
+    {
+        string path = Application.persistentDataPath + "/battlesFought.save";
+        if (File.Exists(path))
+        {
+            BinaryFormatter formatter = new BinaryFormatter();
+            FileStream stream = new FileStream(path, FileMode.Open);
+
+            PlayerSaveData data = formatter.Deserialize(stream) as PlayerSaveData;
+            stream.Close();
+            return data;
+        }
+        else
+        {
+            Debug.LogWarning("A new player! Welcome to the world of Hero Clash!");
+            SavePlayerData(0);
             return null;
         }
     }

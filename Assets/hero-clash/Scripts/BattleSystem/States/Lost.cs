@@ -9,6 +9,10 @@ internal class Lost : State
     public override IEnumerator Start()
     {
         battleSystem.battleUI.PrintMessage("Battle lost.");
+
+        int battlesFought = HeroManager.Instance.battlesFought++;
+        SaveSystem.SavePlayerData(battlesFought);
+
         battleSystem.battleUI.SwitchPanel(PanelType.lose);
         yield break;
     }

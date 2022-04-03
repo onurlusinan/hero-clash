@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _id: 1
   _heroName: Derpio
-  _level: 1
   _experience: 0
-  _health: 5
+  _health: 6
   _attackPower: 2
+  _isLocked: 1
   _defaultAvatar: {fileID: 7348058720353786455, guid: f1d36e38b49efe141af09c0d74afcdf8, type: 3}

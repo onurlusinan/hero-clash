@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: MegaDeathOverlord
   m_EditorClassIdentifier: 
   _enemyName: Mega Death Overlord
-  _health: 50
-  _attackPower: 8
+  _health: 12
+  _attackPower: 4
   _defaultAvatar: {fileID: 8858395719957778913, guid: f1d36e38b49efe141af09c0d74afcdf8, type: 3}

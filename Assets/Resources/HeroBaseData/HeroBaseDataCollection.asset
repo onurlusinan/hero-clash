@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: HeroBaseDataCollection
   m_EditorClassIdentifier: 
   heroBaseDatas:
+  - {fileID: 11400000, guid: f6a31b7e5ac478f46ae9dafdc864ef54, type: 2}
   - {fileID: 11400000, guid: 8d6689ad42cc6314a8937af6d3d0189c, type: 2}
+  - {fileID: 11400000, guid: 97d132d45f0011443b78e4ce859ff28c, type: 2}
   - {fileID: 11400000, guid: 282f855af90cca645804e3a632b03dae, type: 2}
   - {fileID: 11400000, guid: 430f11eb150e331488962d9cec00fe00, type: 2}
-  - {fileID: 11400000, guid: 97d132d45f0011443b78e4ce859ff28c, type: 2}
   - {fileID: 11400000, guid: 5756a4a8d59d4414ab8d7e849d9f88c4, type: 2}

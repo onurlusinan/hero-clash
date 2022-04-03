@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 40beffabff9bef9449f40aea298048a0, type: 3}
-  m_Name: UnityGirl
+  m_Name: CaptainHappy
   m_EditorClassIdentifier: 
-  _id: 2
-  _heroName: Unity Girl
+  _id: 0
+  _heroName: Captain Happy
   _experience: 0
-  _health: 7
-  _attackPower: 4
+  _health: 10
+  _attackPower: 3
   _isLocked: 1
-  _defaultAvatar: {fileID: -685172708238522303, guid: f1d36e38b49efe141af09c0d74afcdf8, type: 3}
+  _defaultAvatar: {fileID: 6799043069244973149, guid: f1d36e38b49efe141af09c0d74afcdf8, type: 3}

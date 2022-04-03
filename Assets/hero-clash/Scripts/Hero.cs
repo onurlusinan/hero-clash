@@ -29,7 +29,7 @@ public class Hero : MonoBehaviour
     public int level;
     public bool isSelected;
     [SerializeField]private int _experience;
-    private bool _isLocked;
+    [SerializeField]private bool _isLocked;
 
     [Header("Panels")]
     public GameObject lockedPanel;
@@ -85,15 +85,18 @@ public class Hero : MonoBehaviour
     {
         HeroSaveData data = SaveSystem.LoadHero(this);
 
+        if (data == null)
+            return;
+
         SetID(data.id);
         SetHeroName(data.heroName);
         SetExperience(data.experience);
         level = CalculateLevel(_experience);
-        health = (data.health) * Mathf.Pow(1.1f, level);
-        attackPower = (data.attackPower) * Mathf.Pow(1.1f, level);
+        health = (data.health) * Mathf.Pow(1.1f, level -1);
+        attackPower = (data.attackPower) * Mathf.Pow(1.1f, level -1);
         SetLock(data.isLocked);
 
-        RefreshCharacterCard();
+        RefreshHeroCard();
     }
 
     public void LoadBaseData(HeroBaseData baseData)
@@ -107,14 +110,17 @@ public class Hero : MonoBehaviour
         health = baseData.GetHealth();
         attackPower = baseData.GetAttackPower();
 
-        _isLocked = baseData.IsLocked();
+        SetLock(baseData.IsLocked());
 
         defaultAvatarSprite = baseData.GetDefaultAvatar();
+
+        RefreshHeroCard();
     }
 
     private int CalculateLevel(int experience)
     {
-        return experience / HeroManager.Instance.experiencePerLevel;
+        int level = experience / HeroManager.Instance.experiencePerLevel;
+        return level +1;
     }
 
     #endregion
@@ -124,13 +130,11 @@ public class Hero : MonoBehaviour
     /// <summary>
     /// Refreshes the text info of the hero card
     /// </summary>
-    public void RefreshCharacterCard()
+    public void RefreshHeroCard()
     {
         characterNameText.text = characterName;
         attributesPanel.RefreshPanelInfo(level, health, attackPower);
         characterAvatar.sprite = defaultAvatarSprite;
-
-        SetLock(_isLocked);
         ShowLockPanel(_isLocked);
     }
 
