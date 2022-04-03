@@ -19,9 +19,6 @@ public class HeroBaseData : ScriptableObject
     private float _attackPower;
 
     [SerializeField]
-    private bool _isLocked;
-
-    [SerializeField]
     private Sprite _defaultAvatar;
 
     public int GetID() => _id;
@@ -29,7 +26,6 @@ public class HeroBaseData : ScriptableObject
     public int GetExperience() => _experience;
     public float GetHealth() => _health;
     public float GetAttackPower() => _attackPower;
-    public bool IsLocked() => _isLocked;
     public Sprite GetDefaultAvatar() => _defaultAvatar;
 }
 

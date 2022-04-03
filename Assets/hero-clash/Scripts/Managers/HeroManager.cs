@@ -59,9 +59,9 @@ public class HeroManager : MonoBehaviour
             heroesToUnlock += initialHeroAmount;
 
         List<Hero> lockList = _heroDict.Values.ToList();
-        for (int i = 0; i < heroesToUnlock; i++)
+        for (int i = 0; i < lockList.Count; i++)
         {
-            lockList[i].SetLock(false);
+            lockList[i].SetLock(!(i < heroesToUnlock));
             lockList[i].RefreshHeroCard();
         }
     }

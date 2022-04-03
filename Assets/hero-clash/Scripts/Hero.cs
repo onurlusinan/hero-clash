@@ -110,8 +110,6 @@ public class Hero : MonoBehaviour
         health = baseData.GetHealth();
         attackPower = baseData.GetAttackPower();
 
-        SetLock(baseData.IsLocked());
-
         defaultAvatarSprite = baseData.GetDefaultAvatar();
 
         RefreshHeroCard();
