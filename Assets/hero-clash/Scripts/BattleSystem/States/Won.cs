@@ -9,6 +9,7 @@ internal class Won : State
     public override IEnumerator Start()
     {
         battleSystem.battleUI.PrintMessage("Battle Won.");
+        battleSystem.battleUI.SwitchPanel(PanelType.gameover);
         yield break;
     }
 }

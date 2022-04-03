@@ -5,6 +5,12 @@ using UnityEngine.UI;
 
 using DG.Tweening;
 
+public enum PanelType
+{ 
+    battle,
+    gameover
+}
+
 public class BattleUI : MonoBehaviour
 {
     [Header("Battle-UI-Manager Config")]
@@ -13,9 +19,17 @@ public class BattleUI : MonoBehaviour
 
     public List<HeroBattleCard> battleHeroes;
 
+    [Header("UI-Panels")]
+    public CanvasGroup battlePanel;
+    public CanvasGroup gameoverPanel;
+    private PanelType _currentPanel;
+
     private void Awake()
     {
         LoadHeroes();
+
+        _currentPanel = PanelType.battle;
+        SwitchPanel(_currentPanel);
 
         overlay.DOFade(0.0f, 0.5f).OnComplete(() =>
             overlay.gameObject.SetActive(false)
@@ -42,5 +56,35 @@ public class BattleUI : MonoBehaviour
     { 
         foreach(HeroBattleCard battleHero in battleHeroes)
             battleHero.SetInput(input);
+    }
+
+    public void SwitchPanel(PanelType panelType)
+    {
+        switch (_currentPanel)
+        {
+            case PanelType.battle:
+                battlePanel.DOFade(0.0f, 0.2f);
+                battlePanel.interactable = false;
+                break;
+            case PanelType.gameover:
+                gameoverPanel.DOFade(0.0f, 0.2f).OnComplete(() =>
+                    gameoverPanel.gameObject.SetActive(false)
+                );
+                gameoverPanel.interactable = false;
+                break;
+        }
+        switch (panelType)
+        {
+            case PanelType.battle:
+                battlePanel.DOFade(1.0f, 0.2f);
+                battlePanel.interactable = true;
+                break;
+            case PanelType.gameover:
+                gameoverPanel.gameObject.SetActive(true);
+                gameoverPanel.DOFade(1.0f, 0.2f);
+                gameoverPanel.interactable = true;
+                break;
+        }
+        _currentPanel = panelType;
     }
 }

@@ -9,6 +9,7 @@ internal class Lost : State
     public override IEnumerator Start()
     {
         battleSystem.battleUI.PrintMessage("Battle lost.");
+        battleSystem.battleUI.SwitchPanel(PanelType.gameover);
         yield break;
     }
 }
