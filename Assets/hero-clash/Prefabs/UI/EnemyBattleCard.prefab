@@ -420,7 +420,7 @@ GameObject:
   - component: {fileID: 5105441036056478256}
   - component: {fileID: 2683365542766855502}
   m_Layer: 0
-  m_Name: Enemy
+  m_Name: EnemyBattleCard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -459,17 +459,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 429e4b1f1df3e9d409365c23a9411231, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterName: 
-  health: 0
-  attackPower: 0
-  defaultAvatarSprite: {fileID: 8858395719957778913, guid: f1d36e38b49efe141af09c0d74afcdf8, type: 3}
-  attackingAvatarSprite: {fileID: 8858395719957778913, guid: f1d36e38b49efe141af09c0d74afcdf8, type: 3}
-  damagedAvatarSprite: {fileID: 8858395719957778913, guid: f1d36e38b49efe141af09c0d74afcdf8, type: 3}
+  characterName: {fileID: 5105441035968601768}
   characterAvatar: {fileID: 5105441035846762968}
-  characterBackground: {fileID: 5105441037713489300}
-  characterNameText: {fileID: 5105441035968601768}
   attributesPanel: {fileID: 9219026566186649831}
   healthBar: {fileID: 1833031195067654385}
+  longClickButton: {fileID: 1674520462659333701}
 --- !u!1 &5105441036214765759
 GameObject:
   m_ObjectHideFlags: 0
@@ -896,7 +890,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0.33188042, b: 0.2688679, a: 1}
+  m_Color: {r: 0.18039216, g: 0.18039216, b: 0.18039216, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1022,10 +1016,10 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_Sprite: {fileID: -6879433261458707565, guid: f1d36e38b49efe141af09c0d74afcdf8, type: 3}
-  m_Type: 0
+  m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
-  m_FillMethod: 4
+  m_FillMethod: 0
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0

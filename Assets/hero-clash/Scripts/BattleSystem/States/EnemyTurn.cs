@@ -12,13 +12,13 @@ internal class EnemyTurn : State
         battleSystem.battleUI.PrintMessage("Enemy Turn.");
         yield return new WaitForSeconds(2f);
 
-        int randomIndex = Random.Range(0, battleSystem.battleHeroes.Count - 1);
-        BattleHero battleHero = battleSystem.battleHeroes[randomIndex];
-        Hero hero = battleHero.GetHero();
-        bool isHeroDead = battleHero.Damage(battleSystem.enemy.attackPower);
+        int randomIndex = Random.Range(0, battleSystem.heroBattleCards.Count - 1);
+        HeroBattleCard heroBattleCard = battleSystem.heroBattleCards[randomIndex];
+        Hero hero = heroBattleCard.GetHero();
+        bool isHeroDead = heroBattleCard.Damage(battleSystem.enemyBattleCard.GetAttackPower());
 
-        battleSystem.battleUI.PrintMessage("Enemy attacks " + hero.characterName + " with Attack Power: " + battleSystem.enemy.attackPower);
-        battleHero.healthBar.SetHealthBar(battleHero.GetCurrentHealth(), hero.health);
+        battleSystem.battleUI.PrintMessage("Enemy attacks " + hero.characterName + " with Attack Power: " + battleSystem.enemyBattleCard.GetAttackPower());
+        heroBattleCard.RefreshCard();
         yield return new WaitForSeconds(2f);
 
         if (isHeroDead)

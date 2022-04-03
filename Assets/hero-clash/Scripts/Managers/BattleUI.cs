@@ -11,7 +11,7 @@ public class BattleUI : MonoBehaviour
     public Image overlay;
     public Text dialogueText;
 
-    public List<BattleHero> battleHeroes;
+    public List<HeroBattleCard> battleHeroes;
 
     private void Awake()
     {
@@ -29,7 +29,7 @@ public class BattleUI : MonoBehaviour
         for (int i = 0; i < heroIDs.Count; i++)
         {
             Hero newHero = HeroManager.Instance.GetHero(heroIDs[i]);
-            battleHeroes[i].InitBattleHero(newHero);
+            battleHeroes[i].InitCard(newHero);
         }
     }
 
@@ -40,7 +40,7 @@ public class BattleUI : MonoBehaviour
 
     public void SetAllInput(bool input)
     { 
-        foreach(BattleHero battleHero in battleHeroes)
+        foreach(HeroBattleCard battleHero in battleHeroes)
             battleHero.SetInput(input);
     }
 }

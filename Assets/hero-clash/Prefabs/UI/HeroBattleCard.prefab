@@ -432,7 +432,7 @@ GameObject:
   - component: {fileID: 5105441036056478256}
   - component: {fileID: 1119293287231144721}
   m_Layer: 0
-  m_Name: BattleHero
+  m_Name: HeroBattleCard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -471,11 +471,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d0fb2cdd7430654a8aff3f1cc1d52e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  heroName: {fileID: 5105441035968601768}
+  characterName: {fileID: 5105441035968601768}
   characterAvatar: {fileID: 5105441035846762968}
   attributesPanel: {fileID: 9219026566186649831}
   healthBar: {fileID: 5664903848485764370}
-  button: {fileID: 1674520462659333701}
+  longClickButton: {fileID: 1674520462659333701}
 --- !u!1 &5105441036214765759
 GameObject:
   m_ObjectHideFlags: 0

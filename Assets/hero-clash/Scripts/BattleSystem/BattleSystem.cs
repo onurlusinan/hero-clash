@@ -4,22 +4,23 @@ using UnityEngine;
 
 public class BattleSystem : StateMachine
 {
+    [Header("Battle System Config")]
     public BattleUI battleUI;
-    public List<BattleHero> battleHeroes;
+    public List<HeroBattleCard> heroBattleCards;
+    public EnemyBattleCard enemyBattleCard;
 
     private EnemyBaseDataCollection _enemyBaseDataCollection;
-    public Enemy enemy;
 
     private void Awake()
     {
-        BattleHero.heroAttack += OnHeroAttack;
+        HeroBattleCard.heroAttack += OnHeroAttack;
         _enemyBaseDataCollection = Resources.Load<EnemyBaseDataCollection>("EnemyBaseData/EnemyBaseDataCollection");
 
         InstantiateEnemy();
     }
     private void OnDestroy()
     {
-        BattleHero.heroAttack -= OnHeroAttack;
+        HeroBattleCard.heroAttack -= OnHeroAttack;
     }
 
     private void Start()
@@ -30,7 +31,7 @@ public class BattleSystem : StateMachine
     private void InstantiateEnemy()
     {
         EnemyBaseData newEnemyBaseData = _enemyBaseDataCollection.GetRandomEnemy();
-        enemy.LoadBaseData(newEnemyBaseData);
+        enemyBattleCard.InitCard(newEnemyBaseData);
     }
 
     private void OnHeroAttack(Hero hero)

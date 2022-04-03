@@ -19,8 +19,8 @@ public class PlayerTurn : State
     public override IEnumerator Attack(Hero hero)
     {
         battleSystem.battleUI.PrintMessage("The hero " + hero.characterName + " attacked the enemy with Attack Power: " + hero.attackPower);
-        bool isDead = battleSystem.enemy.Damage(hero.attackPower);
-        battleSystem.enemy.healthBar.SetHealthBar(battleSystem.enemy.health, battleSystem.enemy.GetTotalHealth()); ;
+        bool isDead = battleSystem.enemyBattleCard.Damage(hero.attackPower);
+        battleSystem.enemyBattleCard.RefreshCard();
 
         battleSystem.battleUI.SetAllInput(false);
 
