@@ -12,7 +12,7 @@ internal class EnemyTurn : State
     {
         battleSystem.battleUI.PrintMessage("Enemy Turn.");
 
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1f);
 
         HeroBattleCard heroBattleCard = SelectRandomHero();
         float attackPower = battleSystem.enemyBattleCard.GetAttackPower();

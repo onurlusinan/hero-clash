@@ -28,7 +28,7 @@ public class Hero : MonoBehaviour
     [Header("Hero Experience-Related")]
     public int level;
     public bool isSelected;
-    private int _experience;
+    [SerializeField]private int _experience;
     private bool _isLocked;
 
     [Header("Panels")]
@@ -88,8 +88,9 @@ public class Hero : MonoBehaviour
         SetID(data.id);
         SetHeroName(data.heroName);
         SetExperience(data.experience);
-        health = data.health;
-        attackPower = data.attackPower;
+        level = CalculateLevel(_experience);
+        health = (data.health) * Mathf.Pow(1.1f, level);
+        attackPower = (data.attackPower) * Mathf.Pow(1.1f, level);
         SetLock(data.isLocked);
 
         RefreshCharacterCard();

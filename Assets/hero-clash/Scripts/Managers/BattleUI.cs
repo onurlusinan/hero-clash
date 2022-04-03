@@ -9,7 +9,8 @@ using UnityEngine.SceneManagement;
 public enum PanelType
 { 
     battle,
-    gameover
+    win,
+    lose
 }
 
 public class BattleUI : MonoBehaviour
@@ -22,7 +23,8 @@ public class BattleUI : MonoBehaviour
 
     [Header("UI-Panels")]
     public CanvasGroup battlePanel;
-    public CanvasGroup gameoverPanel;
+    public CanvasGroup winPanel;
+    public CanvasGroup losePanel;
     private PanelType _currentPanel;
 
     private void Awake()
@@ -67,11 +69,17 @@ public class BattleUI : MonoBehaviour
                 battlePanel.DOFade(0.0f, 0.2f);
                 battlePanel.interactable = false;
                 break;
-            case PanelType.gameover:
-                gameoverPanel.DOFade(0.0f, 0.2f).OnComplete(() =>
-                    gameoverPanel.gameObject.SetActive(false)
+            case PanelType.win:
+                winPanel.DOFade(0.0f, 0.2f).OnComplete(() =>
+                    winPanel.gameObject.SetActive(false)
                 );
-                gameoverPanel.interactable = false;
+                winPanel.interactable = false;
+                break;
+            case PanelType.lose:
+                losePanel.DOFade(0.0f, 0.2f).OnComplete(() =>
+                    losePanel.gameObject.SetActive(false)
+                );
+                winPanel.interactable = false;
                 break;
         }
         switch (panelType)
@@ -80,10 +88,15 @@ public class BattleUI : MonoBehaviour
                 battlePanel.DOFade(1.0f, 0.2f);
                 battlePanel.interactable = true;
                 break;
-            case PanelType.gameover:
-                gameoverPanel.gameObject.SetActive(true);
-                gameoverPanel.DOFade(1.0f, 0.2f);
-                gameoverPanel.interactable = true;
+            case PanelType.win:
+                winPanel.gameObject.SetActive(true);
+                winPanel.DOFade(1.0f, 0.2f);
+                winPanel.interactable = true;
+                break;
+            case PanelType.lose:
+                losePanel.gameObject.SetActive(true);
+                losePanel.DOFade(1.0f, 0.2f);
+                losePanel.interactable = true;
                 break;
         }
         _currentPanel = panelType;

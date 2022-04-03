@@ -21,7 +21,8 @@ public class HeroManager : MonoBehaviour
     public int selectableHeroAmount;
     public List<int> selectedHeroIds;
     public static event Action<int> selectedHeroAmountChanged;
-    public bool heroesInstantiated;
+
+    internal List<int> winnerIDs;
 
     private Dictionary<int, Hero> _heroDict;
 
@@ -36,6 +37,7 @@ public class HeroManager : MonoBehaviour
 
         _heroDict = new Dictionary<int, Hero>();
         selectedHeroIds = new List<int>();
+        winnerIDs = new List<int>();
     }
 
     public void LoadAllHeroes()
@@ -54,6 +56,7 @@ public class HeroManager : MonoBehaviour
     {
         _heroDict.Clear();
         selectedHeroIds.Clear();
+        winnerIDs.Clear();
     }
     public Hero GetHero(int id)
     {
@@ -67,6 +70,8 @@ public class HeroManager : MonoBehaviour
 
     public void LevelUpHeroes(List<int> winnerIDs)
     {
+        this.winnerIDs = winnerIDs;
+
         foreach (int id in winnerIDs)
         {
             _heroDict[id].LevelUp();

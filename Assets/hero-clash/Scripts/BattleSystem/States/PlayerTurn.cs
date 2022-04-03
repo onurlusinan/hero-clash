@@ -11,7 +11,7 @@ public class PlayerTurn : State
     {
         battleSystem.battleUI.PrintMessage("Tap on a hero to attack with.");
         battleSystem.battleUI.SetAllInput(true);
-        yield break;
+        yield return new WaitForSeconds(1f);
     }
 
     public override IEnumerator Attack(HeroBattleCard heroBattleCard)
