@@ -8,7 +8,7 @@ public class EnemyBaseDataCollection : ScriptableObject
 
     public EnemyBaseData GetRandomEnemy()
     {
-        int randomIndex = Random.Range(0, enemyBaseDatas.Length - 1);
+        int randomIndex = Random.Range(0, enemyBaseDatas.Length);
         return enemyBaseDatas[randomIndex];
     }
 }

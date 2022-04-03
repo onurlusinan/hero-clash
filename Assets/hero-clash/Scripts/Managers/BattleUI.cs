@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 using DG.Tweening;
+using UnityEngine.SceneManagement;
 
 public enum PanelType
 { 
@@ -86,5 +87,13 @@ public class BattleUI : MonoBehaviour
                 break;
         }
         _currentPanel = panelType;
+    }
+
+    public void BackToHeroSelection()
+    {
+        overlay.gameObject.SetActive(true);
+        overlay.DOFade(1.0f, 0.2f).OnComplete(() =>
+                    SceneManager.LoadScene((int)SceneType.heroSelection)
+        );
     }
 }

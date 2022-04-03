@@ -21,6 +21,7 @@ public class HeroManager : MonoBehaviour
     public int selectableHeroAmount;
     public List<int> selectedHeroIds;
     public static event Action<int> selectedHeroAmountChanged;
+    public bool heroesInstantiated;
 
     private Dictionary<int, Hero> _heroDict;
 
@@ -49,6 +50,11 @@ public class HeroManager : MonoBehaviour
             hero.Value.SaveHero();
     }
 
+    public void ClearHeroManager()
+    {
+        _heroDict.Clear();
+        selectedHeroIds.Clear();
+    }
     public Hero GetHero(int id)
     {
         return _heroDict[id];
@@ -57,6 +63,17 @@ public class HeroManager : MonoBehaviour
     public void AddToHeroes(Hero hero)
     {
         _heroDict.Add(hero.GetID(), hero);
+    }
+
+    public void LevelUpHeroes(List<int> winnerIDs)
+    {
+        foreach (int id in winnerIDs)
+        {
+            _heroDict[id].LevelUp();
+            Debug.Log(_heroDict[id].characterName + " now has +1 experience.");
+        }
+
+        SaveAllHeroes();
     }
 
     /// <summary>

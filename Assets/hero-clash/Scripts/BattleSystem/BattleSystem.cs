@@ -39,14 +39,25 @@ public class BattleSystem : StateMachine
         StartCoroutine(battleState.Attack(heroBattleCard));
     }
 
-    public bool CheckHeroAvailability()
+    public bool AnyHeroesAvailable()
     {
         foreach (HeroBattleCard heroBattleCard in heroBattleCards)
         {
-            if (heroBattleCard.GetCurrentHealth() > 0)
+            if (!heroBattleCard.IsDead())
                 return true;
         }
 
         return false;
+    }
+
+    public List<int> GetWinnerHeroIDs()
+    {
+        List<int> winnerHeroes = new List<int>();
+        foreach (HeroBattleCard heroBattleCard in heroBattleCards)
+        {
+            if (!heroBattleCard.IsDead())
+                winnerHeroes.Add(heroBattleCard.GetHero().GetID());
+        }
+        return winnerHeroes;
     }
 }

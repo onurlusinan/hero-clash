@@ -2181,9 +2181,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
-        m_MethodName: BattleButton
+      - m_Target: {fileID: 2082208392}
+        m_TargetAssemblyTypeName: BattleUI, Assembly-CSharp
+        m_MethodName: BackToHeroSelection
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

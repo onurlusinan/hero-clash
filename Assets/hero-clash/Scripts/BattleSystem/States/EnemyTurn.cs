@@ -29,7 +29,7 @@ internal class EnemyTurn : State
 
         yield return new WaitForSeconds(3f);
 
-        bool allHeroesDead = !battleSystem.CheckHeroAvailability();
+        bool allHeroesDead = !battleSystem.AnyHeroesAvailable();
         if (allHeroesDead)
             battleSystem.SetState(new Lost(battleSystem));
         else

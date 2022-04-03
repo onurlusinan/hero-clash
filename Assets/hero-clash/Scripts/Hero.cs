@@ -32,7 +32,7 @@ public class Hero : MonoBehaviour
     private bool _isLocked;
 
     [Header("Panels")]
-    public CanvasGroup lockedPanel;
+    public GameObject lockedPanel;
     public CanvasGroup selectIndicator;
     public AttributesPanel attributesPanel;
     public RectTransform characterCard;
@@ -55,8 +55,17 @@ public class Hero : MonoBehaviour
     public void SetLock(bool locked) 
     {
         _isLocked = locked;
-        ShowLockPanel(locked);
-    } 
+    }
+    #endregion
+
+    #region LEVELING
+
+    public void LevelUp()
+    {
+        _experience++;
+        level = _experience / HeroManager.Instance.experiencePerLevel;
+    }
+
     #endregion
 
     #region SAVE-SYSTEM
@@ -121,6 +130,7 @@ public class Hero : MonoBehaviour
         characterAvatar.sprite = defaultAvatarSprite;
 
         SetLock(_isLocked);
+        ShowLockPanel(_isLocked);
     }
 
     /// <summary>
@@ -137,19 +147,9 @@ public class Hero : MonoBehaviour
     /// <summary>
     /// Shows/hides the lock panel
     /// </summary>
-    private void ShowLockPanel(bool islocked)
+    private void ShowLockPanel(bool isLocked)
     {
-        if (islocked)
-        {
-            lockedPanel.gameObject.SetActive(true);
-            lockedPanel.DOFade(1.0f, 0.2f);
-        }
-        else
-        {
-            lockedPanel.DOFade(0.0f, 0.2f).OnComplete(() =>
-                lockedPanel.gameObject.SetActive(false)
-            );
-        }
+        lockedPanel.SetActive(isLocked);
     }
 
     /// <summary>

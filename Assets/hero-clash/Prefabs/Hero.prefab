@@ -621,6 +621,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04109c6998cda634ab44cf5aad2cd11d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _heroID: 0
   characterName: Hero Name
   health: 0
   attackPower: 0
@@ -630,13 +631,11 @@ MonoBehaviour:
   characterAvatar: {fileID: 5105441035846762968}
   characterBackground: {fileID: 5105441037713489300}
   characterNameText: {fileID: 5105441035968601768}
-  attributesPanel: {fileID: 9219026566186649831}
-  _heroID: 0
   level: 0
   isSelected: 0
-  _isLocked: 0
-  lockedPanel: {fileID: 5693361920205473026}
+  lockedPanel: {fileID: 6613392273212343474}
   selectIndicator: {fileID: 8872793099977608045}
+  attributesPanel: {fileID: 9219026566186649831}
   characterCard: {fileID: 5105441036281771088}
 --- !u!1 &5105441036214765759
 GameObject:

@@ -25,6 +25,7 @@ public class SelectionManager : MonoBehaviour
         battleButton.interactable = false;
 
         _heroBaseDataCollection = Resources.Load<HeroBaseDataCollection>("HeroBaseData/HeroBaseDataCollection");
+
         InstantiateHeroes();
 
         overlay.DOFade(0.0f, 0.5f).OnComplete(() =>
@@ -48,6 +49,8 @@ public class SelectionManager : MonoBehaviour
     /// </summary>
     private void InstantiateHeroes()
     {
+        HeroManager.Instance.ClearHeroManager();
+
         foreach (HeroBaseData baseData in _heroBaseDataCollection.GetCollection())
         {
             GameObject newHeroObject = Instantiate(heroPrefab, heroesParent);
