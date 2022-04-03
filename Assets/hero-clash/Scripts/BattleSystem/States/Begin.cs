@@ -10,6 +10,7 @@ public class Begin : State
 
     public override IEnumerator Start()
     {
+        battleSystem.battleUI.SetAllInput(false);
         battleSystem.battleUI.PrintMessage("Another epic battle begins!");
 
         yield return new WaitForSeconds(3f);

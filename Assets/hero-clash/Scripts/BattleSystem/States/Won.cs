@@ -8,7 +8,7 @@ internal class Won : State
 
     public override IEnumerator Start()
     {
-        battleSystem.battleUI.PrintMessage("Battle lost.");
+        battleSystem.battleUI.PrintMessage("Battle Won.");
         yield break;
     }
 }

@@ -10,16 +10,22 @@ public class PlayerTurn : State
     public override IEnumerator Start()
     {
         battleSystem.battleUI.PrintMessage("Tap on a hero to attack with.");
-
-        yield return new WaitForSeconds(2f);
-
         battleSystem.battleUI.SetAllInput(true);
+        yield break;
     }
 
-    public override IEnumerator Attack(Hero hero)
+    public override IEnumerator Attack(HeroBattleCard heroBattleCard)
     {
-        battleSystem.battleUI.PrintMessage("The hero " + hero.characterName + " attacked the enemy with Attack Power: " + hero.attackPower);
-        bool isDead = battleSystem.enemyBattleCard.Damage(hero.attackPower);
+        string heroName = heroBattleCard.GetHero().characterName;
+        float attackPower = heroBattleCard.GetAttackPower();
+        EnemyBattleCard enemyBattleCard = battleSystem.enemyBattleCard;
+
+        bool isDead = enemyBattleCard.Damage(heroBattleCard.GetAttackPower());
+
+        battleSystem.battleUI.PrintMessage("The hero " + heroName + " attacked " + enemyBattleCard.GetBaseData().GetEnemyName() + " with Attack Power: " + heroBattleCard.GetAttackPower());
+        enemyBattleCard.damageDisplay.ShowText(InteractionType.damage, attackPower);
+        heroBattleCard.damageDisplay.ShowText(InteractionType.attack, attackPower);
+
         battleSystem.enemyBattleCard.RefreshCard();
 
         battleSystem.battleUI.SetAllInput(false);

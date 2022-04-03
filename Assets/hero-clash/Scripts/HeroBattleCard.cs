@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class HeroBattleCard : BattleCard
 {
     private Hero hero;  
-    public static event Action<Hero> heroAttack;
+    public static event Action<HeroBattleCard> heroAttack;
 
     public override void RefreshCard()
     {
@@ -19,15 +19,17 @@ public class HeroBattleCard : BattleCard
         this.hero = hero;
         characterName.text = hero.characterName;
         characterAvatar.sprite = hero.defaultAvatarSprite;
-        attributesPanel.RefreshPanelInfo(hero.level, hero.health, hero.attackPower);
-
         _totalHealth = hero.health;
+        _attackPower = hero.attackPower;
         _currentHealth = _totalHealth;
+
+        attributesPanel.RefreshPanelInfo(hero.level, _currentHealth, _attackPower);
     }
     public Hero GetHero() => hero;
     public void Attack()
     {
-        heroAttack?.Invoke(hero);
+        AnimateBattleCard(InteractionType.attack);
+        heroAttack?.Invoke(this);
     }
     public void SetInput(bool input)
     {

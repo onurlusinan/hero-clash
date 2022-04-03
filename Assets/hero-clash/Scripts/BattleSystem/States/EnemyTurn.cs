@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 internal class EnemyTurn : State
@@ -10,20 +11,39 @@ internal class EnemyTurn : State
     public override IEnumerator Start()
     {
         battleSystem.battleUI.PrintMessage("Enemy Turn.");
+
         yield return new WaitForSeconds(2f);
 
-        int randomIndex = Random.Range(0, battleSystem.heroBattleCards.Count - 1);
-        HeroBattleCard heroBattleCard = battleSystem.heroBattleCards[randomIndex];
-        Hero hero = heroBattleCard.GetHero();
-        bool isHeroDead = heroBattleCard.Damage(battleSystem.enemyBattleCard.GetAttackPower());
+        HeroBattleCard heroBattleCard = SelectRandomHero();
+        float attackPower = battleSystem.enemyBattleCard.GetAttackPower();
+        string enemyName = battleSystem.enemyBattleCard.GetBaseData().GetEnemyName();
+        heroBattleCard.Damage(attackPower);
 
-        battleSystem.battleUI.PrintMessage("Enemy attacks " + hero.characterName + " with Attack Power: " + battleSystem.enemyBattleCard.GetAttackPower());
+        battleSystem.enemyBattleCard.AnimateBattleCard(InteractionType.attack);
+        battleSystem.enemyBattleCard.damageDisplay.ShowText(InteractionType.attack, attackPower);
+        heroBattleCard.damageDisplay.ShowText(InteractionType.damage, attackPower);
+
+        battleSystem.battleUI.PrintMessage(enemyName + " attacks " + heroBattleCard.GetHero().characterName + " with Attack Power: " + battleSystem.enemyBattleCard.GetAttackPower());
+
         heroBattleCard.RefreshCard();
-        yield return new WaitForSeconds(2f);
 
-        if (isHeroDead)
+        yield return new WaitForSeconds(3f);
+
+        bool allHeroesDead = !battleSystem.CheckHeroAvailability();
+        if (allHeroesDead)
             battleSystem.SetState(new Lost(battleSystem));
         else
             battleSystem.SetState(new PlayerTurn(battleSystem));
+    }
+
+    private HeroBattleCard SelectRandomHero()
+    {
+        int randomIndex = Random.Range(0, battleSystem.heroBattleCards.Count - 1);
+        HeroBattleCard heroBattleCard = battleSystem.heroBattleCards[randomIndex];
+
+        if (heroBattleCard.IsDead())
+            return SelectRandomHero();
+        else
+            return heroBattleCard;
     }
 }

@@ -34,8 +34,19 @@ public class BattleSystem : StateMachine
         enemyBattleCard.InitCard(newEnemyBaseData);
     }
 
-    private void OnHeroAttack(Hero hero)
+    private void OnHeroAttack(HeroBattleCard heroBattleCard)
     {
-        StartCoroutine(battleState.Attack(hero));
+        StartCoroutine(battleState.Attack(heroBattleCard));
+    }
+
+    public bool CheckHeroAvailability()
+    {
+        foreach (HeroBattleCard heroBattleCard in heroBattleCards)
+        {
+            if (heroBattleCard.GetCurrentHealth() > 0)
+                return true;
+        }
+
+        return false;
     }
 }
