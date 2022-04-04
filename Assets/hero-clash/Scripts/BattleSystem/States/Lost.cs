@@ -10,7 +10,7 @@ internal class Lost : State
     {
         battleSystem.battleUI.PrintMessage("Battle lost.");
 
-        int battlesFought = HeroManager.Instance.battlesFought++;
+        int battlesFought = HeroManager.Instance.battlesFought +1;
         SaveSystem.SavePlayerData(battlesFought);
 
         battleSystem.battleUI.SwitchPanel(PanelType.lose);

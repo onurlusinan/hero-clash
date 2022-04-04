@@ -25,6 +25,7 @@ public class HeroBattleCard : BattleCard
 
         attributesPanel.RefreshPanelInfo(hero.level, _currentHealth, _attackPower);
     }
+
     public Hero GetHero() => hero;
     public void Attack()
     {
