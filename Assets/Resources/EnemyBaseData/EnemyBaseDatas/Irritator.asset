@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Irritator
   m_EditorClassIdentifier: 
   _enemyName: Irritator
-  _health: 25
-  _attackPower: 12
+  _health: 15
+  _attackPower: 4
   _defaultAvatar: {fileID: -6619897477489484878, guid: d7db26ba0ce56a442b63353282dd7212, type: 3}

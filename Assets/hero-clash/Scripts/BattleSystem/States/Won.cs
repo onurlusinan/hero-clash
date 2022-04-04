@@ -9,7 +9,7 @@ internal class Won : State
     public override IEnumerator Start()
     {
         battleSystem.battleUI.PrintMessage("Battle Won.");
-        HeroManager.Instance.LevelUpHeroes(battleSystem.GetWinnerHeroIDs());
+        HeroManager.Instance.RewardWinnerHeroes(battleSystem.GetWinnerHeroIDs());
 
         int battlesFought = HeroManager.Instance.battlesFought +1;
         SaveSystem.SavePlayerData(battlesFought);

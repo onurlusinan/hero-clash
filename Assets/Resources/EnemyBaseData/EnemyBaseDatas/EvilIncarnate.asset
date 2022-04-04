@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _enemyName: Evil Incarnate
   _health: 35
-  _attackPower: 10
+  _attackPower: 8
   _defaultAvatar: {fileID: 7138636302706560983, guid: f1d36e38b49efe141af09c0d74afcdf8, type: 3}

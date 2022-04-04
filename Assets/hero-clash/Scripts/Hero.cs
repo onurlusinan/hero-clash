@@ -50,20 +50,41 @@ public class Hero : MonoBehaviour
     public int GetExperience() => _experience;
     public bool IsLocked() => _isLocked;
     public void SetID(int id) => _heroID = id;
-    public void SetHeroName(string name) => characterName = name; 
-    public void SetExperience(int experience) => _experience = experience;
-    public void SetLock(bool locked) 
-    {
-        _isLocked = locked;
-    }
+    public void SetHeroName(string name) => characterName = name;
+    public void SetExperience(int experience)
+    { 
+        _experience = experience;
+        level = CalculateLevel(_experience);
+    } 
+    public void SetLock(bool locked) => _isLocked = locked;
+    
     #endregion
 
     #region LEVELING
 
     public void LevelUp()
     {
-        _experience++;
-        level = _experience / HeroManager.Instance.experiencePerLevel;
+        _experience = _experience + 1;
+
+        int previousLevel = level;
+        int newLevel = CalculateLevel(_experience);
+
+        if (newLevel > previousLevel)
+        {
+            health = health * 1.1f;
+            attackPower = attackPower * 1.1f;
+            SaveHero();
+
+            Debug.Log(characterName + " has leveled up! " + previousLevel + " -> " + newLevel);
+        }
+
+        level = newLevel;
+    }
+
+    private int CalculateLevel(int experience)
+    {
+        level = experience / HeroManager.Instance.experiencePerLevel;
+        return level + 1;
     }
 
     #endregion
@@ -91,9 +112,8 @@ public class Hero : MonoBehaviour
         SetID(data.id);
         SetHeroName(data.heroName);
         SetExperience(data.experience);
-        level = CalculateLevel(_experience);
-        health = (data.health) * Mathf.Pow(1.1f, level -1);
-        attackPower = (data.attackPower) * Mathf.Pow(1.1f, level -1);
+        health = (data.health);
+        attackPower = (data.attackPower);
         SetLock(data.isLocked);
 
         RefreshHeroCard();
@@ -106,16 +126,12 @@ public class Hero : MonoBehaviour
 
         health = baseData.GetHealth();
         attackPower = baseData.GetAttackPower();
+        SetExperience(0);
 
         defaultAvatarSprite = baseData.GetDefaultAvatar();
+        
 
         RefreshHeroCard();
-    }
-
-    private int CalculateLevel(int experience)
-    {
-        int level = experience / HeroManager.Instance.experiencePerLevel;
-        return level +1;
     }
 
     #endregion

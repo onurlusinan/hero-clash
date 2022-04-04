@@ -92,7 +92,7 @@ public class HeroManager : MonoBehaviour
     {
         _heroDict.Add(hero.GetID(), hero);
     }
-    public void LevelUpHeroes(List<int> winnerIDs)
+    public void RewardWinnerHeroes(List<int> winnerIDs)
     {
         this.winnerIDs = winnerIDs;
 
