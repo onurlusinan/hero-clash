@@ -1,5 +1,8 @@
 using UnityEngine;
 
+/// <summary>
+/// Scriptable object that holds the enemy data to load enemies from
+/// </summary>
 [CreateAssetMenu(fileName = "EnemyBaseData", menuName = "ScriptableObjects/EnemyBaseData")]
 public class EnemyBaseData : ScriptableObject
 {

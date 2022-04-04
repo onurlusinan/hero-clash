@@ -18,6 +18,7 @@ public class BattleSystem : StateMachine
 
         InstantiateEnemy();
     }
+
     private void OnDestroy()
     {
         HeroBattleCard.heroAttack -= OnHeroAttack;

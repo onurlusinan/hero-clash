@@ -10,12 +10,15 @@ public class WinPanel : MonoBehaviour
 
     private void OnEnable()
     {
-        PopulateBoard();
+        PopulateBoard(HeroManager.Instance.winnerIDs);
     }
 
-    private void PopulateBoard()
+    /// <summary>
+    /// Populates the final board dynamically with winner heroes using the prefab
+    /// </summary>
+    private void PopulateBoard(List<int> winnerIDs)
     {
-        foreach (int id in HeroManager.Instance.winnerIDs)
+        foreach (int id in winnerIDs)
         {
             GameObject heroLevelUpObject = Instantiate(heroLevelUpCard, levelUpList);
             HeroLevelUpCard newHeroLevelUpCard = heroLevelUpObject.GetComponent<HeroLevelUpCard>();

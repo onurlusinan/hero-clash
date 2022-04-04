@@ -9,11 +9,16 @@ public class HeroBattleCard : BattleCard
     private Hero hero;  
     public static event Action<HeroBattleCard> heroAttack;
 
-    public override void RefreshCard()
-    {
-        healthBar.SetHealthBar(_currentHealth, hero.health);
-        attributesPanel.RefreshPanelInfo(hero.level, _currentHealth, hero.attackPower);
-    }
+    public Hero GetHero() => hero;
+
+    /// <summary>
+    /// Enables or disables player input for the battle card
+    /// </summary>
+    public void SetInput(bool input) => longClickButton.SetInput(input);
+
+    /// <summary>
+    /// Fills Card using a Hero
+    /// </summary>
     public void InitCard(Hero hero)
     {
         this.hero = hero;
@@ -26,7 +31,15 @@ public class HeroBattleCard : BattleCard
         attributesPanel.RefreshPanelInfo(hero.level, _currentHealth, _attackPower);
     }
 
-    public Hero GetHero() => hero;
+    public override void RefreshCard()
+    {
+        healthBar.SetHealthBar(_currentHealth, hero.health);
+        attributesPanel.RefreshPanelInfo(hero.level, _currentHealth, hero.attackPower);
+    }
+    
+    /// <summary>
+    /// For the button, invokes event to Battle System
+    /// </summary>
     public void Attack()
     {
         if (_isDead)
@@ -35,8 +48,6 @@ public class HeroBattleCard : BattleCard
         AnimateBattleCard(InteractionType.attack);
         heroAttack?.Invoke(this);
     }
-    public void SetInput(bool input)
-    {
-        longClickButton.SetInput(input);
-    }
+
+
 }

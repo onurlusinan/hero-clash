@@ -3,16 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// The battle card for the enemy on the battleground
+/// </summary>
 public class EnemyBattleCard : BattleCard
 {
     private EnemyBaseData enemyBaseData;
-
     public EnemyBaseData GetBaseData() => enemyBaseData;
-    public override void RefreshCard()
-    {
-        healthBar.SetHealthBar(_currentHealth, _totalHealth);
-        attributesPanel.RefreshPanelInfo(_currentHealth, _attackPower);
-    }
+
+    /// <summary>
+    /// Fills Card with enemy base data
+    /// </summary>
     public void InitCard(EnemyBaseData enemyBaseData)
     {
         this.enemyBaseData = enemyBaseData;
@@ -24,5 +25,11 @@ public class EnemyBattleCard : BattleCard
         _attackPower = enemyBaseData.GetAttackPower();
 
         attributesPanel.RefreshPanelInfo(enemyBaseData.GetHealth(), _attackPower);
+    }
+
+    public override void RefreshCard()
+    {
+        healthBar.SetHealthBar(_currentHealth, _totalHealth);
+        attributesPanel.RefreshPanelInfo(_currentHealth, _attackPower);
     }
 }

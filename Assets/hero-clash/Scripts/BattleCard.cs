@@ -3,12 +3,18 @@ using UnityEngine.UI;
 
 using DG.Tweening;
 
+/// <summary>
+/// Battle Card interactions
+/// </summary>
 public enum InteractionType
 { 
     attack,
     damage
 }
 
+/// <summary>
+/// Handles the character cards on the battleground
+/// </summary>
 public abstract class BattleCard : MonoBehaviour
 {
     [Header("UI-Config")]
@@ -24,11 +30,21 @@ public abstract class BattleCard : MonoBehaviour
     protected float _currentHealth;
     protected float _attackPower;
 
-    public abstract void RefreshCard();
     public virtual float GetCurrentHealth() => _currentHealth;
     public virtual float GetTotalHealth() => _totalHealth;
     public virtual float GetAttackPower() => _attackPower;
     public virtual bool IsDead() => _isDead;
+
+    /// <summary>
+    /// Refreshes the info on the battle card after an interaction
+    /// </summary>
+    public abstract void RefreshCard();
+
+    /// <summary>
+    /// Damages the battle card
+    /// </summary>
+    /// <param name="amount"></param>
+    /// <returns></returns>
     public virtual bool Damage(float amount)
     {
         AnimateBattleCard(InteractionType.damage);
@@ -37,9 +53,13 @@ public abstract class BattleCard : MonoBehaviour
         _isDead = _currentHealth <= 0;
         return _isDead;
     }
-    public virtual void AnimateBattleCard(InteractionType animType)
+
+    /// <summary>
+    /// Animates the battle card based on interaction type
+    /// </summary>
+    public virtual void AnimateBattleCard(InteractionType interactionType)
     {
-        switch (animType)
+        switch (interactionType)
         {
             case InteractionType.attack:
                 AttackAnim();
@@ -50,6 +70,9 @@ public abstract class BattleCard : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// The attack animation of the battle cards
+    /// </summary>
     private void AttackAnim()
     {
         float originalPosY = transform.position.y;
@@ -59,6 +82,9 @@ public abstract class BattleCard : MonoBehaviour
                       .SetEase(Ease.Linear);
     }
 
+    /// <summary>
+    /// The damage animation of the battle cards
+    /// </summary>
     private void DamageAnim()
     {
         float originalPosX = transform.position.x;

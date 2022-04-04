@@ -1,5 +1,8 @@
 using UnityEngine;
 
+/// <summary>
+/// Scriptable object that holds the base hero data to only initially load enemies from
+/// </summary>
 [CreateAssetMenu(fileName = "HeroBaseData", menuName = "ScriptableObjects/HeroBaseData")]
 public class HeroBaseData : ScriptableObject
 {
