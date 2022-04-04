@@ -14,7 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _id: 9
   _heroName: Super Troll
-  _experience: 0
-  _health: 30
-  _attackPower: 8
+  _health: 25
+  _attackPower: 18
   _defaultAvatar: {fileID: 4718543092510625969, guid: d7db26ba0ce56a442b63353282dd7212, type: 3}

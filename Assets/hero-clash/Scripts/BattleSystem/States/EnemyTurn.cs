@@ -17,6 +17,7 @@ internal class EnemyTurn : State
     public override IEnumerator Start()
     {
         battleSystem.battleUI.PrintMessage("Enemy Turn.");
+        battleSystem.battleUI.SetBackImages(false);
 
         yield return new WaitForSeconds(1.5f);
 

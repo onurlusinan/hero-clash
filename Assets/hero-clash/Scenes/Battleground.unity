@@ -773,7 +773,7 @@ GameObject:
   - component: {fileID: 690389089}
   - component: {fileID: 690389088}
   m_Layer: 5
-  m_Name: EnemyBackPanel2
+  m_Name: EnemyBackImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -811,7 +811,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.6132076, g: 0.19379672, b: 0.21276383, a: 1}
+  m_Color: {r: 0.9056604, g: 0.36311856, b: 0.39102083, a: 0.5019608}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1354,7 +1354,7 @@ GameObject:
   - component: {fileID: 1428154423}
   - component: {fileID: 1428154422}
   m_Layer: 5
-  m_Name: HeroesBackPanel2
+  m_Name: HeroBackImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1392,7 +1392,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.4481132, g: 0.92226976, b: 1, a: 1}
+  m_Color: {r: 0.4481132, g: 0.92226976, b: 1, a: 0.5019608}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -2521,15 +2521,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7452311e24b28b44198e578ccb75ba29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  battleSystem: {fileID: 2042529723}
   overlay: {fileID: 182048460}
   dialogueText: {fileID: 1950226090}
-  battleHeroes:
-  - {fileID: 1371039068}
-  - {fileID: 1612387537}
-  - {fileID: 322211122}
   battlePanel: {fileID: 782563324}
   winPanel: {fileID: 1818624464}
   losePanel: {fileID: 1287670107}
+  heroBackImage: {fileID: 1428154422}
+  enemyBackImage: {fileID: 690389088}
 --- !u!1 &2093600857
 GameObject:
   m_ObjectHideFlags: 0

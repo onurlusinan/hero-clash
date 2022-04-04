@@ -14,7 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _id: 7
   _heroName: Vigilante
-  _experience: 0
-  _health: 25
-  _attackPower: 10
+  _health: 22
+  _attackPower: 15
   _defaultAvatar: {fileID: 5934535619381611209, guid: d7db26ba0ce56a442b63353282dd7212, type: 3}

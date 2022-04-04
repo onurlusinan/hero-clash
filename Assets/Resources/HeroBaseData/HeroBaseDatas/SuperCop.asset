@@ -14,8 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _id: 2
   _heroName: Super Cop
-  _experience: 0
-  _health: 7
-  _attackPower: 4
-  _isLocked: 1
+  _health: 14
+  _attackPower: 8
   _defaultAvatar: {fileID: 2266114437038893649, guid: f1d36e38b49efe141af09c0d74afcdf8, type: 3}

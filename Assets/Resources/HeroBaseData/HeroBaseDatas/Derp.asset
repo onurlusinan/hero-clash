@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _id: 0
   _heroName: Derp
-  _health: 100
-  _attackPower: 30
+  _health: 10
+  _attackPower: 8
   _defaultAvatar: {fileID: 7348058720353786455, guid: f1d36e38b49efe141af09c0d74afcdf8, type: 3}

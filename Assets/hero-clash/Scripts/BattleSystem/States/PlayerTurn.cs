@@ -16,6 +16,7 @@ internal class PlayerTurn : State
     public override IEnumerator Start()
     {
         battleSystem.battleUI.PrintMessage("Tap on a hero to attack with.");
+        battleSystem.battleUI.SetBackImages(true);
         battleSystem.battleUI.SetAllInput(true);
         yield return new WaitForSeconds(1f);
     }

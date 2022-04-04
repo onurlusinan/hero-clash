@@ -22,6 +22,7 @@ internal class Lost : State
 
         yield return new WaitForSeconds(1f);
 
+        battleSystem.battleUI.ResetBackImages();
         battleSystem.battleUI.SwitchPanel(PanelType.lose);
         yield break;
     }

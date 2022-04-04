@@ -24,6 +24,7 @@ public abstract class BattleCard : MonoBehaviour
     public HealthBar healthBar;
     public LongClickButton longClickButton;
     public DamageDisplay damageDisplay;
+    public CanvasGroup visuals;
 
     protected bool _isDead;
     protected float _totalHealth;
@@ -52,6 +53,14 @@ public abstract class BattleCard : MonoBehaviour
         _currentHealth = _currentHealth - amount;
         _isDead = _currentHealth <= 0;
         return _isDead;
+    }
+
+    public virtual void FadeCard(bool fade)
+    {
+        if (fade)
+            visuals.DOFade(0.5f, 0.2f);
+        else
+            visuals.DOFade(1.0f, 0.2f);
     }
 
     /// <summary>

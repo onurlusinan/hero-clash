@@ -15,11 +15,11 @@ public enum PanelType
 
 public class BattleUI : MonoBehaviour
 {
+    public BattleSystem battleSystem;
+
     [Header("Battle-UI-Manager Config")]
     public Image overlay;
     public Text dialogueText;
-
-    public List<HeroBattleCard> battleHeroes;
 
     [Header("UI-Panels")]
     public CanvasGroup battlePanel;
@@ -27,9 +27,13 @@ public class BattleUI : MonoBehaviour
     public CanvasGroup losePanel;
     private PanelType _currentPanel;
 
+    [Header("Back Panels")]
+    public Image heroBackImage;
+    public Image enemyBackImage;
+
     private void Awake()
     {
-        LoadHeroes();
+        InitHeroBattleCards();
 
         _currentPanel = PanelType.battle;
         SwitchPanel(_currentPanel);
@@ -39,28 +43,61 @@ public class BattleUI : MonoBehaviour
         );
     }
 
-    private void LoadHeroes()
+    public void SetBackImages(bool isHeroSide)
+    {
+        if (isHeroSide)
+        {
+            heroBackImage.DOFade(1.0f, 0.2f);
+            enemyBackImage.DOFade(0.5f, 0.2f);
+        }
+        else
+        {
+
+            enemyBackImage.DOFade(1.0f, 0.2f);
+            heroBackImage.DOFade(0.5f, 0.2f);
+        }
+    }
+
+    public void ResetBackImages()
+    {
+        heroBackImage.DOFade(1.0f, 0.2f);
+        enemyBackImage.DOFade(1.0f, 0.2f);
+    }
+
+    /// <summary>
+    /// Fills the Hero battle Cards with the selected Heroes 
+    /// </summary>
+    private void InitHeroBattleCards()
     {
         List<int> heroIDs = HeroManager.Instance.selectedHeroIds;
 
         for (int i = 0; i < heroIDs.Count; i++)
         {
             Hero newHero = HeroManager.Instance.GetHero(heroIDs[i]);
-            battleHeroes[i].InitCard(newHero);
+            battleSystem.heroBattleCards[i].InitCard(newHero);
         }
     }
 
+    /// <summary>
+    /// Prints a message to the text box
+    /// </summary>
     public void PrintMessage(string message)
     {
-        dialogueText.text = message;
+        dialogueText.DOText(message, 0.2f, true, ScrambleMode.All);
     }
 
+    /// <summary>
+    /// Sets all battle card inputs
+    /// </summary>
     public void SetAllInput(bool input)
     { 
-        foreach(HeroBattleCard battleHero in battleHeroes)
+        foreach(HeroBattleCard battleHero in battleSystem.heroBattleCards)
             battleHero.SetInput(input);
     }
 
+    /// <summary>
+    /// Handles panel switching to the end game panels
+    /// </summary>
     public void SwitchPanel(PanelType panelType)
     {
         switch (_currentPanel)
@@ -102,6 +139,10 @@ public class BattleUI : MonoBehaviour
         _currentPanel = panelType;
     }
 
+    /// <summary>
+    /// Method for the button in the win and lose panels
+    /// Fades overlay and changes back to the hero selection scene
+    /// </summary>
     public void BackToHeroSelection()
     {
         overlay.gameObject.SetActive(true);

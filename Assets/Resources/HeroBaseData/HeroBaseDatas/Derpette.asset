@@ -14,7 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _id: 1
   _heroName: Derpette
-  _experience: 0
-  _health: 6
-  _attackPower: 5
+  _health: 12
+  _attackPower: 7
   _defaultAvatar: {fileID: 1785550314556681177, guid: f1d36e38b49efe141af09c0d74afcdf8, type: 3}

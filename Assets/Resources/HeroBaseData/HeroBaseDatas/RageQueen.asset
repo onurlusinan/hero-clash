@@ -14,7 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _id: 8
   _heroName: Rage Queen
-  _experience: 0
-  _health: 18
-  _attackPower: 12
+  _health: 16
+  _attackPower: 20
   _defaultAvatar: {fileID: -2433688309757056736, guid: d7db26ba0ce56a442b63353282dd7212, type: 3}

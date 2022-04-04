@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _id: 6
   _heroName: Detective
-  _health: 15
-  _attackPower: 7
+  _health: 18
+  _attackPower: 10
   _defaultAvatar: {fileID: -4905154091074506600, guid: f1d36e38b49efe141af09c0d74afcdf8, type: 3}
