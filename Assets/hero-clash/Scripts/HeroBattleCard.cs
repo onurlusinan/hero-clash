@@ -28,6 +28,9 @@ public class HeroBattleCard : BattleCard
     public Hero GetHero() => hero;
     public void Attack()
     {
+        if (_isDead)
+            return;
+
         AnimateBattleCard(InteractionType.attack);
         heroAttack?.Invoke(this);
     }
