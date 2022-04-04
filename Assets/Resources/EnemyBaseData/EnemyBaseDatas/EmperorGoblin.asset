@@ -9,12 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 40beffabff9bef9449f40aea298048a0, type: 3}
-  m_Name: Derpette
+  m_Script: {fileID: 11500000, guid: a5e994c31a485314f99111c94b1e033d, type: 3}
+  m_Name: EmperorGoblin
   m_EditorClassIdentifier: 
-  _id: 1
-  _heroName: Derpette
-  _experience: 0
-  _health: 6
-  _attackPower: 5
-  _defaultAvatar: {fileID: 1785550314556681177, guid: f1d36e38b49efe141af09c0d74afcdf8, type: 3}
+  _enemyName: Emperor Goblin
+  _health: 50
+  _attackPower: 15
+  _defaultAvatar: {fileID: -3957353282838831822, guid: d7db26ba0ce56a442b63353282dd7212, type: 3}

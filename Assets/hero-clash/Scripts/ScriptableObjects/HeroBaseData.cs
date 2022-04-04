@@ -10,9 +10,6 @@ public class HeroBaseData : ScriptableObject
     private string _heroName;
 
     [SerializeField]
-    private int _experience;
-
-    [SerializeField]
     private float _health;
 
     [SerializeField]
@@ -23,7 +20,6 @@ public class HeroBaseData : ScriptableObject
 
     public int GetID() => _id;
     public string GetHeroName() => _heroName;
-    public int GetExperience() => _experience;
     public float GetHealth() => _health;
     public float GetAttackPower() => _attackPower;
     public Sprite GetDefaultAvatar() => _defaultAvatar;

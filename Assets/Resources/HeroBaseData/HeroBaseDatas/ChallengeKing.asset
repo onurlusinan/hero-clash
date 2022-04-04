@@ -15,7 +15,6 @@ MonoBehaviour:
   _id: 4
   _heroName: Challenge King
   _experience: 0
-  _health: 6
-  _attackPower: 12
-  _isLocked: 1
+  _health: 9
+  _attackPower: 6
   _defaultAvatar: {fileID: 6799043069244973149, guid: f1d36e38b49efe141af09c0d74afcdf8, type: 3}

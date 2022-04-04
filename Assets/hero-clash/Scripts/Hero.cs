@@ -104,9 +104,6 @@ public class Hero : MonoBehaviour
         SetID(baseData.GetID());
         SetHeroName(baseData.GetHeroName());
 
-        SetExperience(baseData.GetExperience());
-        level = CalculateLevel(_experience);
-
         health = baseData.GetHealth();
         attackPower = baseData.GetAttackPower();
 

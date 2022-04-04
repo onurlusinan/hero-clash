@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5e994c31a485314f99111c94b1e033d, type: 3}
   m_Name: MegaDeathOverlord
   m_EditorClassIdentifier: 
-  _enemyName: Mega Death Overlord
-  _health: 12
-  _attackPower: 4
+  _enemyName: Deathlord
+  _health: 35
+  _attackPower: 7
   _defaultAvatar: {fileID: 8858395719957778913, guid: f1d36e38b49efe141af09c0d74afcdf8, type: 3}

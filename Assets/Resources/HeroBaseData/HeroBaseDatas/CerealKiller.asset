@@ -15,7 +15,6 @@ MonoBehaviour:
   _id: 5
   _heroName: Cereal Killer
   _experience: 0
-  _health: 10
+  _health: 12
   _attackPower: 4
-  _isLocked: 1
   _defaultAvatar: {fileID: -4712630994511652308, guid: f1d36e38b49efe141af09c0d74afcdf8, type: 3}
