@@ -5,38 +5,39 @@ using UnityEngine.UI;
 
 using DG.Tweening;
 
+/// <summary>
+/// The main hero class
+/// </summary>
 public class Hero : MonoBehaviour
 {
     #region VARIABLES & REFS
 
     [Header("Attributes")]
     [SerializeField] private int _heroID;
-    public string characterName;
+    [SerializeField] private string characterName;
     public float health;
     public float attackPower;
 
+    [Header("Hero Experience-Related")]
+    public int level;
+    [SerializeField]private int _experience;
+    [SerializeField]private bool _isLocked;
+
     [Header("Sprites")]
-    public Sprite defaultAvatarSprite;
-    public Sprite attackingAvatarSprite;
-    public Sprite damagedAvatarSprite;
+    internal Sprite defaultAvatarSprite;
 
     [Header("Images and Texts")]
     public Image characterAvatar;
     public Image characterBackground;
     public Text characterNameText;
-
-    [Header("Hero Experience-Related")]
-    public int level;
-    public bool isSelected;
-    [SerializeField]private int _experience;
-    [SerializeField]private bool _isLocked;
-
+    
     [Header("Panels")]
     public GameObject lockedPanel;
     public CanvasGroup selectIndicator;
     public AttributesPanel attributesPanel;
     public RectTransform characterCard;
 
+    public bool isSelected;
     #endregion
 
     private void Awake()
@@ -193,9 +194,6 @@ public class Hero : MonoBehaviour
             characterCard.DOAnchorPosY(0f, 0.2f);
     }
 
-    #endregion
-
-    #region SELECTING
     public void Select(bool select)
     {
         isSelected = select;

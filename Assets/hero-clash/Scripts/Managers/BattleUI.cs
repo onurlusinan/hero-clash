@@ -13,23 +13,24 @@ public enum PanelType
     lose
 }
 
+/// <summary>
+/// Handles the Battleground UI using the BattleSystem
+/// </summary>
 public class BattleUI : MonoBehaviour
 {
     public BattleSystem battleSystem;
 
-    [Header("Battle-UI-Manager Config")]
+    [Header("BattleUI Config")]
     public Image overlay;
     public Text dialogueText;
+    public Image heroBackImage;
+    public Image enemyBackImage;
 
-    [Header("UI-Panels")]
+    [Header("Panel Switching")]
     public CanvasGroup battlePanel;
     public CanvasGroup winPanel;
     public CanvasGroup losePanel;
     private PanelType _currentPanel;
-
-    [Header("Back Panels")]
-    public Image heroBackImage;
-    public Image enemyBackImage;
 
     private void Awake()
     {
@@ -41,27 +42,6 @@ public class BattleUI : MonoBehaviour
         overlay.DOFade(0.0f, 0.5f).OnComplete(() =>
             overlay.gameObject.SetActive(false)
         );
-    }
-
-    public void SetBackImages(bool isHeroSide)
-    {
-        if (isHeroSide)
-        {
-            heroBackImage.DOFade(1.0f, 0.2f);
-            enemyBackImage.DOFade(0.5f, 0.2f);
-        }
-        else
-        {
-
-            enemyBackImage.DOFade(1.0f, 0.2f);
-            heroBackImage.DOFade(0.5f, 0.2f);
-        }
-    }
-
-    public void ResetBackImages()
-    {
-        heroBackImage.DOFade(1.0f, 0.2f);
-        enemyBackImage.DOFade(1.0f, 0.2f);
     }
 
     /// <summary>
@@ -149,5 +129,32 @@ public class BattleUI : MonoBehaviour
         overlay.DOFade(1.0f, 0.2f).OnComplete(() =>
                     SceneManager.LoadScene((int)SceneType.heroSelection)
         );
+    }
+
+    /// <summary>
+    /// Sets the background image fades during player and enemy turns
+    /// </summary>
+    public void SetBackImages(bool isHeroTurn)
+    {
+        if (isHeroTurn)
+        {
+            heroBackImage.DOFade(1.0f, 0.2f);
+            enemyBackImage.DOFade(0.5f, 0.2f);
+        }
+        else
+        {
+
+            enemyBackImage.DOFade(1.0f, 0.2f);
+            heroBackImage.DOFade(0.5f, 0.2f);
+        }
+    }
+
+    /// <summary>
+    /// Resets image alphas at game end
+    /// </summary>
+    public void ResetBackImages()
+    {
+        heroBackImage.DOFade(1.0f, 0.2f);
+        enemyBackImage.DOFade(1.0f, 0.2f);
     }
 }

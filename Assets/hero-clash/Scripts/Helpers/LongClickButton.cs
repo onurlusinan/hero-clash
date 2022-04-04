@@ -1,16 +1,17 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
+/// <summary>
+/// Handles the click & hold function of all hero-related buttons
+/// </summary>
 public class LongClickButton : MonoBehaviour,  IPointerUpHandler, IPointerDownHandler,
                                                IDragHandler, IBeginDragHandler, IEndDragHandler
 {
     private bool _pointerDown;
     private float _pointerDownTimer;
-    private bool _fakeClick;
+    private bool _shortClick;
     public bool _input;
 
     private ScrollRect _scrollRectParent;
@@ -22,22 +23,12 @@ public class LongClickButton : MonoBehaviour,  IPointerUpHandler, IPointerDownHa
     public UnityEvent onReleaseLongClick;
     public UnityEvent onClick;
 
-
     public void Awake()
     {
         if (GetComponentInParent<ScrollRect>() != null)
             _scrollRectParent = GetComponentInParent<ScrollRect>();
 
         SetInput(true);
-    }
-
-    private void Reset()
-    {
-        _pointerDown = false;
-        _fakeClick = false;
-        _pointerDownTimer = 0f;
-
-        onReleaseLongClick?.Invoke();
     }
 
     private void Update()
@@ -50,19 +41,27 @@ public class LongClickButton : MonoBehaviour,  IPointerUpHandler, IPointerDownHa
             _pointerDownTimer += Time.deltaTime;
             if (_pointerDownTimer > requiredHoldTime)
             {
-                _fakeClick = false;
+                _shortClick = false;
                 onLongClick?.Invoke();
             }
             else
-                _fakeClick = true;
+                _shortClick = true;
         }
     }
 
-    public void SetInput(bool input)
+    public void SetInput(bool input) => _input = input;
+
+    private void Reset()
     {
-        _input = input;
+        _pointerDown = false;
+        _shortClick = false;
+        _pointerDownTimer = 0f;
+
+        onReleaseLongClick?.Invoke();
     }
 
+
+    #region INTERFACES
     public void OnPointerDown(PointerEventData eventData)
     {
         if (!_input)
@@ -76,7 +75,7 @@ public class LongClickButton : MonoBehaviour,  IPointerUpHandler, IPointerDownHa
         if (!_input)
             return;
 
-        if (!eventData.dragging && _fakeClick)
+        if (!eventData.dragging && _shortClick)
             onClick?.Invoke();
         
         Reset();
@@ -99,4 +98,5 @@ public class LongClickButton : MonoBehaviour,  IPointerUpHandler, IPointerDownHa
         if (_scrollRectParent != null)
             _scrollRectParent.OnEndDrag(eventData);
     }
+    #endregion
 }
