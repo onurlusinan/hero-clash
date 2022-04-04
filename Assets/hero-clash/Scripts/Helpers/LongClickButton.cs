@@ -38,6 +38,9 @@ public class LongClickButton : MonoBehaviour,  IPointerUpHandler, IPointerDownHa
 
     public void OnPointerDown(PointerEventData eventData)
     {
+        if (!_input)
+            return;
+
         _pointerDown = true;
     }
 
