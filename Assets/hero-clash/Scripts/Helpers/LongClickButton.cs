@@ -63,7 +63,7 @@ public class LongClickButton : MonoBehaviour,  IPointerUpHandler, IPointerDownHa
         _input = input;
     }
 
-    private void OnPointerDown(PointerEventData eventData)
+    public void OnPointerDown(PointerEventData eventData)
     {
         if (!_input)
             return;
@@ -71,7 +71,7 @@ public class LongClickButton : MonoBehaviour,  IPointerUpHandler, IPointerDownHa
         _pointerDown = true;
     }
 
-    private void OnPointerUp(PointerEventData eventData)
+    public void OnPointerUp(PointerEventData eventData)
     {
         if (!_input)
             return;
@@ -82,19 +82,19 @@ public class LongClickButton : MonoBehaviour,  IPointerUpHandler, IPointerDownHa
         Reset();
     }
 
-    private void OnDrag(PointerEventData eventData)
+    public void OnDrag(PointerEventData eventData)
     {
         if (_scrollRectParent != null)
             _scrollRectParent.OnDrag(eventData);
     }
 
-    private void OnBeginDrag(PointerEventData eventData)
+    public void OnBeginDrag(PointerEventData eventData)
     {
         if (_scrollRectParent != null)
             _scrollRectParent.OnBeginDrag(eventData);
     }
 
-    private void OnEndDrag(PointerEventData eventData)
+    public void OnEndDrag(PointerEventData eventData)
     {
         if (_scrollRectParent != null)
             _scrollRectParent.OnEndDrag(eventData);
