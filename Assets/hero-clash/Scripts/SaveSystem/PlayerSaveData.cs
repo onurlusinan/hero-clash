@@ -1,4 +1,7 @@
-﻿[System.Serializable]
+﻿/// <summary>
+/// Class for saving any player data, gets serialized / unserialized by the binary formatter
+/// </summary>
+[System.Serializable]
 public class PlayerSaveData
 {
     public int battlesFought;

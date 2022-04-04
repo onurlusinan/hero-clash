@@ -31,49 +31,6 @@ public class LongClickButton : MonoBehaviour,  IPointerUpHandler, IPointerDownHa
         SetInput(true);
     }
 
-    public void SetInput(bool input)
-    {
-        _input = input;
-    }
-
-    public void OnPointerDown(PointerEventData eventData)
-    {
-        if (!_input)
-            return;
-
-        _pointerDown = true;
-    }
-
-    public void OnPointerUp(PointerEventData eventData)
-    {
-        if (!_input)
-            return;
-
-        if (!eventData.dragging && _fakeClick)
-            onClick?.Invoke();
-        
-        Reset();
-    }
-
-    public void OnDrag(PointerEventData eventData)
-    {
-        if (_scrollRectParent != null)
-            _scrollRectParent.OnDrag(eventData);
-    }
-
-
-    public void OnBeginDrag(PointerEventData eventData)
-    {
-        if (_scrollRectParent != null)
-            _scrollRectParent.OnBeginDrag(eventData);
-    }
-
-    public void OnEndDrag(PointerEventData eventData)
-    {
-        if (_scrollRectParent != null)
-            _scrollRectParent.OnEndDrag(eventData);
-    }
-
     private void Reset()
     {
         _pointerDown = false;
@@ -99,5 +56,47 @@ public class LongClickButton : MonoBehaviour,  IPointerUpHandler, IPointerDownHa
             else
                 _fakeClick = true;
         }
+    }
+
+    public void SetInput(bool input)
+    {
+        _input = input;
+    }
+
+    private void OnPointerDown(PointerEventData eventData)
+    {
+        if (!_input)
+            return;
+
+        _pointerDown = true;
+    }
+
+    private void OnPointerUp(PointerEventData eventData)
+    {
+        if (!_input)
+            return;
+
+        if (!eventData.dragging && _fakeClick)
+            onClick?.Invoke();
+        
+        Reset();
+    }
+
+    private void OnDrag(PointerEventData eventData)
+    {
+        if (_scrollRectParent != null)
+            _scrollRectParent.OnDrag(eventData);
+    }
+
+    private void OnBeginDrag(PointerEventData eventData)
+    {
+        if (_scrollRectParent != null)
+            _scrollRectParent.OnBeginDrag(eventData);
+    }
+
+    private void OnEndDrag(PointerEventData eventData)
+    {
+        if (_scrollRectParent != null)
+            _scrollRectParent.OnEndDrag(eventData);
     }
 }

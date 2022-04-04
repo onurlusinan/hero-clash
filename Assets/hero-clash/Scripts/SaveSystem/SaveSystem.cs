@@ -5,6 +5,9 @@ using UnityEngine;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 
+/// <summary>
+/// Saves/Loads data with Binary Serialization/Deserialization
+/// </summary>
 public static class SaveSystem
 {
     public static void SaveHero(Hero hero)
@@ -42,7 +45,7 @@ public static class SaveSystem
     public static void SavePlayerData(int battlesFought)
     {
         BinaryFormatter formatter = new BinaryFormatter();
-        string path = Application.persistentDataPath + "/battlesFought.save";
+        string path = Application.persistentDataPath + "/totalBattles.save";
         FileStream stream = new FileStream(path, FileMode.Create);
 
         PlayerSaveData data = new PlayerSaveData(battlesFought);
@@ -53,7 +56,7 @@ public static class SaveSystem
 
     public static PlayerSaveData LoadPlayerData()
     {
-        string path = Application.persistentDataPath + "/battlesFought.save";
+        string path = Application.persistentDataPath + "/totalBattles.save";
         if (File.Exists(path))
         {
             BinaryFormatter formatter = new BinaryFormatter();

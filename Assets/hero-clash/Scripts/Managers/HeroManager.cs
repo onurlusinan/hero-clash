@@ -4,24 +4,31 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
+/// <summary>
+/// SceneType enum that has values that corresponds to their necessary build indices
+/// </summary>
 public enum SceneType
 { 
     heroSelection,
     battleground
 }
 
+/// <summary>
+/// Hero Manager handles everything related to the heroes
+/// Holds the heroes in a dictionary with their ids
+/// Levels them up when necessary, Saves and Loads them
+/// </summary>
 public class HeroManager : MonoBehaviour
 {
-    // Simple singleton Instance
     public static HeroManager Instance;
 
     [Header("Hero Leveling")]
     public int experiencePerLevel;
     public int battlesPerNewHero;
     public int initialHeroAmount;
-    internal int battlesFought;
+    internal int totalBattles;
 
-    [Header("HeroManager Config")]
+    [Header("Hero Manager Config")]
     public int selectableHeroAmount;
     public List<int> selectedHeroIds;
     public static event Action<int> selectedHeroAmountChanged;
@@ -43,16 +50,24 @@ public class HeroManager : MonoBehaviour
         winnerIDs = new List<int>();
     }
 
+    /// <summary>
+    /// Gets the hero by id
+    /// </summary>
+    public Hero GetHero(int id) => _heroDict[id];
+
+    /// <summary>
+    /// Checks hero locks and turns them either on or off based on battles fought
+    /// </summary>
     public void CheckLocks()
     {
         PlayerSaveData playerSaveData = SaveSystem.LoadPlayerData();
         
         if (playerSaveData == null)
-            battlesFought = 0;
+            totalBattles = 0;
         else
-            battlesFought = playerSaveData.battlesFought;
+            totalBattles = playerSaveData.battlesFought;
         
-        int heroesToUnlock = battlesFought / battlesPerNewHero;
+        int heroesToUnlock = totalBattles / battlesPerNewHero;
         if (heroesToUnlock == 0)
             heroesToUnlock = initialHeroAmount;
         else
@@ -66,6 +81,9 @@ public class HeroManager : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Loads all hero saves
+    /// </summary>
     public void LoadAllHeroes()
     {
         foreach (KeyValuePair<int, Hero> hero in _heroDict)
@@ -73,26 +91,41 @@ public class HeroManager : MonoBehaviour
 
         CheckLocks();
     }
+
+    /// <summary>
+    /// Saves all heroes
+    /// </summary>
     private void SaveAllHeroes()
     {
         foreach (KeyValuePair<int, Hero> hero in _heroDict)
             hero.Value.SaveHero();
     }
+
+    /// <summary>
+    /// Clears the necessary data structures of Hero Manager
+    /// Since it's the same singleton all session, needs empty data structures to fill them back
+    /// </summary>
     public void ClearHeroManager()
     {
         _heroDict.Clear();
         selectedHeroIds.Clear();
         winnerIDs.Clear();
     }
-    public Hero GetHero(int id)
-    {
-        return _heroDict[id];
-    }
+
+    /// <summary>
+    /// Adds hero to the hero dictionary _heroDict
+    /// </summary>
+    /// <param name="hero"></param>
     public void AddToHeroes(Hero hero)
     {
         _heroDict.Add(hero.GetID(), hero);
     }
-    public void RewardWinnerHeroes(List<int> winnerIDs)
+
+    /// <summary>
+    /// Levels up the winner heroes
+    /// </summary>
+    /// <param name="winnerIDs"> the list of ids of the winner heroes </param>
+    public void LevelUpWinnerHeroes(List<int> winnerIDs)
     {
         this.winnerIDs = winnerIDs;
 
@@ -104,6 +137,7 @@ public class HeroManager : MonoBehaviour
 
         SaveAllHeroes();
     }
+
     /// <summary>
     /// Main select/deselect with id
     /// </summary>

@@ -1,13 +1,18 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class Begin : State
+/// <summary>
+/// The begin state that starts the entire battle
+/// </summary>
+internal class Begin : State
 {
     public Begin(BattleSystem battleSystem) : base(battleSystem)
     {
     }
 
+    /// <summary>
+    /// /// Sets input false then starts playerTurn state
+    /// </summary>
     public override IEnumerator Start()
     {
         battleSystem.battleUI.SetAllInput(false);

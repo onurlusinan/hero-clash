@@ -1,3 +1,6 @@
+/// <summary>
+/// Class for saving the heroes, gets serialized / unserialized by the binary formatter
+/// </summary>
 [System.Serializable]
 public class HeroSaveData
 {

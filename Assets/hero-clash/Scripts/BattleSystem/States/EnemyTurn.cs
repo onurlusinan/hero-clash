@@ -1,26 +1,36 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// The state where the enemy attacks
+/// </summary>
 internal class EnemyTurn : State
 {
     public EnemyTurn(BattleSystem battleSystem) : base(battleSystem)
     {
     }
 
+    /// <summary>
+    /// Selects random hero and attacks it
+    /// At the end checks if there are any heroes alive, changes battlesystem state accordingly
+    /// </summary>
     public override IEnumerator Start()
     {
         battleSystem.battleUI.PrintMessage("Enemy Turn.");
 
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(1.5f);
 
         HeroBattleCard heroBattleCard = SelectRandomHero();
-        float attackPower = battleSystem.enemyBattleCard.GetAttackPower();
-        string enemyName = battleSystem.enemyBattleCard.GetBaseData().GetEnemyName();
+        EnemyBattleCard enemyBattleCard = battleSystem.enemyBattleCard;
+
+        string enemyName = enemyBattleCard.GetBaseData().GetEnemyName();
+
+        float attackPower = enemyBattleCard.GetAttackPower();
         heroBattleCard.Damage(attackPower);
 
-        battleSystem.enemyBattleCard.AnimateBattleCard(InteractionType.attack);
-        battleSystem.enemyBattleCard.damageDisplay.ShowText(InteractionType.attack, attackPower);
+        enemyBattleCard.AnimateBattleCard(InteractionType.attack);
+
+        enemyBattleCard.damageDisplay.ShowText(InteractionType.attack, attackPower);
         heroBattleCard.damageDisplay.ShowText(InteractionType.damage, attackPower);
 
         battleSystem.battleUI.PrintMessage(enemyName + " attacks " + heroBattleCard.GetHero().characterName + " with Attack Power: " + battleSystem.enemyBattleCard.GetAttackPower());
@@ -36,6 +46,9 @@ internal class EnemyTurn : State
             battleSystem.SetState(new PlayerTurn(battleSystem));
     }
 
+    /// <summary>
+    /// Selects a random hero battle card for the enemy to attack to
+    /// </summary>
     private HeroBattleCard SelectRandomHero()
     {
         int randomIndex = Random.Range(0, battleSystem.heroBattleCards.Count);

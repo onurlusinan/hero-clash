@@ -1,12 +1,18 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-public class PlayerTurn : State
+/// <summary>
+/// The state where the player attacks
+/// </summary>
+internal class PlayerTurn : State
 {
     public PlayerTurn(BattleSystem battleSystem) : base(battleSystem)
     {
     }
 
+    /// <summary>
+    /// Enables player input
+    /// </summary>
     public override IEnumerator Start()
     {
         battleSystem.battleUI.PrintMessage("Tap on a hero to attack with.");
@@ -14,6 +20,10 @@ public class PlayerTurn : State
         yield return new WaitForSeconds(1f);
     }
 
+    /// <summary>
+    /// Attacks the enemy then disables player input
+    /// </summary>
+    /// <param name="heroBattleCard"> The hero battle card to attack with </param>
     public override IEnumerator Attack(HeroBattleCard heroBattleCard)
     {
         string heroName = heroBattleCard.GetHero().characterName;
@@ -22,7 +32,10 @@ public class PlayerTurn : State
 
         bool isDead = enemyBattleCard.Damage(heroBattleCard.GetAttackPower());
 
-        battleSystem.battleUI.PrintMessage("The hero " + heroName + " attacked " + enemyBattleCard.GetBaseData().GetEnemyName() + " with Attack Power: " + heroBattleCard.GetAttackPower());
+        battleSystem.battleUI.PrintMessage("The hero " + heroName 
+            + " attacked " + enemyBattleCard.GetBaseData().GetEnemyName() 
+            + " with Attack Power: " + heroBattleCard.GetAttackPower());
+
         enemyBattleCard.damageDisplay.ShowText(InteractionType.damage, attackPower);
         heroBattleCard.damageDisplay.ShowText(InteractionType.attack, attackPower);
 
