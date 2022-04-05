@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 using DG.Tweening;
+using HeroClash.Audio;
 
 namespace HeroClash.UserInterface
 {
@@ -38,7 +39,10 @@ namespace HeroClash.UserInterface
             if (show)
                 canvasGroup.DOFade(1.0f, 0.1f);
             else
+            { 
                 canvasGroup.DOFade(0.0f, 0.1f);
+                SoundManager.Instance.Play(Sounds.pop);
+            }
         }
     }
 }

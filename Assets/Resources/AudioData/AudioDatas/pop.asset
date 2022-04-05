@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6f732d8537dbc014ebd07e4b615ae321, type: 3}
-  m_Name: punch
+  m_Name: pop
   m_EditorClassIdentifier: 
-  clip: {fileID: 8300000, guid: 5006fa3c14c4d2c4ca1df1644a47ce3e, type: 3}
-  volume: 0.4
-  pitch: 0.2
+  clip: {fileID: 8300000, guid: ee0dce410d0e2fa4c919c89437702d4c, type: 3}
+  volume: 1
+  pitch: 1
   randomPitch: 1
-  AudioName: punch
+  AudioName: pop

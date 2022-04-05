@@ -4,6 +4,7 @@ using UnityEngine;
 using HeroClash.HeroSystem;
 using HeroClash.PersistentData;
 using HeroClash.UserInterface;
+using HeroClash.Audio;
 
 namespace HeroClash.CombatSystem
 {

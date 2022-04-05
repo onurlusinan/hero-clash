@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: select
   m_EditorClassIdentifier: 
   clip: {fileID: 8300000, guid: 6b820d135d06a834badcbbe9273d4e6e, type: 3}
-  volume: 1
+  volume: 0.2
   pitch: 1
-  randomPitch: 0
+  randomPitch: 1
   AudioName: select

@@ -2,9 +2,10 @@
 using UnityEngine.UI;
 
 using DG.Tweening;
+using HeroClash.Audio;
 
 namespace HeroClash.UserInterface
-{ 
+{
     /// <summary>
     /// Battle Card interactions
     /// </summary>

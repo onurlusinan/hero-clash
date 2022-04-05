@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 using DG.Tweening;
 using HeroClash.CombatSystem;
 using HeroClash.HeroSystem;
+using HeroClash.Audio;
 
 namespace HeroClash.UserInterface
 {
@@ -41,6 +42,8 @@ namespace HeroClash.UserInterface
 
             _currentPanel = PanelType.battle;
             SwitchPanel(_currentPanel);
+
+            SoundManager.Instance.Play(Sounds.swoosh);
 
             overlay.DOFade(0.0f, 0.5f).OnComplete(() =>
                 overlay.gameObject.SetActive(false)
@@ -128,7 +131,7 @@ namespace HeroClash.UserInterface
         /// </summary>
         public void BackToHeroSelection()
         {
-            SoundManager.Instance.Play(Sounds.swoosh);
+            SoundManager.Instance.Play(Sounds.button);
             SoundManager.Instance.DestroySources();
 
             overlay.gameObject.SetActive(true);
@@ -145,7 +148,7 @@ namespace HeroClash.UserInterface
             if (isHeroTurn)
             {
                 heroBackImage.DOFade(1.0f, 0.2f);
-                enemyBackImage.DOFade(0.5f, 0.2f);
+                enemyBackImage.DOFade(0.75f, 0.2f);
             }
             else
             {

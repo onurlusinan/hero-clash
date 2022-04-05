@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 using DG.Tweening;
 using HeroClash.UserInterface;
+using HeroClash.Audio;
 
 namespace HeroClash.HeroSystem
 {
@@ -50,6 +51,8 @@ namespace HeroClash.HeroSystem
             _heroBaseDataCollection = Resources.Load<HeroBaseDataCollection>("HeroBaseData/HeroBaseDataCollection");
 
             InstantiateHeroes();
+
+            SoundManager.Instance.Play(Sounds.swoosh);
 
             overlay.DOFade(0.0f, 0.5f).OnComplete(() =>
                 overlay.gameObject.SetActive(false)
@@ -108,7 +111,7 @@ namespace HeroClash.HeroSystem
         public void BattleButton()
         {
             HeroManager.Instance.selectedHeroes = selectedHeroIDs;
-            SoundManager.Instance.Play(Sounds.swoosh);
+            SoundManager.Instance.Play(Sounds.button);
 
             overlay.gameObject.SetActive(true);
             overlay.DOFade(1.0f, 0.2f).OnComplete(() =>

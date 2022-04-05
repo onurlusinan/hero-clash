@@ -1,3 +1,4 @@
+using HeroClash.Audio;
 using System.Collections;
 using UnityEngine;
 
@@ -17,9 +18,9 @@ namespace HeroClash.CombatSystem
             battleSystem.battleUI.SetAllInput(false);
             battleSystem.battleUI.PrintMessage("Another epic battle begins!");
 
-            SoundManager.Instance.Play(Sounds.battleStart);
-
             yield return new WaitForSeconds(3f);
+
+            SoundManager.Instance.Play(Sounds.battleStart);
             battleSystem.SetState(new PlayerTurn(battleSystem));
         }
     }
