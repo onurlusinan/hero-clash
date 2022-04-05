@@ -8,6 +8,8 @@ using DG.Tweening;
 
 public class SelectionManager : MonoBehaviour
 {
+    public static SelectionManager Instance;
+
     [Header("UIManager Config")]
     public Button battleButton;
     public Image overlay;
@@ -16,13 +18,21 @@ public class SelectionManager : MonoBehaviour
     public GameObject heroPrefab;
     public Transform heroesParent;
 
+    [Header("Selection Config")]
+    public int selectableHeroAmount;
+    public List<int> selectedHeroIDs;
+
     private HeroBaseDataCollection _heroBaseDataCollection;
 
     private void Awake()
     {
-        HeroManager.selectedHeroAmountChanged += OnSelectedHeroAmountChanged;
-        
+        if (SelectionManager.Instance == null)
+            SelectionManager.Instance = this;
+        else
+            Destroy(gameObject);
+
         battleButton.interactable = false;
+        selectedHeroIDs = new List<int>();
 
         _heroBaseDataCollection = Resources.Load<HeroBaseDataCollection>("HeroBaseData/HeroBaseDataCollection");
 
@@ -33,14 +43,9 @@ public class SelectionManager : MonoBehaviour
         );
     }
 
-    private void OnDestroy()
+    private void SetBattleButton(int count)
     {
-        HeroManager.selectedHeroAmountChanged -= OnSelectedHeroAmountChanged;
-    }
-
-    private void OnSelectedHeroAmountChanged(int count)
-    {
-        bool isInteractable = (count == HeroManager.Instance.selectableHeroAmount);
+        bool isInteractable = (count == selectableHeroAmount);
         battleButton.interactable = isInteractable;
     }
 
@@ -63,8 +68,28 @@ public class SelectionManager : MonoBehaviour
         HeroManager.Instance.LoadAllHeroes();
     }
 
+    /// <summary>
+    /// Main select/deselect with id
+    /// </summary>
+    public void SelectHero(bool select, int id)
+    {
+        if (select)
+        {
+            selectedHeroIDs.Add(id);
+
+            if (selectedHeroIDs.Count > selectableHeroAmount)
+                HeroManager.Instance.GetHero(selectedHeroIDs[0]).Select(false);
+        }
+        else
+            selectedHeroIDs.Remove(id);
+
+        SetBattleButton(selectedHeroIDs.Count);
+    }
+
     public void BattleButton()
     {
+        HeroManager.Instance.selectedHeroes = selectedHeroIDs;
+
         overlay.gameObject.SetActive(true);
         overlay.DOFade(1.0f, 0.2f).OnComplete(() =>
                     SceneManager.LoadScene((int)SceneType.battleground)

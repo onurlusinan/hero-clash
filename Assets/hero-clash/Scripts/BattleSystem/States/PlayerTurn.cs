@@ -27,7 +27,7 @@ internal class PlayerTurn : State
     /// <param name="heroBattleCard"> The hero battle card to attack with </param>
     public override IEnumerator Attack(HeroBattleCard heroBattleCard)
     {
-        string heroName = heroBattleCard.GetHero().characterName;
+        string heroName = heroBattleCard.GetHero().GetName();
         float attackPower = heroBattleCard.GetAttackPower();
         EnemyBattleCard enemyBattleCard = battleSystem.enemyBattleCard;
 

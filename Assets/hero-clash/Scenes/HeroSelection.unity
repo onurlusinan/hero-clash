@@ -1246,9 +1246,6 @@ MonoBehaviour:
   experiencePerLevel: 5
   battlesPerNewHero: 5
   initialHeroAmount: 3
-  battlesFought: 0
-  selectableHeroAmount: 3
-  selectedHeroIds: 
 --- !u!1 &1275951455
 GameObject:
   m_ObjectHideFlags: 0
@@ -1846,3 +1843,5 @@ MonoBehaviour:
   overlay: {fileID: 182048460}
   heroPrefab: {fileID: 5105441036056478259, guid: cfe7dfb780b25a642b9a711a8ba91299, type: 3}
   heroesParent: {fileID: 838504475}
+  selectableHeroAmount: 3
+  selectedHeroIDs: 

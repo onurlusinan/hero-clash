@@ -200,7 +200,7 @@ public class Hero : MonoBehaviour
 
         MoveHeroCard(isSelected);
 
-        HeroManager.Instance.SelectHero(isSelected, _heroID);
+        SelectionManager.Instance.SelectHero(isSelected, _heroID);
     }
     #endregion
 }

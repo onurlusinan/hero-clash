@@ -28,10 +28,7 @@ public class HeroManager : MonoBehaviour
     public int initialHeroAmount;
     internal int totalBattles;
 
-    [Header("Hero Manager Config")]
-    public int selectableHeroAmount;
-    public List<int> selectedHeroIds;
-    public static event Action<int> selectedHeroAmountChanged;
+    internal List<int> selectedHeroes;
 
     private Dictionary<int, Hero> _heroDict;
     internal List<int> winnerIDs;
@@ -46,7 +43,7 @@ public class HeroManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
 
         _heroDict = new Dictionary<int, Hero>();
-        selectedHeroIds = new List<int>();
+        selectedHeroes = new List<int>();
         winnerIDs = new List<int>();
     }
 
@@ -108,7 +105,7 @@ public class HeroManager : MonoBehaviour
     public void ClearHeroManager()
     {
         _heroDict.Clear();
-        selectedHeroIds.Clear();
+        selectedHeroes.Clear();
         winnerIDs.Clear();
     }
 
@@ -130,32 +127,8 @@ public class HeroManager : MonoBehaviour
         this.winnerIDs = winnerIDs;
 
         foreach (int id in winnerIDs)
-        {
             _heroDict[id].LevelUp();
-            Debug.Log(_heroDict[id].characterName + " now has +1 experience.");
-        }
 
         SaveAllHeroes();
-    }
-
-    /// <summary>
-    /// Main select/deselect with id
-    /// </summary>
-    public void SelectHero(bool select, int id)
-    {
-        if (select)
-        {
-            selectedHeroIds.Add(id);
-
-            if (selectedHeroIds.Count > selectableHeroAmount)
-                _heroDict[selectedHeroIds[0]].Select(false);
-        }
-        else
-        {
-            selectedHeroIds.Remove(id);
-            selectedHeroAmountChanged?.Invoke(selectedHeroIds.Count);
-        }
-        
-        selectedHeroAmountChanged?.Invoke(selectedHeroIds.Count);
     }
 }

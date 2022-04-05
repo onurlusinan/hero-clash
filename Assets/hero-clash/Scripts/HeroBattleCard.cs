@@ -22,7 +22,7 @@ public class HeroBattleCard : BattleCard
     public void InitCard(Hero hero)
     {
         this.hero = hero;
-        characterName.text = hero.characterName;
+        characterName.text = hero.GetName(); ;
         characterAvatar.sprite = hero.defaultAvatarSprite;
         _totalHealth = hero.health;
         _attackPower = hero.attackPower;
@@ -36,7 +36,18 @@ public class HeroBattleCard : BattleCard
         healthBar.SetHealthBar(_currentHealth, hero.health);
         attributesPanel.RefreshPanelInfo(hero.level, _currentHealth, hero.attackPower);
     }
-    
+    public override bool Damage(float amount)
+    {
+        AnimateBattleCard(InteractionType.damage);
+
+        _currentHealth = _currentHealth - amount;
+        _isDead = _currentHealth <= 0;
+
+        FadeCard(_isDead);
+
+        return _isDead;
+    }
+
     /// <summary>
     /// For the button, invokes event to Battle System
     /// </summary>

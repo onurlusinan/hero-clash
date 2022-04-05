@@ -9,6 +9,6 @@ public class HeroLevelUpCard : MonoBehaviour
 
     public void SetCard(Hero hero)
     {
-        heroName.text = hero.characterName;
+        heroName.text = hero.GetName();
     }
 }

@@ -34,7 +34,7 @@ internal class EnemyTurn : State
         enemyBattleCard.damageDisplay.ShowText(InteractionType.attack, attackPower);
         heroBattleCard.damageDisplay.ShowText(InteractionType.damage, attackPower);
 
-        battleSystem.battleUI.PrintMessage(enemyName + " attacks " + heroBattleCard.GetHero().characterName + " with Attack Power: " + battleSystem.enemyBattleCard.GetAttackPower());
+        battleSystem.battleUI.PrintMessage(enemyName + " attacks " + heroBattleCard.GetHero().GetName() + " with Attack Power: " + battleSystem.enemyBattleCard.GetAttackPower());
 
         heroBattleCard.RefreshCard();
 

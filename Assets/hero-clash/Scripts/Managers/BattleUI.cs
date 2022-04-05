@@ -49,7 +49,7 @@ public class BattleUI : MonoBehaviour
     /// </summary>
     private void InitHeroBattleCards()
     {
-        List<int> heroIDs = HeroManager.Instance.selectedHeroIds;
+        List<int> heroIDs = HeroManager.Instance.selectedHeroes;
 
         for (int i = 0; i < heroIDs.Count; i++)
         {
