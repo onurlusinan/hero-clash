@@ -47,9 +47,6 @@ public class HeroManager : MonoBehaviour
         winnerIDs = new List<int>();
     }
 
-    /// <summary>
-    /// Gets the hero by id
-    /// </summary>
     public Hero GetHero(int id) => _heroDict[id];
 
     /// <summary>

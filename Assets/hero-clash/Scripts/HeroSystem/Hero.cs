@@ -44,8 +44,19 @@ public class Hero
     
     #endregion
 
-    #region LEVELING
+    #region LEVELING 
+    /// <summary>
+    /// Calculates the user level through experience
+    /// </summary>
+    private int CalculateLevel(int experience)
+    {
+        level = experience / HeroManager.Instance.experiencePerLevel;
+        return level + 1;
+    }
 
+    /// <summary>
+    /// Main level up (exp gain) method
+    /// </summary>
     public void LevelUp()
     {
         _experience = _experience + 1;
@@ -64,13 +75,6 @@ public class Hero
 
         level = newLevel;
     }
-
-    private int CalculateLevel(int experience)
-    {
-        level = experience / HeroManager.Instance.experiencePerLevel;
-        return level + 1;
-    }
-
     #endregion
 
     #region SAVE-SYSTEM

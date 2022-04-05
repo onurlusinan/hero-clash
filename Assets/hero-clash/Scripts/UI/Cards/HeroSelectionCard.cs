@@ -30,18 +30,17 @@ public class HeroSelectionCard : MonoBehaviour
         ShowLockPanel(hero.IsLocked());
     }
 
-    public void RefreshHeroCard(Hero hero)
+    /// <summary>
+    /// Initialize a hero selection card from a hero
+    /// </summary>
+    public void InitHeroCard(Hero hero)
     {
         this.hero = hero;
-
-        characterNameText.text = hero.GetName();
-        attributesPanel.RefreshPanelInfo(hero.level, hero.health, hero.attackPower);
-        characterAvatar.sprite = hero.defaultAvatarSprite;
-        ShowLockPanel(hero.IsLocked());
+        RefreshHeroCard();
     }
 
     /// <summary>
-    /// Override method for selecting on the hero card
+    /// Button method for hero card tap
     /// </summary>
     public void HeroCardPressed()
     {
@@ -87,9 +86,7 @@ public class HeroSelectionCard : MonoBehaviour
     public void Select(bool select)
     {
         isSelected = select;
-
         MoveHeroCard(isSelected);
-
         SelectionManager.Instance.SelectHero(isSelected, hero.GetID());
     }
 }

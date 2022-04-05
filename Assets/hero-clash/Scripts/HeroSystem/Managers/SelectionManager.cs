@@ -69,7 +69,7 @@ public class SelectionManager : MonoBehaviour
             newHero.LoadBaseData(baseData);
             HeroManager.Instance.AddToHeroes(newHero);
 
-            newHeroSelectionCard.RefreshHeroCard(newHero);
+            newHeroSelectionCard.InitHeroCard(newHero);
             _heroSelectionCardDict.Add(newHero.GetID(), newHeroSelectionCard);
         }
 
