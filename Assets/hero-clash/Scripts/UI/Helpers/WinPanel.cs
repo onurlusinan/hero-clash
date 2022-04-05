@@ -1,29 +1,31 @@
-using System;
-using System.Collections;
+using HeroClash.HeroSystem;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WinPanel : MonoBehaviour
+namespace HeroClash.UserInterface
 {
-    public GameObject heroLevelUpCard;
-    public Transform levelUpList;
-
-    private void OnEnable()
+    public class WinPanel : MonoBehaviour
     {
-        PopulateBoard(HeroManager.Instance.winnerIDs);
-    }
+        public GameObject heroLevelUpCard;
+        public Transform levelUpList;
 
-    /// <summary>
-    /// Populates the final board dynamically with winner heroes using the prefab
-    /// </summary>
-    private void PopulateBoard(List<int> winnerIDs)
-    {
-        foreach (int id in winnerIDs)
+        private void OnEnable()
         {
-            GameObject heroLevelUpObject = Instantiate(heroLevelUpCard, levelUpList);
-            HeroLevelUpCard newHeroLevelUpCard = heroLevelUpObject.GetComponent<HeroLevelUpCard>();
-            Hero winnerHero = HeroManager.Instance.GetHero(id);
-            newHeroLevelUpCard.SetCard(winnerHero);
+            PopulateBoard(HeroManager.Instance.winnerIDs);
+        }
+
+        /// <summary>
+        /// Populates the final board dynamically with winner heroes using the prefab
+        /// </summary>
+        private void PopulateBoard(List<int> winnerIDs)
+        {
+            foreach (int id in winnerIDs)
+            {
+                GameObject heroLevelUpObject = Instantiate(heroLevelUpCard, levelUpList);
+                HeroLevelUpCard newHeroLevelUpCard = heroLevelUpObject.GetComponent<HeroLevelUpCard>();
+                Hero winnerHero = HeroManager.Instance.GetHero(id);
+                newHeroLevelUpCard.SetCard(winnerHero);
+            }
         }
     }
 }

@@ -1,16 +1,17 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 using DG.Tweening;
 
-public class HealthBar : MonoBehaviour
+namespace HeroClash.UserInterface
 {
-    public Image healthFill;
-
-    public void SetHealthBar(float health, float totalHealth)
+    public class HealthBar : MonoBehaviour
     {
-        healthFill.DOFillAmount(health / totalHealth, 0.2f);
+        public Image healthFill;
+
+        public void SetHealthBar(float health, float totalHealth)
+        {
+            healthFill.DOFillAmount(health / totalHealth, 0.2f);
+        }
     }
 }

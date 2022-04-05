@@ -1,14 +1,17 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class HeroLevelUpCard : MonoBehaviour
-{
-    public Text heroName;
+using HeroClash.HeroSystem;
 
-    public void SetCard(Hero hero)
+namespace HeroClash.UserInterface
+{
+    public class HeroLevelUpCard : MonoBehaviour
     {
-        heroName.text = hero.GetName();
+        public Text heroName;
+
+        public void SetCard(Hero hero)
+        {
+            heroName.text = hero.GetName();
+        }
     }
 }

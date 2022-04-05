@@ -1,35 +1,33 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.UI;
-
-/// <summary>
-/// The battle card for the enemy on the battleground
-/// </summary>
-public class EnemyBattleCard : BattleCard
+namespace HeroClash.UserInterface
 {
-    private EnemyBaseData enemyBaseData;
-    public EnemyBaseData GetBaseData() => enemyBaseData;
-
     /// <summary>
-    /// Fills Card with enemy base data
+    /// The battle card for the enemy on the battleground
     /// </summary>
-    public void InitCard(EnemyBaseData enemyBaseData)
+    public class EnemyBattleCard : BattleCard
     {
-        this.enemyBaseData = enemyBaseData;
-        characterName.text = enemyBaseData.GetEnemyName();
-        characterAvatar.sprite = enemyBaseData.GetDefaultAvatar();
+        private EnemyBaseData enemyBaseData;
+        public EnemyBaseData GetBaseData() => enemyBaseData;
 
-        _totalHealth = enemyBaseData.GetHealth();
-        _currentHealth = _totalHealth;
-        _attackPower = enemyBaseData.GetAttackPower();
+        /// <summary>
+        /// Fills Card with enemy base data
+        /// </summary>
+        public void InitCard(EnemyBaseData enemyBaseData)
+        {
+            this.enemyBaseData = enemyBaseData;
+            characterName.text = enemyBaseData.GetEnemyName();
+            characterAvatar.sprite = enemyBaseData.GetDefaultAvatar();
 
-        attributesPanel.RefreshPanelInfo(enemyBaseData.GetHealth(), _attackPower);
-    }
+            _totalHealth = enemyBaseData.GetHealth();
+            _currentHealth = _totalHealth;
+            _attackPower = enemyBaseData.GetAttackPower();
 
-    public override void RefreshCard()
-    {
-        healthBar.SetHealthBar(_currentHealth, _totalHealth);
-        attributesPanel.RefreshPanelInfo(_currentHealth, _attackPower);
+            attributesPanel.RefreshPanelInfo(enemyBaseData.GetHealth(), _attackPower);
+        }
+
+        public override void RefreshCard()
+        {
+            healthBar.SetHealthBar(_currentHealth, _totalHealth);
+            attributesPanel.RefreshPanelInfo(_currentHealth, _attackPower);
+        }
     }
 }

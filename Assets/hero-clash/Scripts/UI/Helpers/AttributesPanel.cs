@@ -1,42 +1,44 @@
-using DG.Tweening;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class AttributesPanel : MonoBehaviour
+using DG.Tweening;
+
+namespace HeroClash.UserInterface
 {
-    [Header("Panel UI Config")]
-    public Text levelText;
-    public Text healthText;
-    public Text attackPowerText;
-
-    private CanvasGroup canvasGroup;
-
-    private void Awake()
+    public class AttributesPanel : MonoBehaviour
     {
-        canvasGroup = GetComponent<CanvasGroup>();
-    }
-    public void RefreshPanelInfo(int level, float health, float attackPower)
-    {
-        if(levelText != null)
-            levelText.text = level.ToString();
+        [Header("Panel UI Config")]
+        public Text levelText;
+        public Text healthText;
+        public Text attackPowerText;
 
-        healthText.text = health.ToString();
-        attackPowerText.text = attackPower.ToString();
-    }
+        private CanvasGroup canvasGroup;
 
-    public void RefreshPanelInfo(float health, float attackPower)
-    {
-        healthText.text = health.ToString();
-        attackPowerText.text = attackPower.ToString();
-    }
+        private void Awake()
+        {
+            canvasGroup = GetComponent<CanvasGroup>();
+        }
+        public void RefreshPanelInfo(int level, float health, float attackPower)
+        {
+            if (levelText != null)
+                levelText.text = level.ToString();
 
-    public void ShowPanel(bool show)
-    {
-        if (show)
-            canvasGroup.DOFade(1.0f, 0.1f);
-        else
-            canvasGroup.DOFade(0.0f, 0.1f);
+            healthText.text = health.ToString();
+            attackPowerText.text = attackPower.ToString();
+        }
+
+        public void RefreshPanelInfo(float health, float attackPower)
+        {
+            healthText.text = health.ToString();
+            attackPowerText.text = attackPower.ToString();
+        }
+
+        public void ShowPanel(bool show)
+        {
+            if (show)
+                canvasGroup.DOFade(1.0f, 0.1f);
+            else
+                canvasGroup.DOFade(0.0f, 0.1f);
+        }
     }
 }
