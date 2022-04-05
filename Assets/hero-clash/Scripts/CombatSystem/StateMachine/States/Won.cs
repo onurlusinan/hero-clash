@@ -19,6 +19,8 @@ namespace HeroClash.CombatSystem
         /// </summary>
         public override IEnumerator Start()
         {
+            SoundManager.Instance.Play(Sounds.win);
+
             int totalBattles = HeroManager.Instance.totalBattles + 1;
             SaveSystem.SavePlayerData(totalBattles);
 

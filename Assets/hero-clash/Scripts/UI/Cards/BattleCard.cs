@@ -77,6 +77,7 @@ namespace HeroClash.UserInterface
                     AttackAnim();
                     break;
                 case InteractionType.damage:
+                    SoundManager.Instance.Play(Sounds.punch);
                     DamageAnim();
                     break;
             }

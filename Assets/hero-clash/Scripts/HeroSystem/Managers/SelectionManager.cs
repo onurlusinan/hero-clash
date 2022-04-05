@@ -108,6 +108,7 @@ namespace HeroClash.HeroSystem
         public void BattleButton()
         {
             HeroManager.Instance.selectedHeroes = selectedHeroIDs;
+            SoundManager.Instance.Play(Sounds.swoosh);
 
             overlay.gameObject.SetActive(true);
             overlay.DOFade(1.0f, 0.2f).OnComplete(() =>

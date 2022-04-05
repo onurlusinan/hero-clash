@@ -128,6 +128,9 @@ namespace HeroClash.UserInterface
         /// </summary>
         public void BackToHeroSelection()
         {
+            SoundManager.Instance.Play(Sounds.swoosh);
+            SoundManager.Instance.DestroySources();
+
             overlay.gameObject.SetActive(true);
             overlay.DOFade(1.0f, 0.2f).OnComplete(() =>
                         SceneManager.LoadScene((int)SceneType.heroSelection)
@@ -146,7 +149,6 @@ namespace HeroClash.UserInterface
             }
             else
             {
-
                 enemyBackImage.DOFade(1.0f, 0.2f);
                 heroBackImage.DOFade(0.5f, 0.2f);
             }

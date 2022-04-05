@@ -23,6 +23,7 @@ namespace HeroClash.CombatSystem
         public override IEnumerator Start()
         {
             battleSystem.battleUI.PrintMessage("Battle lost.");
+            SoundManager.Instance.Play(Sounds.lose);
 
             int battlesFought = HeroManager.Instance.totalBattles + 1;
             SaveSystem.SavePlayerData(battlesFought);

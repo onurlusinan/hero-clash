@@ -78,7 +78,10 @@ namespace HeroClash.UserInterface
                 return;
 
             if (!eventData.dragging && _shortClick)
+            {
+                SoundManager.Instance.Play(Sounds.select);
                 onClick?.Invoke();
+            }
 
             Reset();
         }

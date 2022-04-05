@@ -17,6 +17,8 @@ namespace HeroClash.CombatSystem
             battleSystem.battleUI.SetAllInput(false);
             battleSystem.battleUI.PrintMessage("Another epic battle begins!");
 
+            SoundManager.Instance.Play(Sounds.battleStart);
+
             yield return new WaitForSeconds(3f);
             battleSystem.SetState(new PlayerTurn(battleSystem));
         }
