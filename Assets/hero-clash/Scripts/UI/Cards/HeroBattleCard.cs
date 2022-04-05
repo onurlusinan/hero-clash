@@ -35,6 +35,7 @@ namespace HeroClash.UserInterface
             healthBar.SetHealthBar(_currentHealth, hero.health);
             attributesPanel.RefreshPanelInfo(hero.level, _currentHealth, hero.attackPower);
         }
+
         public override bool Damage(float amount)
         {
             AnimateBattleCard(InteractionType.damage);

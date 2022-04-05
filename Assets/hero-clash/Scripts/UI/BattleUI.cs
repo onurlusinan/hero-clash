@@ -66,7 +66,7 @@ namespace HeroClash.UserInterface
         /// </summary>
         public void PrintMessage(string message)
         {
-            dialogueText.DOText(message, 0.2f, true, ScrambleMode.All);
+            dialogueText.DOText(message, 0.5f, true, ScrambleMode.All);
         }
 
         /// <summary>

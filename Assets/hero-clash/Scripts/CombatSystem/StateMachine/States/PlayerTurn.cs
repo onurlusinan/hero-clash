@@ -45,7 +45,7 @@ namespace HeroClash.CombatSystem
 
             battleSystem.battleUI.SetAllInput(false);
 
-            yield return new WaitForSeconds(2f);
+            yield return new WaitForSeconds(3f);
 
             if (isDead)
                 battleSystem.SetState(new Won(battleSystem));

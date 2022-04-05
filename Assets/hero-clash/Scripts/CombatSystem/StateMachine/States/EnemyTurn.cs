@@ -20,7 +20,7 @@ namespace HeroClash.CombatSystem
             battleSystem.battleUI.PrintMessage("Enemy Turn.");
             battleSystem.battleUI.SetBackImages(false);
 
-            yield return new WaitForSeconds(1.5f);
+            yield return new WaitForSeconds(2f);
 
             HeroBattleCard heroBattleCard = SelectRandomHero();
             EnemyBattleCard enemyBattleCard = battleSystem.enemyBattleCard;
