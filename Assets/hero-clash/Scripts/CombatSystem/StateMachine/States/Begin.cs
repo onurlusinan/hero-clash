@@ -1,6 +1,7 @@
-using HeroClash.Audio;
 using System.Collections;
 using UnityEngine;
+
+using HeroClash.Audio;
 
 namespace HeroClash.CombatSystem
 {

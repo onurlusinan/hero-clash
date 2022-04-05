@@ -60,7 +60,6 @@ namespace HeroClash.Audio
         /// <summary>
         /// This returns the unused source if there is any, if not creates a new one
         /// </summary>
-        /// <returns> Either unused or new AudioSource </returns>
         private AudioSource GetSource()
         {
             foreach (AudioSource source in sources)
@@ -77,10 +76,6 @@ namespace HeroClash.Audio
             return CreateSource();
         }
 
-        /// <summary>
-        /// Creates AudioSource
-        /// </summary>
-        /// <returns> New AudioSource </returns>
         private AudioSource CreateSource()
         {
             AudioSource newSource = gameObject.AddComponent<AudioSource>();
@@ -89,8 +84,7 @@ namespace HeroClash.Audio
         }
 
         /// <summary>
-        /// This destroys the unused sources whenever needed, for ex: scene changes
-        /// Aims for optimizing the amount of audio sources
+        /// Destroys the unused sources, optimizing the amount of audio sources
         /// </summary>
         public void DestroySources()
         {
@@ -104,7 +98,6 @@ namespace HeroClash.Audio
             }
             foreach (AudioSource unusedSource in unusedSources)
             {
-                Debug.Log("Destroying: " + unusedSource.clip.name);
                 sources.Remove(unusedSource);
                 Destroy(unusedSource);
             }
