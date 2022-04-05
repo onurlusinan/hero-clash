@@ -8,7 +8,7 @@ using DG.Tweening;
 /// <summary>
 /// The main hero class
 /// </summary>
-public class Hero : MonoBehaviour
+public class Hero
 {
     #region VARIABLES & REFS
 
@@ -26,24 +26,7 @@ public class Hero : MonoBehaviour
     [Header("Sprites")]
     internal Sprite defaultAvatarSprite;
 
-    [Header("Images and Texts")]
-    public Image characterAvatar;
-    public Image characterBackground;
-    public Text characterNameText;
-    
-    [Header("Panels")]
-    public GameObject lockedPanel;
-    public CanvasGroup selectIndicator;
-    public AttributesPanel attributesPanel;
-    public RectTransform characterCard;
-
-    public bool isSelected;
     #endregion
-
-    private void Awake()
-    {
-        isSelected = false;
-    }
 
     #region GETTERS - SETTERS
     public int GetID() => _heroID;
@@ -117,7 +100,7 @@ public class Hero : MonoBehaviour
         attackPower = (data.attackPower);
         SetLock(data.isLocked);
 
-        RefreshHeroCard();
+        
     }
 
     public void LoadBaseData(HeroBaseData baseData)
@@ -130,77 +113,7 @@ public class Hero : MonoBehaviour
         SetExperience(0);
 
         defaultAvatarSprite = baseData.GetDefaultAvatar();
-        
-
-        RefreshHeroCard();
     }
 
-    #endregion
-
-    #region UI
-
-    /// <summary>
-    /// Refreshes the text info of the hero card
-    /// </summary>
-    public void RefreshHeroCard()
-    {
-        characterNameText.text = characterName;
-        attributesPanel.RefreshPanelInfo(level, health, attackPower);
-        characterAvatar.sprite = defaultAvatarSprite;
-        ShowLockPanel(_isLocked);
-    }
-
-    /// <summary>
-    /// Override method for selecting on the hero card
-    /// </summary>
-    public void CharacterPressed()
-    {
-        if (_isLocked)
-            return;
-
-        Select(!isSelected);
-    }
-
-    /// <summary>
-    /// Shows/hides the lock panel
-    /// </summary>
-    private void ShowLockPanel(bool isLocked)
-    {
-        lockedPanel.SetActive(isLocked);
-    }
-
-    /// <summary>
-    /// shows/hides the SELECTED text behind the character cards
-    /// </summary>
-    /// <param name="show"></param>
-    private void ShowSelectIndicator(bool show)
-    {
-        if (show)
-            selectIndicator.DOFade(1.0f, 0.2f);
-        else
-            selectIndicator.DOFade(0.0f, 0.2f);
-    }
-
-    /// <summary>
-    /// Moves the hero card down when selected
-    /// </summary>
-    private void MoveHeroCard(bool selected)
-    {
-        ShowSelectIndicator(selected);
-
-        if (selected)
-            characterCard.DOAnchorPosY(-60f, 0.2f);
-        else
-            characterCard.DOAnchorPosY(0f, 0.2f);
-    }
-
-    public void Select(bool select)
-    {
-        isSelected = select;
-
-        MoveHeroCard(isSelected);
-
-        SelectionManager.Instance.SelectHero(isSelected, _heroID);
-    }
     #endregion
 }

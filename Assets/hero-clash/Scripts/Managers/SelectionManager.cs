@@ -15,7 +15,7 @@ public class SelectionManager : MonoBehaviour
     public Image overlay;
 
     [Header("Hero loading")]
-    public GameObject heroPrefab;
+    public GameObject heroSelectionCardPrefab;
     public Transform heroesParent;
 
     [Header("Selection Config")]
@@ -23,6 +23,7 @@ public class SelectionManager : MonoBehaviour
     public List<int> selectedHeroIDs;
 
     private HeroBaseDataCollection _heroBaseDataCollection;
+    private Dictionary<int, HeroSelectionCard> _heroSelectionCardDict;
 
     private void Awake()
     {
@@ -33,6 +34,7 @@ public class SelectionManager : MonoBehaviour
 
         battleButton.interactable = false;
         selectedHeroIDs = new List<int>();
+        _heroSelectionCardDict = new Dictionary<int, HeroSelectionCard>();
 
         _heroBaseDataCollection = Resources.Load<HeroBaseDataCollection>("HeroBaseData/HeroBaseDataCollection");
 
@@ -42,6 +44,8 @@ public class SelectionManager : MonoBehaviour
             overlay.gameObject.SetActive(false)
         );
     }
+
+    public HeroSelectionCard GetHeroSelectionCard(int id) => _heroSelectionCardDict[id];
 
     private void SetBattleButton(int count)
     {
@@ -58,11 +62,15 @@ public class SelectionManager : MonoBehaviour
 
         foreach (HeroBaseData baseData in _heroBaseDataCollection.GetCollection())
         {
-            GameObject newHeroObject = Instantiate(heroPrefab, heroesParent);
-            Hero newHero = newHeroObject.GetComponent<Hero>();
-            newHero.LoadBaseData(baseData);
+            GameObject heroSelectionCardObj = Instantiate(heroSelectionCardPrefab, heroesParent);
+            HeroSelectionCard newHeroSelectionCard = heroSelectionCardObj.GetComponent<HeroSelectionCard>();
 
+            Hero newHero = new Hero();
+            newHero.LoadBaseData(baseData);
             HeroManager.Instance.AddToHeroes(newHero);
+
+            newHeroSelectionCard.RefreshHeroCard(newHero);
+            _heroSelectionCardDict.Add(newHero.GetID(), newHeroSelectionCard);
         }
 
         HeroManager.Instance.LoadAllHeroes();
@@ -78,7 +86,7 @@ public class SelectionManager : MonoBehaviour
             selectedHeroIDs.Add(id);
 
             if (selectedHeroIDs.Count > selectableHeroAmount)
-                HeroManager.Instance.GetHero(selectedHeroIDs[0]).Select(false);
+                _heroSelectionCardDict[selectedHeroIDs[0]].Select(false);
         }
         else
             selectedHeroIDs.Remove(id);

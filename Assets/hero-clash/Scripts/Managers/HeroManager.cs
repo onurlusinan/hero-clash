@@ -74,7 +74,7 @@ public class HeroManager : MonoBehaviour
         for (int i = 0; i < lockList.Count; i++)
         {
             lockList[i].SetLock(!(i < heroesToUnlock));
-            lockList[i].RefreshHeroCard();
+            SelectionManager.Instance.GetHeroSelectionCard(lockList[i].GetID()).RefreshHeroCard();
         }
     }
 
